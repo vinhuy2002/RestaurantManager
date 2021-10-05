@@ -29,7 +29,7 @@
 	        </div>
 		  </div>
 
-		  <a href="javascript:void(0)" id="submit_reg" class="waves-effect waves-light btn" style="background: #ee6e73 !important;">Đăng ký</a>
+		  <a href="javascript:void(0)" id="submit_reg" class="waves-effect waves-light btn" style="background: #5c95ff !important;">Đăng ký</a>
 	      	
 	      </form>
 	    </div>

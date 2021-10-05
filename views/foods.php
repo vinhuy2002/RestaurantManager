@@ -55,7 +55,7 @@ $arr_all = $query->fetchAll(PDO::FETCH_ASSOC);
 										<p><?php echo $arr_all[$i+$j-2]['description']; ?>
 									</div>
 									<div class="card-content center">
-										<a href="backends/order-food.php?id=<?php echo $arr_all[$i+$j-2]['id']; ?>" style="background: #ee6e73;" class="btn waves-effect waves-block waves-light" href="">Đặt luôn!</a>
+										<a href="backends/order-food.php?id=<?php echo $arr_all[$i+$j-2]['id']; ?>" style="background: #5c95ff;" class="btn waves-effect waves-block waves-light" href="">Đặt luôn!</a>
 									</div>
 								</div>
 								<div class="card-reveal">

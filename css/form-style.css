@@ -1,10 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 body {
-  background: #ee6e73; /* mấy trình duyệt cũ á */
+  background: #5c95ff; /* mấy trình duyệt cũ á */
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;      
+  -moz-osx-font-smoothing: grayscale;  
+      
 }
 
 .login-page {
@@ -17,7 +18,7 @@ body {
 }
 
 .input-field>input:focus{
-	border-bottom: 1px solid #ee6e73 !important;
+	border-bottom: 1px solid #5c95ff !important;
 	-webkit-box-shadow: 0 1px 0 0 #F13791 !important;
 	box-shadow: 0 1px 0 0 #F13791 !important; 
 }
@@ -29,13 +30,13 @@ body {
 
 .input-field>span{
   font-size: 1.5rem;
-  color: #ee6e73;
+  color: #5c95ff;
   float: left;
 }
 
 .btn, .btn:active, .btn:hover{
 
-  background: #ee6e73 !important;
+  background: #5c95ff !important;
   width: 100%;
 
 }
@@ -47,7 +48,7 @@ body {
 }
 
 
-/*Dashboard CSS Starts!*/
+/* s*/
 
 .left-sidebar {
   height: 100vh;

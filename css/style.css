@@ -2,6 +2,10 @@
 	text-decoration: none;
 }
 
+.nav-wrapper {
+	background-color: #5c95ff;
+}
+
 .nav-wrapper > a {
 	text-decoration: none;
 	font-family: 'Pacifico', cursive;
@@ -9,6 +13,10 @@
 
 .nav-wrapper > a:hover {
 	color: white;
+}
+
+.page-footer {
+	background-color: #5c95ff;
 }
 
 .hvr-grow {
@@ -22,8 +30,24 @@
 	color: white;
 }
 
+.brand-logo {
+	font-size: 23px;
+}
+
+.hvr-grow-a:hover,
+.hvr-grow-a:focus,
+.hvr-grow-a:active {
+	text-decoration: none;
+	color: white;
+	background-color: #5c95ff;
+}
+
 .slider .indicators .indicator-item.active{
-	background-color: #ee6e73 !important;
+	background-color: #5c95ff !important;
+}
+
+.dropdown-content li>a, .dropdown-content li>span {
+    padding: 21.2px 16px;
 }
 
 @media(max-width : 992px) {

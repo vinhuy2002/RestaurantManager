@@ -54,7 +54,7 @@
 	</div>
 	<div class="row center" style="margin-bottom: 50px;">
 		<div class="col s12">
-			<a href="waiting.php" class="waves-effect waves-light btn" style="background: #ee6e73 !important;">Quản lý điều khác &raquo;</a>
+			<a href="waiting.php" class="waves-effect waves-light btn" style="background: #5c95ff !important;">Quản lý điều khác &raquo;</a>
 		</div>
 	</div>
 </section>

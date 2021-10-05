@@ -13,7 +13,20 @@ $(document).ready(function() {
   	padding: 55
   });
   $('.modal').modal();
+
+  $(".dropdown-trigger").dropdown({ hover: false });
+
 }); 
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.dropdown-trigger');
+    var instances = M.Dropdown.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $('.dropdown-trigger').dropdown();
+        
 
 function toggleModal(heading, description){
 
