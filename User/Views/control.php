@@ -1,78 +1,60 @@
 <div class="row">
-	<div class="col-4">
-		<div class="list-group" id="list-tab" role="tablist">
-			<a
-			class="list-group-item list-group-item-action active"
-			id="list-home-list"
-			data-mdb-toggle="list"
-			href="#list-home"
-			role="tab"
-			aria-controls="list-home"
-			>Home</a
-			>
-			<a
-			class="list-group-item list-group-item-action"
-			id="list-profile-list"
-			data-mdb-toggle="list"
-			href="#list-profile"
-			role="tab"
-			aria-controls="list-profile"
-			>Profile</a
-			>
-			<a
-			class="list-group-item list-group-item-action"
-			id="list-messages-list"
-			data-mdb-toggle="list"
-			href="#list-messages"
-			role="tab"
-			aria-controls="list-messages"
-			>Messages</a
-			>
-			<a
-			class="list-group-item list-group-item-action"
-			id="list-settings-list"
-			data-mdb-toggle="list"
-			href="#list-settings"
-			role="tab"
-			aria-controls="list-settings"
-			>Settings</a
-			>
-		</div>
+	<div class="col-2">
+		<ul class="sidenav-menu bg-info text-white" style="padding-bottom: 350px">
+			<li class="sidenav-item">
+				<a class="sidenav-link">
+					<div style="width: 33.5px;"><i class="fas fa-home"></i></div>
+					<span>Trang Chủ</span>
+				</a>
+			</li>
+
+			<li class="sidenav-item">
+				<a class="sidenav-link">
+					<div style="width: 33.5px;"><i class="fas fa-utensils"></i></div>
+					<span>Món ăn</span>
+				</a>
+			</li>
+
+			<li class="sidenav-item">
+				<a class="sidenav-link">
+					<div style="width: 33.5px;"><i class="fas fa-store"></i></div>
+					<span>Đặt món</span>
+				</a>
+			</li>
+
+			<li class="sidenav-item">
+				<a class="sidenav-link">
+					<div style="width: 33.5px;"><i class="fas fa-table"></i></div>
+					<span>Bàn</span>
+				</a>
+			</li>
+
+			<li class="sidenav-item">
+				<a class="sidenav-link">
+					<div style="width: 33.5px;"><i class="far fa-calendar-alt"></i></div>
+					<span>Lịch làm việc</span>
+				</a>
+			</li>
+
+			<li class="sidenav-item">
+				<a class="sidenav-link">
+					<div style="width: 33.5px;"><i class="fas fa-users"></i></div>
+					<span>Nhân viên</span>
+				</a>
+			</li>
+
+			<li class="sidenav-item">
+				<a class="sidenav-link">
+					<div style="width: 33.5px;"><i class="fas fa-chart-line"></i></div>
+					<span>Doanh thu</span>
+				</a>
+			</li>
+
+
+		</ul>
+
 	</div>
-	<div class="col-8">
-		<div class="tab-content" id="nav-tabContent">
-			<div
-			class="tab-pane fade show active"
-			id="list-home"
-			role="tabpanel"
-			aria-labelledby="list-home-list"
-			>
-			...
-		</div>
-		<div
-		class="tab-pane fade"
-		id="list-profile"
-		role="tabpanel"
-		aria-labelledby="list-profile-list"
-		>
-		...
-	</div>
-	<div
-	class="tab-pane fade"
-	id="list-messages"
-	role="tabpanel"
-	aria-labelledby="list-messages-list"
-	>
-	...
-</div>
-<div
-class="tab-pane fade"
-id="list-settings"
-role="tabpanel"
-aria-labelledby="list-settings-list"
->
-...
-</div>
-</div>
-</div>
-</div>
+
+
+
+
