@@ -1,63 +1,28 @@
-<section class="fnavbar">
-	<div class="navbar-fixed">
-		<nav style="background-color: #5c95ff;">
-			<div class="nav-wrapper">
-				<a href="/RestaurantManager" class="brand-logo">RestaurantManager</a>
-				<a href="/RestaurantManager" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-				
-				<ul class="right hide-on-med-and-down">
-					<li><a href="/RestaurantManager" class="hvr-grow">Trang chủ</a></li>
-					
-					<li><a class="dropdown-trigger" href="#!" data-target="dropdown">Quản lý<i class="material-icons right">arrow_drop_down</i></a></li>
-					<ul id="dropdown" class="dropdown-content">
-						<li><a href="foods.php" class="hvr-grow-a">Món ăn</a></li>
-						<li><a href="waiting.php" class="hvr-grow-a">Thực đơn</a></li>
-						<li><a href="waiting.php" class="hvr-grow-a">Khách hàng</a></li>
-						<li><a href="waiting.php" class="hvr-grow-a">Đầu bếp</a></li>
-						<li><a href="waiting.php" class="hvr-grow-a">Nhân viên</a></li>
-						<li><a href="waiting.php" class="hvr-grow-a">Tài chính</a></li>
-					</ul>
+<?php
+	require('Views/login.php');
+	require('Views/register.php');
+?>
 
-					<li><a href="/RestaurantManager/about-restaurant-manager.php" class="hvr-grow">Về chúng tôi</a></li>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<div class="container">
+		<a class="navbar-brand me-2" href="/restaurantmanager">Restaurant Manager</a>
 
-					<?php
+		<div class="collapse navbar-collapse">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
 
-					if (isset($_SESSION['user'])) {
-						echo '<li><a href="#" class="hvr-grow">Hi, '.$_SESSION['user'].'</a></li>
-						<li><a href="logout.php" class="hvr-grow">Đăng xuất</a></li>';
-					} else {
-						echo '<li><a href="#" class="hvr-grow modal-trigger" data-target="modal1">Đăng nhập</a></li>
-						<li><a href="#" class="hvr-grow modal-trigger" data-target="modal2">Đăng ký</a></li>';
-					}
+			<div class="d-flex align-items-center">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<button type="button" class="btn btn-link">TRANG CHỦ</button>
+						<button type="button" class="btn btn-link">GIỚI THIỆU</button>
 
-					?>
+						<a class="btn btn-outline-primary btn-rounded" href="" data-mdb-ripple-color="dark" role="button" data-mdb-toggle="modal" data-mdb-target="#login">ĐĂNG NHẬP</a>
+						<a class="btn btn-primary btn-rounded" href="" data-mdb-ripple-color="dark" role="button" data-mdb-toggle="modal" data-mdb-target="#register">ĐĂNG KÝ MIỄN PHÍ</a>
+					</li>
 				</ul>
+
 			</div>
-		</nav>
+		</div>
 	</div>
+</nav>
 
-	<ul class="sidenav" id="mobile-demo">
-		<li><a href="/RestaurantManager" class="hvr-grow">Trang chủ</a></li>
-
-		<li><a href="foods.php" class="hvr-grow">Món ăn</a></li>
-		<li><a href="waiting.php" class="hvr-grow">Thực đơn</a></li>
-		<li><a href="waiting.php" class="hvr-grow">Khách hàng</a></li>
-		<li><a href="waiting.php" class="hvr-grow">Đầu bếp</a></li>
-		<li><a href="waiting.php" class="hvr-grow">Nhân viên</a></li>
-		<li><a href="waiting.php" class="hvr-grow">Tài chính</a></li>
-
-		<li><a href="/RestaurantManager/about-restaurant-manager.php" class="hvr-grow">Về chúng tôi</a></li>
-
-		<?php
-
-		if (isset($_SESSION['user'])) {
-			echo '<li><a href="#">Hi, '.$_SESSION['user'].'</a></li>
-			<li><a href="logout.php">Logout</a></li>';
-		} else {
-			echo '<li><a href="#" class="modal-trigger" data-target="modal1">Login</a></li>
-			<li><a href="#" class="modal-trigger" data-target="modal2">Register</a></li>';
-		}
-
-		?>
-	</ul>
-</section>
