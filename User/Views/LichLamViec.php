@@ -1,82 +1,86 @@
-<!-- <div class="col-9">
-	<table class="table table-hover text-nowrap">
-		<thead>
-			<tr>
-				<th scope="col"></th>
-				<th scope="col">Product Detail Views</th>
-				<th scope="col">Unique Purchases</th>
-				<th scope="col">Quantity</th>
-				<th scope="col">Product Revenue</th>
-				<th scope="col">Avg. Price</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<th scope="row">Value</th>
-				<td>18,492</td>
-				<td>228</td>
-				<td>350</td>
-				<td>$4,787.64</td>
-				<td>$13.68</td>
-			</tr>
-			<tr>
-				<th scope="row">Percentage change</th>
-				<td>
-					<span class="text-danger">
-						<i class="fas fa-caret-down me-1"></i><span>-48.8%%</span>
-					</span>
-				</td>
-				<td>
-					<span class="text-success">
-						<i class="fas fa-caret-up me-1"></i><span>14.0%</span>
-					</span>
-				</td>
-				<td>
-					<span class="text-success">
-						<i class="fas fa-caret-up me-1"></i><span>46.4%</span>
-					</span>
-				</td>
-				<td>
-					<span class="text-success">
-						<i class="fas fa-caret-up me-1"></i><span>29.6%</span>
-					</span>
-				</td>
-				<td>
-					<span class="text-danger">
-						<i class="fas fa-caret-down me-1"></i><span>-11.5%</span>
-					</span>
-				</td>
-			</tr>
-			<tr>
-				<th scope="row">Absolute change</th>
-				<td>
-					<span class="text-danger">
-						<i class="fas fa-caret-down me-1"></i><span>-17,654</span>
-					</span>
-				</td>
-				<td>
-					<span class="text-success">
-						<i class="fas fa-caret-up me-1"></i><span>28</span>
-					</span>
-				</td>
-				<td>
-					<span class="text-success">
-						<i class="fas fa-caret-up me-1"></i><span>111</span>
-					</span>
-				</td>
-				<td>
-					<span class="text-success">
-						<i class="fas fa-caret-up me-1"></i><span>$1,092.72</span>
-					</span>
-				</td>
-				<td>
-					<span class="text-danger">
-						<i class="fas fa-caret-down me-1"></i><span>$-1.78</span>
-					</span>
-				</td>
-			</tr>
-		</tbody>
-	</table>
+<div class="col-10">
+	<div class="container-fluid">
+		<h3>
+			<p class="note" style="margin-top: 15px">
+				<strong>XEM LỊCH LÀM VIỆC</strong>&ensp;
+				<i class="fas fa-calendar-alt"></i>
+			</p>
+		</h3>
+
+		<table class="table table-hover text-nowrap">
+			<thead>
+				<tr>
+					<th scope="col"></th>
+					<th scope="col">Ngày</th>
+					<th scope="col">Giờ làm việc</th>
+					<th scope="col">Xin phép</th>
+					<th scope="col">Ghi chú</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope="row">Thứ hai</th>
+					<td>10/10/2021</td>
+					<td>8h - 16h</td>
+					<td><a href=""><span class="text-danger">Xin nghỉ ?</span></a></td>
+					<td><span class="text-success">Nhớ đặt mua thức ăn trước buổi trưa</span></td>
+					
+				</tr>
+				<tr>
+					<th scope="row">Thứ ba</th>
+					<td>11/10/2021</td>
+					<td>8h - 16h</td>
+					<td><a href=""><span class="text-danger">Xin nghỉ ?</span></a></td>
+					<td><span class="text-success"></span></td>
+					
+				</tr>
+				<tr>
+					<th scope="row">Thứ tư</th>
+					<td>12/10/2021</td>
+					<td>15h - 22h</td>
+					<td><a href=""><span class="text-danger">Xin nghỉ ?</span></a></td>
+					<td><span class="text-success"></span></td>
+					
+				</tr>
+				<tr>
+					<th scope="row">Thứ năm</th>
+					<td>13/10/2021</td>
+					<td>15h - 22h</td>
+					<td><a href=""><span class="text-danger">Xin nghỉ ?</span></a></td>
+					<td><span class="text-success"></span></td>
+					
+				</tr>
+				<tr>
+					<th scope="row">Thứ sáu</th>
+					<td>14/10/2021</td>
+					<td></td>
+					<td><a href=""><span class="text-danger">Xin nghỉ ?</span></a></td>
+					<td><span class="text-success">Hôm nay nhà hàng tạm đóng cửa do không thích bán</span></td>
+					
+				</tr>
+				<tr>
+					<th scope="row">Thứ bảy</th>
+					<td>15/10/2021</td>
+					<td>8h - 22h</td>
+					<td><a href=""><span class="text-danger">Xin nghỉ ?</span></a></td>
+					<td><span class="text-success"</span></td>
+					
+				</tr>
+				<tr>
+					<th scope="row">Chủ nhật</th>
+					<td>16/10/2021</td>
+					<td></td>
+					<td><a href=""><span class="text-danger">Xin nghỉ ?</span></a></td>
+					<td><span class="text-success"></span></td>
+					
+				</tr>
+			</tbody>
+		</table>
+
+		
+	</div>
 </div>
 </div>
- -->
+
+
+

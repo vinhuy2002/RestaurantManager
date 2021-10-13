@@ -1,6 +1,6 @@
-<div class="container-fluid">
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<div class="container-fluid">
+
 		<i class="fas fa-bars fa-fw me-3"></i>
 		<a class="navbar-brand me-2" href="/restaurantmanager">Restaurant Manager</a>
 
@@ -28,6 +28,5 @@
 				</ul>
 			</div>
 		</div>
-		
-	</nav>
-</div>
+	</div>
+</nav>
