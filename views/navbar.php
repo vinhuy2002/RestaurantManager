@@ -5,7 +5,9 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 	<div class="container">
-		<a class="navbar-brand me-2" href="/restaurantmanager">Restaurant Manager</a>
+
+		<a class="navbar-brand me-2" href="/restaurantmanager"><img src="public/images/logo.png" height="44" alt="" loading="lazy"></a>
+		
 
 		<div class="collapse navbar-collapse">
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
