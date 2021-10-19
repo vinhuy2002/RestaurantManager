@@ -94,8 +94,8 @@
 	</div>
 </section>
 
-<div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+<div class="text-center p-4 text-white" style="background-color: #424242">
 	© 2021 Bản quyền thuộc về:
-	<a class="text-reset fw-bold" href="/restaurantmanager">Restaurant Manager</a>
+	<a class="text-info" href="/restaurantmanager">RestaurantManager (Văn Bằng ~ Vĩnh Uy)</a>
 </div>
 </footer>
