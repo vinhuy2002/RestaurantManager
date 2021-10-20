@@ -20,6 +20,7 @@
 	<?php
 		require('Views/navbar.php');
 		require('Views/carousel.php');
+		require('Views/body.php');
 		require('Views/footer.php');
 	?>
 
