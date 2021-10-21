@@ -15,11 +15,11 @@ require('Views/register.php');
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
 
 			<div class="d-flex align-items-center">
-				<button type="button" class="btn btn-link px-3 me-2">TRANG CHỦ</button>
-				<button type="button" class="btn btn-link px-3 me-2">GIỚI THIỆU</button>
+				<a href="?mod=trangchu"><button type="button" class="btn btn-link px-3 me-2">TRANG CHỦ</button></a>
+				<a href="?mod=gioithieu"><button type="button" class="btn btn-link px-3 me-2">GIỚI THIỆU</button></a>
 
 				<a class="btn btn-outline-primary btn-rounded" href="" data-mdb-ripple-color="dark" role="button" data-mdb-toggle="modal" data-mdb-target="#login">ĐĂNG NHẬP</a>
-
+				&ensp;
 				<a class="btn btn-primary btn-rounded" href="" data-mdb-ripple-color="dark" role="button" data-mdb-toggle="modal" data-mdb-target="#register">ĐĂNG KÝ MIỄN PHÍ</a>
 			</div>
 		</div>

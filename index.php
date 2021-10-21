@@ -20,7 +20,17 @@
 	<?php
 		require('Views/navbar.php');
 		require('Views/carousel.php');
-		require('Views/body.php');
+
+		$mod = isset($_GET['mod']) ? $_GET['mod'] : "trangchu";
+		switch ($mod) {
+			case "trangchu":
+			require_once("Views/body.php");
+			break;
+			case "gioithieu":
+			require_once("Views/gioithieu.php");
+			break;
+		}
+
 		require('Views/footer.php');
 	?>
 
