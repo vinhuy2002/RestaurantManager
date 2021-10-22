@@ -3,15 +3,17 @@
 
  	<!-- Sidebar - Brand -->
  	<a class="sidebar-brand d-flex align-items-center justify-content-center" href="?mod=trangchu">
- 		<div class="sidebar-brand-icon rotate-n-15">
- 			<i class="fas fa-laugh-wink"></i>
- 		</div>
+ 		<!-- <div class="sidebar-brand-icon rotate-n-15"> -->
+ 			<!-- <i class="fas fa-laugh-wink"></i> -->
+ 		<!-- </div> -->
+
+      <img src="public/img/spatula2.svg" height="75">
  		<!-- <div class="sidebar-brand-text mx-3">RestaurantManager</sup></div> -->
-               <img class="sidebar-brand-text mx-3" src="public/img/logo.png" height="40" alt="" loading="lazy">
+               <!-- <img class="sidebar-brand-text mx-3" src="public/img/logo.png" height="40" alt="" loading="lazy">
                
                <div class="sidebar-brand-icon rotate-n-15">
                      <i class="fas fa-laugh-wink"></i>
-              </div>
+              </div> -->
        </a>
 
        <!-- Divider -->
