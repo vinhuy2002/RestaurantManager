@@ -7,7 +7,7 @@
  			<!-- <i class="fas fa-laugh-wink"></i> -->
  		<!-- </div> -->
 
-      <img src="public/img/spatula2.svg" height="75">
+      <img src="public/img/spatula1.svg" height="75">
  		<!-- <div class="sidebar-brand-text mx-3">RestaurantManager</sup></div> -->
                <!-- <img class="sidebar-brand-text mx-3" src="public/img/logo.png" height="40" alt="" loading="lazy">
                
