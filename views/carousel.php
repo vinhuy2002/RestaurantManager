@@ -7,7 +7,7 @@
 
 	<div class="carousel-inner">
 		<div class="carousel-item active">
-			<img src="public/images/banner1.jpg" class="d-block w-100" alt="..."/>
+			<img src="public/images/banner0.jpg" class="d-block w-100" alt="..."/>
 
 			<div class="carousel-caption d-none d-md-block">
 				<h5>Restaurant Manager</h5>
@@ -16,20 +16,20 @@
 		</div>
 
 		<div class="carousel-item">
-			<img src="public/images/banner2.jpg" class="d-block w-100" alt="..."/>
+			<img src="public/images/banner1.jpg" class="d-block w-100" alt="..."/>
 			<div class="carousel-caption d-none d-md-block">
 				<h5>Restaurant Manager</h5>
-				<p>Rất vui vì bạn đang sử dụng dịch vụ của chúng tôi.</p>
+				<p>Chúng tôi cố gắng giúp bạn quản lý nhà hàng của mình dễ dàng và hiệu quả nhất.</p>
 			</div>
 		</div>
 
 		<div class="carousel-item">
-			<img src="public/images/banner1.jpg" class="d-block w-100" alt="..."/>
+			<img src="public/images/banner2.jpg" class="d-block w-100" alt="..."/>
 
-			<div class="carousel-caption d-none d-md-block">
+			<!-- <div class="carousel-caption d-none d-md-block">
 				<h5>Restaurant Manager</h5>
-				<p>Chúng tôi cố gắng mang lại cho bạn cách quản lý dễ dàng và hiệu quả nhất.</p>
-			</div>
+				<p>Rất vui vì bạn đang sử dụng dịch vụ của chúng tôi.</p>
+			</div> -->
 		</div>
 	</div>
 
