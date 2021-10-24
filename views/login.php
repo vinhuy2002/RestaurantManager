@@ -3,7 +3,7 @@
 		<div class="modal-content">
 			<div class="modal-body">
 				<form>
-					<center><b>ĐĂNG NHẬP</b></center>
+					<center><h5>ĐĂNG NHẬP VÀO NHÀ HÀNG CỦA BẠN</h5></center>
 					<br>
 
 					<div class="form-outline mb-4">

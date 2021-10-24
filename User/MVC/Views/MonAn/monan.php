@@ -1,96 +1,79 @@
-<h3>
-	<p class="note" style="margin-top: 15px">
-		<strong>QUẢN LÝ MÓN ĂN</strong>&ensp;
-		<i class="fas fa-utensils"></i>
-	</p>
-</h3>
+<div class="card shadow mb-4">
+	<div class="card-header py-3">
+		<h4 class="" style="margin-top: 10px">
+			<strong>QUẢN LÝ MÓN ĂN</strong>&ensp;
+			<i class="fas fa-utensils"></i>
+		</h4>            
+	</div>
 
-<table class="table table-hover text-nowrap">
-	<thead>
-		<tr>
-			<th scope="col">ID</th>
-			<th scope="col">Loại</th>
-			<th scope="col">Tên món</th>
-			<th scope="col">Đơn giá</th>
-			<th scope="col">Thay đổi</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<th scope="row">1</th>
-			<td>Thịt</td>
-			<td>Bò xung khói</td>
-			<td>150.000 VND</td>
-			<td>
-				<a href="" class="text-warning ">Sửa</a>&emsp;
-				<a href="" class="text-danger">Xóa</a>
-			</td>
-		</tr>
+	<div class="card-body">
+		<div class="table-responsive">
+			<!-- <a href="?mod=ban&act=add" type="button" class="btn btn-primary">Thêm bàn</a> -->
 
-		<tr>
-			<th scope="row">2</th>
-			<td>Thịt</td>
-			<td>Gà rán</td>
-			<td>200.000 VND</td>
-			<td>
-				<a href="" class="text-warning ">Sửa</a>&emsp;
-				<a href="" class="text-danger">Xóa</a>
-			</td>
-		</tr>
+			<!-- <hr> -->
+			<table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+				<thead>
+					<tr>
+						<th scope="col">ID</th>
+						<th scope="col">Loại</th>
+						<th scope="col">Tên món</th>
+						<th scope="col">Đơn giá</th>
+						<th scope="col">Thay đổi</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td>Thịt</td>
+						<td>Bò xung khói</td>
+						<td>150.000 VND</td>
+						<td>
+							<a href="" type="button" class="btn btn-success btn-rounded" target="_blank">Xem</a>
+							<a href="" type="button" class="btn btn-warning btn-rounded">Sửa</a>
+							<a href="" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-danger btn-rounded">Xóa</a>
+						</td>
+					</tr>
 
-		<tr>
-			<th scope="row">3</th>
-			<td>Nước</td>
-			<td>Cam ép</td>
-			<td>15.000 VND</td>
-			<td>
-				<a href="" class="text-warning ">Sửa</a>&emsp;
-				<a href="" class="text-danger">Xóa</a>
-			</td>
-		</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td>Thịt</td>
+						<td>Gà rán</td>
+						<td>200.000 VND</td>
+						<td>
+							<a href="" type="button" class="btn btn-success btn-rounded" target="_blank">Xem</a>
+							<a href="" type="button" class="btn btn-warning btn-rounded">Sửa</a>
+							<a href="" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-danger btn-rounded">Xóa</a>
+						</td>
+					</tr>
 
-		<tr>
-			<th scope="row">4</th>
-			<td>Thịt</td>
-			<td>Gà rán</td>
-			<td>200.000 VND</td>
-			<td>
-				<a href="" class="text-warning ">Sửa</a>&emsp;
-				<a href="" class="text-danger">Xóa</a>
-			</td>
-		</tr>
+					<tr>
+						<th scope="row">3</th>
+						<td>Nước</td>
+						<td>Cam ép</td>
+						<td>15.000 VND</td>
+						<td>
+							<a href="" type="button" class="btn btn-success btn-rounded" target="_blank">Xem</a>
+							<a href="" type="button" class="btn btn-warning btn-rounded">Sửa</a>
+							<a href="" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-danger btn-rounded">Xóa</a>
+						</td>
+					</tr>
 
-		<tr>
-			<th scope="row">5</th>
-			<td>Nước</td>
-			<td>Cam ép</td>
-			<td>15.000 VND</td>
-			<td>
-				<a href="" class="text-warning ">Sửa</a>&emsp;
-				<a href="" class="text-danger">Xóa</a>
-			</td>
-		</tr>
+				</tbody>
+			</table>
 
-	</tbody>
-</table>
-
-<div class="float-end">
-	<div class="input-group float-end">
-		<div class="form-outline float-end">
-			<input type="search" id="form1" class="form-control" />
-			<label class="form-label" for="form1">Tìm kiếm</label>
+			<script>
+				$(document).ready(function() {
+					$('#dataTable').DataTable();
+				});
+			</script>
 		</div>
-		<button type="button" class="btn btn-info">
-			<i class="fas fa-search"></i>
-		</button>
 	</div>
 </div>
-<br><br>
 
-<div class="card">
+
+<div class="card shadow">
+	<div class="card-header"><h5 class="card-title" style="margin-top: 10px">Tùy chỉnh:</h5></div>
 	<div class="card-body">
-		<h5 class="card-title">Tùy chỉnh:</h5>
-		<br>
 		<div class="row">
 			<div class="col-12">
 				<button class="btn btn-info dropdown-toggle btn-rounded" type="button" id="LoaiMonAn" data-mdb-toggle="dropdown" aria-expanded="false">Loại món ăn</button>
@@ -124,6 +107,4 @@
 	</div>
 </div>
 
-<br>
-<br>
 <br>
