@@ -4,6 +4,8 @@
 	<meta charset="utf-8">
 	<title>Restaurant Manager</title>
 
+	<link rel="shortcut icon" type="image/x-icon" href="public/img/spatula2.svg">
+
 	<link href="public/css/./sb-admin-2.min.css" rel="stylesheet" type="text/css">
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
@@ -41,6 +43,9 @@
 						break;
 						case "datmon":
 						require_once("MVC/Views/DatMon/datmon.php");
+						break;
+						case "nguyenlieu":
+						require_once("MVC/Views/NguyenLieu/nguyenlieu.php");
 						break;
 						case "ban":
 						require_once("MVC/Views/Ban/ban.php");

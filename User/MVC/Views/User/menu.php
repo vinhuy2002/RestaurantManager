@@ -24,21 +24,28 @@
 	<li class="nav-item">
 		<a class="nav-link" href="?mod=monan">
 			<i class="fas fa-utensils"></i>
-			<span>Món ăn</span>
+			<span>Quản lý Món ăn</span>
 		</a>
 	</li>
 
 	<li class="nav-item">
 		<a class="nav-link" href="?mod=datmon">
 			<i class="fas fa-store"></i>
-			<span>Đặt món</span>
+			<span>Quản lý Đặt món</span>
+		</a>
+	</li>
+
+	<li class="nav-item">
+		<a class="nav-link" href="?mod=nguyenlieu">
+			<i class="fas fa-cannabis"></i>
+			<span>Quản lý Nguyên liệu</span>
 		</a>
 	</li>
 
 	<li class="nav-item">
 		<a class="nav-link" href="?mod=ban">
 			<i class="fas fa-table"></i>
-			<span>Bàn</span>
+			<span>Quản lý Bàn</span>
 		</a>
 	</li>
 
@@ -52,14 +59,14 @@
 	<li class="nav-item">
 		<a class="nav-link" href="?mod=nhanvien">
 			<i class="fas fa-users"></i>
-			<span>Nhân viên</span>
+			<span>Quản lý Nhân viên</span>
 		</a>
 	</li>
 
 	<li class="nav-item">
 		<a class="nav-link" href="?mod=doanhthu">
 			<i class="fas fa-chart-line"></i>
-			<span>Doanh thu</span>
+			<span>Quản lý Doanh thu</span>
 		</a>
 	</li>
 

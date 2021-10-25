@@ -1,13 +1,13 @@
 <div class="card shadow mb-4">
 	<div class="card-header py-3">
 		<h4 class="" style="margin-top: 10px">
-			<strong>QUẢN LÝ BÀN</strong>&ensp;
-			<i class="fas fa-table"></i>
+			<strong>QUẢN LÝ NGUYÊN LIỆU</strong>&ensp;
+			<i class="fas fa-cannabis"></i>
 		</h4>            
 	</div>
 
 	<div class="card-body">
-		<div class="table-responsive">
+		<!-- <div class="table-responsive">
 			<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 				<thead>
 					<tr>
@@ -63,15 +63,14 @@
 					$('#dataTable').DataTable();
 				});
 			</script>
-		</div>
+		</div> -->
 	</div>
 </div>
 
 <div class="card shadow">
 	<div class="card-header"><h5 class="card-title" style="margin-top: 10px">Tùy chỉnh:</h5></div>
 	<div class="card-body">
-		<a href="?mod=ban&act=add" type="button" class="btn btn-info btn-rounded">Thêm bàn</a>
-		<a href="" type="button" class="btn btn-secondary btn-rounded">Đặt bàn</a>
+		<a href="?mod=ban&act=add" type="button" class="btn btn-info btn-rounded">Thêm nguyên liệu</a>
 	</div>
 </div>
 
