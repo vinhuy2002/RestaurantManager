@@ -6,6 +6,17 @@
 		<img src="public/img/spatula1.svg" height="70">
 	</a>
 
+ 	<!-- Sidebar - Brand -->
+ 	<a class="sidebar-brand d-flex align-items-center justify-content-center" href="?mod=trangchu">
+ 		<div class="sidebar-brand-icon ">
+ 			<img src="public/img/spatula2.svg" height="80">
+         
+ 		</div>
+ 		<!-- <div class="sidebar-brand-text mx-3">RestaurantManager</sup></div> -->
+               <!-- <img class="sidebar-brand-text mx-3" src="public/img/logo.png" height="25" alt="" loading="lazy" style="margin-left: -10px;"> -->
+       </a>
+
+
 
 	<!-- Divider -->
 	<hr class="sidebar-divider">
