@@ -8,11 +8,13 @@
 
 	<div class="card-body">
 		<form action="" class="text-center">
-			<label>Chọn mốc thời gian từ:&ensp;</label>
-			<input type="date" id="batdau" name="batdau">
-			<label>&ensp;cho đến: </label>
-			<input type="date" id="ketthuc" name="ketthuc">&emsp;
-			<button type="button" class="btn btn-info btn-rounded">Thống kê</button>
+			<h6>
+				Chọn mốc thời gian từ:&ensp;
+				<input type="date" id="batdau" name="batdau">
+				&ensp;cho đến:&ensp;
+				<input type="date" id="ketthuc" name="ketthuc">&emsp;
+				<button type="button" class="btn btn-info btn-rounded">Thống kê</button>
+			</h6>
 		</form>
 		<br>
 		<table class="table table-hover text-nowrap table-bordered">
@@ -113,8 +115,8 @@
 <div class="card shadow">
 	<div class="card-header"><h5 class="card-title" style="margin-top: 10px">Tùy chỉnh:</h5></div>
 	<div class="card-body">
-		<button type="button" class="btn btn-success btn-rounded">Xuất excel</button>
-		<button type="button" class="btn btn-info btn-rounded">In báo cáo</button>
+		<button type="button" class="btn btn-success">Xuất excel</button>
+		<button type="button" class="btn btn-info">In báo cáo</button>
 	</div>
 </div>
 

@@ -90,8 +90,8 @@
 <div class="card shadow">
 	<div class="card-header"><h5 class="card-title" style="margin-top: 10px">Tùy chỉnh:</h5></div>
 	<div class="card-body">
-		<a href="" type="button" class="btn btn-info btn-rounded">Báo cáo</a>
-		<a href="?mod=ban&act=add" type="button" class="btn btn-warning btn-rounded">Xin nghỉ</a>
+		<a href="" type="button" class="btn btn-info">Báo cáo</a>
+		<a href="?mod=ban&act=add" type="button" class="btn btn-warning">Xin nghỉ</a>
 	</div>
 </div>
 

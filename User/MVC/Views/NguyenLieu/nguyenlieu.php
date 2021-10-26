@@ -70,7 +70,7 @@
 <div class="card shadow">
 	<div class="card-header"><h5 class="card-title" style="margin-top: 10px">Tùy chỉnh:</h5></div>
 	<div class="card-body">
-		<a href="?mod=ban&act=add" type="button" class="btn btn-info btn-rounded">Thêm nguyên liệu</a>
+		<a href="?mod=ban&act=add" type="button" class="btn btn-info">Thêm nguyên liệu</a>
 	</div>
 </div>
 

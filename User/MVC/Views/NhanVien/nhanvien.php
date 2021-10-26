@@ -113,11 +113,11 @@
 	<div class="card-body">
 		<div class="row">
 			<div class="col-12">
-				<button type="button" class="btn btn-info btn-rounded">Thêm nhân viên</button>
+				<button type="button" class="btn btn-info">Thêm nhân viên</button>
 			</div>
 			<br><br>
 			<div class="col-12">
-				<button class="btn btn-info btn-rounded dropdown-toggle" type="button" id="MonAn"  data-mdb-toggle="dropdown"  aria-expanded="false">Các chức vụ</button>
+				<button class="btn btn-info dropdown-toggle" type="button" id="MonAn"  data-mdb-toggle="dropdown"  aria-expanded="false">Các chức vụ</button>
 				<ul class="dropdown-menu" aria-labelledby="MonAn">
 					<li><a class="dropdown-item" href="#">Admin</a></li>
 					<li><a class="dropdown-item" href="#">Phục vụ</a></li>
