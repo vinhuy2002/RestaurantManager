@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\NhaHang;
 use Illuminate\Http\Request;
-use Illuminate\Queue\Jobs\RedisJob;
+use Illuminate\Support\Facades\Redirect;
 
-class LoginAndRegisterController extends Controller
+class Register extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,6 @@ class LoginAndRegisterController extends Controller
     public function index()
     {
         //
-        // $usernameCHK = NhaHang::where('ID',);
-        // dd($username);
-        // return view('index');
     }
 
     /**
@@ -29,7 +26,6 @@ class LoginAndRegisterController extends Controller
     public function create()
     {
         //
-        // return view('index');
     }
 
     /**
@@ -40,7 +36,7 @@ class LoginAndRegisterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Lưu trữ nơi Nha_Hangs
         $restaurant = NhaHang::create([
             'Ten_nha_hang' => $request->input('tennhahang'),
             'Dia_chi' => $request->input('diachi'),
@@ -49,7 +45,7 @@ class LoginAndRegisterController extends Controller
             'Ten_dang_nhap' => $request->input('tendangnhap'),
             'Mat_khau' => $request->input('mk1')
         ]);
-        return redirect('/');
+        return Redirect('/');
     }
 
     /**
