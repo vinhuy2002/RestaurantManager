@@ -38,7 +38,6 @@ Route::get('/RestaurantManager/User', [AdminController::class, 'index']);
 // });
 
 Route::get('/RestaurantManager/User/{slug}', [AdminController::class, 'dieuhuong']);
-Route::get('/tests', [LogAndReg::class, 'login']);
+// Route::get('/tests', [LogAndReg::class, 'login']);
 
-// Route::resource('/Register', LoginAndRegisterController::class);
 Route::resource('/Register', Register::class);

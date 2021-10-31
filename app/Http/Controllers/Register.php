@@ -36,6 +36,7 @@ class Register extends Controller
      */
     public function store(Request $request)
     {
+        
         //Lưu trữ nơi Nha_Hangs
         $restaurant = NhaHang::create([
             'Ten_nha_hang' => $request->input('tennhahang'),
