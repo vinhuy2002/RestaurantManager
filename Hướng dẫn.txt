@@ -1,0 +1,7 @@
+Bro bình tĩnh cứ làm theo hướng dẫn là ok =)))
+
+1. Tạo database có tên: restaurantmanager
+2. Mở Terminal của Visual Studio Code.
+3. Gõ lệnh: php artisan migrate
+4. Bro test thử nơi chỗ đăng ký.
+5. Have fun =)))
