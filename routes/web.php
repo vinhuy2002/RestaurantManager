@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FirstController;
 use App\Http\Controllers\LogAndReg;
 use App\Http\Controllers\LoginAndRegisterController;
+use App\Http\Controllers\Register;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,6 +38,6 @@ Route::get('/RestaurantManager/User', [AdminController::class, 'index']);
 // });
 
 Route::get('/RestaurantManager/User/{slug}', [AdminController::class, 'dieuhuong']);
-Route::get('/tests', [LogAndReg::class, 'login']);
+// Route::get('/tests', [LogAndReg::class, 'login']);
 
-Route::resource('/Register', LoginAndRegisterController::class);
+Route::resource('/Register', Register::class);
