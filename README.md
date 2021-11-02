@@ -6,5 +6,26 @@
 
 Hành trình chạy deadline của Bằng và Uy được lưu trữ ở đây :v
 
-# PHAN VĂN BẰNG
-# TRẦN NGUYỄN VĨNH UY
+## Cách chạy chương trình
+
+#### Clone:
+cp .env.example .env
+composer install
+php artisan key:generate
+php artisan migrate:fresh
+php artisan db:seed
+php artisan storage:link
+npm install
+npm run dev
+php artisan serve
+
+#### Pull:
+composer install
+php artisan migrate
+php artisan serve
+
+
+
+<br>
+### PHAN VĂN BẰNG
+### TRẦN NGUYỄN VĨNH UY
