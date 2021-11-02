@@ -20,9 +20,9 @@
 <p>php artisan serve</p>
 
 #### Pull:
-composer install
-php artisan migrate
-php artisan serve
+<p>composer install</p>
+<p>php artisan migrate</p>
+<p>php artisan serve</p>
 
 
 ### Đồng sáng tạo:
