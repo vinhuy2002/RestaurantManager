@@ -15,7 +15,7 @@
                                 
                                 <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.png" class="img-fluid" alt="Sample image">
                                 <!-- <h4 >Restaurant Manager</h4> -->
-                                  <p class="mt-1 mb-2 pb-1">Tạo tài khoản và bắt đầu quản lý nhà hàng của bạn một cách chuyên nghiệp.</p>
+                                  <a class="mt-1 mb-2 pb-1 text-black" href="/">Tạo tài khoản và bắt đầu quản lý nhà hàng của bạn một cách chuyên nghiệp.</a>
                             </div>
                         </div>
 

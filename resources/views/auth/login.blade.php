@@ -12,7 +12,7 @@
 
                             <div class="col-md-10 col-lg-7 col-xl-7 d-flex align-items-center order-1 order-lg-1">
                                 <div class="text-center">
-                                  <img src="{{ URL('images1/logo-black.png') }}">
+                                  <a href="/"><img src="{{ URL('images1/logo-black.png') }}"></a>
                                   <!-- <h4 >Restaurant Manager</h4> -->
 
                                   <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-registration/draw1.png" class="img-fluid" alt="Sample image">
@@ -29,11 +29,11 @@
                                 @csrf
                                 <div class="d-flex flex-row align-items-center mb-4">
                                     <div class="form-outline flex-fill mb-0">
-                                        <input class="form-control" id="email" type="email" name="email" :value="old('email')" required autofocus/>
-                                        <label class="form-label" for="email">Email</label>
+                                        <!-- <input class="form-control" id="email" type="email" name="email" :value="old('email')" required autofocus/>
+                                        <label class="form-label" for="email">Email</label> -->
 
-                                      <!-- <input class="form-control" id="Ten_dang_nhap" type="text" name="Ten_dang_nhap" :value="old('Ten_dang_nhap')" required autofocus/>
-                                        <label class="form-label" for="Ten_dang_nhap">Tên đăng nhập</label> -->
+                                      <input class="form-control" id="auth" type="text" name="auth" :value="old('auth')" required autofocus/>
+                                        <label class="form-label" for="auth">Tên đăng nhập</label>
                                     </div>
                                 </div>
 
