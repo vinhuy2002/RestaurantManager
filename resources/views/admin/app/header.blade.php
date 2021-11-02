@@ -69,9 +69,12 @@
 				<img class="img-profile rounded-circle" height="50" src="{{ URL('images2/girl.jpg') }}">
 			</a>
 			<ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start" aria-labelledby="userDropdown">
-				<li><a class="dropdown-item" href="#">Thông tin</a></li>
-				<li><a class="dropdown-item" href="#">Doanh thu</a></li>
-				<li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+				<form method="POST" action="{{ route('logout') }}">
+					@csrf
+					<li><a class="dropdown-item" href="#">Thông tin</a></li>
+					<li><a class="dropdown-item" href="#">Doanh thu</a></li>
+					<li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">Đăng xuất</a></li>
+				</form>
 			</ul>
 		</li>
 

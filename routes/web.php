@@ -40,4 +40,9 @@ Route::get('/RestaurantManager/User', [AdminController::class, 'index']);
 Route::get('/RestaurantManager/User/{slug}', [AdminController::class, 'dieuhuong']);
 // Route::get('/tests', [LogAndReg::class, 'login']);
 
-Route::resource('/Register', Register::class);
+// Route::resource('/Register', Register::class);
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    $path = view("admin.trangchu.trangchu");
+    return view('admin.index')->with('route',$path);
+})->name('');

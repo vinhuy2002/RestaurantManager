@@ -41,10 +41,17 @@
                 <div class="d-flex align-items-center">
                     <a href="/"><button type="button" class="btn btn-link px-3 me-2">TRANG CHỦ</button></a>
                     <a href="/GioiThieu"><button type="button" class="btn btn-link px-3 me-2">GIỚI THIỆU</button></a>
-    
-                    <a class="btn btn-outline-primary btn-rounded" href="/Login" data-mdb-ripple-color="dark" role="button" data-mdb-toggle="modal" data-mdb-target="#login">ĐĂNG NHẬP</a>
-                    &ensp;
-                    <a class="btn btn-primary btn-rounded" href="/Register" data-mdb-ripple-color="dark" role="button" data-mdb-toggle="modal" data-mdb-target="#register">ĐĂNG KÝ MIỄN PHÍ</a>
+					@if (Route::has('login'))
+						@auth
+                    		<a href="{{ url('/RestaurantManager/User/trangchu') }}" class="btn btn-primary btn-rounded">Nhà hàng của bạn</a>
+						@else
+							<a class="btn btn-outline-primary btn-rounded" href="{{ route('login') }}">ĐĂNG NHẬP</a>
+							&ensp;
+							@if (Route::has('register'))
+								<a class="btn btn-primary btn-rounded" href="{{ route('register') }}">ĐĂNG KÝ MIỄN PHÍ</a>
+							@endif
+						@endauth
+            		@endif
                 </div>
             </div>
         </div>

@@ -3,8 +3,6 @@
 @section('content')
 
     @include('app.carousel')
-    @include('app.login')
-    @include('app.register')
 
     @switch($route)
         @case('TrangChu')

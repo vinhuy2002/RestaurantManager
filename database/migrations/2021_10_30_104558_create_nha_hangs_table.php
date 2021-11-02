@@ -13,15 +13,15 @@ class CreateNhaHangsTable extends Migration
      */
     public function up()
     {
-        Schema::create('nha_hangs', function (Blueprint $table) {
-            $table->increments('ID');
-            $table->string('Ten_nha_hang');
-            $table->string('Dia_chi');
-            $table->string('SDT');
-            $table->string('Email');
-            $table->string('Ten_dang_nhap');
-            $table->string('Mat_khau');
-        });
+        // Schema::create('nha_hangs', function (Blueprint $table) {
+        //     $table->increments('ID');
+        //     $table->string('Ten_nha_hang');
+        //     $table->string('Dia_chi');
+        //     $table->string('SDT');
+        //     $table->string('Email');
+        //     $table->string('Ten_dang_nhap');
+        //     $table->string('Mat_khau');
+        // });
     }
 
     /**
