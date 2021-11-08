@@ -37,7 +37,7 @@
                                         <label class="form-label" for="email">Email</label> -->
 
                                       <input class="form-control" id="auth" type="text" name="email" value="{{ old('email') }}" required autofocus/>
-                                        <label class="form-label" for="auth">Tên đăng nhập</label>
+                                        <label class="form-label" for="auth">Email</label>
                                     </div>
                                 </div>
 
