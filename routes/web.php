@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FirstController;
 use App\Http\Controllers\LogAndReg;
 use App\Http\Controllers\LoginAndRegisterController;
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\Register;
 use Illuminate\Support\Facades\Route;
 
@@ -19,30 +20,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 // User View
-Route::get('/', [FirstController::class, 'index']);
+Route::get('/', [MainController::class, 'index']);
 
-Route::get('/GioiThieu', [FirstController::class, 'aboutus']);
+Route::get('/GioiThieu', [MainController::class, 'aboutUs']);
 
 
 // Admin View
-Route::get('/RestaurantManager/User', [AdminController::class, 'index']);
+Route::post('/auth/save', [MainController::class, 'storeReg'])->name('registerStore');
+Route::post('/RestaurantManager/User', [MainController::class, 'loginCheck'])->name('admin.dashboard');
 
+Route::get('/RestaurantManager/User/{slug}', [MainController::class, 'dieuhuong']);
 
-// Route::get('/RestaurantManager/User/{slug}', function($slug){
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     $path = view("admin.trangchu.trangchu");
+//     return view('admin.index')->with('route',$path);
+// })->name('');
 
-//     $path = __DIR__ . "/../resources/post/{$slug}.blade.php";
-//     $dieuhuong = file_get_contents($path);
-//     return view('admin.index', [
-//         "route" => $dieuhuong,
-//     ]);
-// });
+Route::get('/auth/login', [MainController::class, 'login'])->name('auth.login');
+Route::get('/auth/register', [MainController::class, 'register'])->name('auth.register');
 
-Route::get('/RestaurantManager/User/{slug}', [AdminController::class, 'dieuhuong']);
-// Route::get('/tests', [LogAndReg::class, 'login']);
-
-// Route::resource('/Register', Register::class);
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    $path = view("admin.trangchu.trangchu");
-    return view('admin.index')->with('route',$path);
-})->name('');
+// Route::post('/admin/dashboard', [MainController::class, 'storeReg'])->name('admin.dashboard');
