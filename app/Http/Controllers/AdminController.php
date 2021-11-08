@@ -15,4 +15,10 @@ class AdminController extends Controller
 
         return view('admin.index')->with('route',$path);
     }
+
+    public function dieuhuong2($slug, $slug2){
+        $path = view("admin.{$slug}.{$slug2}");
+        
+        return view('admin.index')->with('route',$path);
+    }
 }

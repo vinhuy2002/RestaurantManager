@@ -1,6 +1,16 @@
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet"/>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RestaurantManager | Đăng nhập</title>
+	<link rel="shortcut icon" type="image/x-icon" href="{{ URL('images2/spatula2.svg') }}">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet" />
+</head>
 
 <section class="vh-100" style="background-color: #eee;">
     <div class="container h-100">
@@ -15,7 +25,7 @@
                                   <a href="/"><img src="{{ URL('images1/logo-black.png') }}"></a>
                                   <!-- <h4 >Restaurant Manager</h4> -->
 
-                                  <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-registration/draw1.png" class="img-fluid" alt="Sample image">
+                                  <img src="{{ URL('images1/login.png') }}" class="img-fluid" alt="Sample image">
                                   <p class="mt-1 mb-2 pb-1">Chúng tôi giúp bạn quản lý nhanh chóng và tiện lợi nhà hàng của mình.</p>
                               </div>    
 
@@ -80,3 +90,5 @@
 </section>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
+
+</html>

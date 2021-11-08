@@ -63,16 +63,16 @@
 		<div class="topbar-divider d-none d-sm-block"></div>
 		<!-- Nav Item - User Information -->
 		
-		<li class="dropdown">
+		<li class="dropdown nav-item">
 			<a class="nav-link dropdown-toggle" type="button" id="userDropdown" data-mdb-toggle="dropdown" aria-expanded="false" >
-				<span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
+				<span class="badge bg-primary">Admin</span>&ensp;
 				<img class="img-profile rounded-circle" height="50" src="{{ URL('images2/girl.jpg') }}">
 			</a>
 			<ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start" aria-labelledby="userDropdown">
 				<form method="POST" action="{{ route('logout') }}">
 					@csrf
 					<li><a class="dropdown-item" href="#">Thông tin</a></li>
-					<li><a class="dropdown-item" href="#">Doanh thu</a></li>
+					<li><a class="dropdown-item" href="/RestaurantManager/User/doanhthu">Doanh thu</a></li>
 					<li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">Đăng xuất</a></li>
 				</form>
 			</ul>

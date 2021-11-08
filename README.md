@@ -11,12 +11,12 @@
 #### Clone:
 <p>cp .env.example .env</p>
 <p>composer install</p>
-<p>php artisan key:generate</p>
-<p>php artisan migrate:fresh</p>
-<p>php artisan db:seed</p>
-<p>php artisan storage:link</p>
 <p>npm install</p>
 <p>npm run dev</p>
+<p>php artisan migrate:fresh</p>
+<p>php artisan key:generate</p>
+<p>php artisan db:seed</p>
+<!-- <p>php artisan storage:link</p> -->
 <p>php artisan serve</p>
 
 #### Pull:

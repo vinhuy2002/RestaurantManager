@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>Restaurant Manager</title>
 
-	<link rel="shortcut icon" type="image/x-icon" href="{{ URL('iamges2/spatula2.svg') }}">
+	<link rel="shortcut icon" type="image/x-icon" href="{{ URL('images2/spatula2.svg') }}">
 
 	<link href="{{ URL('css/sb-admin-2.min.css') }}" rel="stylesheet" type="text/css">
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

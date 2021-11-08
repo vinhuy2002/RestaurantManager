@@ -1,11 +1,9 @@
 <?php
 
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\FirstController;
-use App\Http\Controllers\LogAndReg;
-use App\Http\Controllers\LoginAndRegisterController;
 use App\Http\Controllers\MainController;
-use App\Http\Controllers\Register;
+use App\Http\Controllers\MonAnController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,13 +28,17 @@ Route::post('/auth/save', [MainController::class, 'storeReg'])->name('registerSt
 Route::post('/RestaurantManager/User', [MainController::class, 'loginCheck'])->name('admin.dashboard');
 
 Route::get('/RestaurantManager/User/{slug}', [MainController::class, 'dieuhuong']);
-
-// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-//     $path = view("admin.trangchu.trangchu");
-//     return view('admin.index')->with('route',$path);
-// })->name('');
+Route::get('/RestaurantManager/User/{slug}/{slug2}', [AdminController::class, 'dieuhuong2']);
 
 Route::get('/auth/login', [MainController::class, 'login'])->name('auth.login');
 Route::get('/auth/register', [MainController::class, 'register'])->name('auth.register');
 
 // Route::post('/admin/dashboard', [MainController::class, 'storeReg'])->name('admin.dashboard');
+
+// Món ăn
+Route::get('/RestaurantManager/User/monan/monan', [MonAnController::class, 'show']);
+Route::post('/RestaurantManager/User/monan/them', [MonAnController::class, 'store']);
+Route::get('/RestaurantManager/User/monan/xoa/id={id}', [MonAnController::class, 'destroy']);
+// Route::get('/RestaurantManager/User/monan/monan/xoa/{id}', [MonAnController::class, 'destroy']);
+Route::get('/RestaurantManager/User/monan/sua/id={id}', [MonAnController::class, 'edit']);
+Route::post('/RestaurantManager/User/monan/sua', [MonAnController::class, 'update']);

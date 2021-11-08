@@ -24,13 +24,13 @@
 				<hr>
 				<div class="card-body">
 					<ul class="list-group list-group-flush">
-						<li class="list-group-item">Tên nhà hàng: {{ $data['Ten_nha_hang'] }} </li>
-						<li class="list-group-item">Địa chỉ: {{ $data['Dia_chi'] }}</li>
-						<li class="list-group-item">Số điện thoại: {{ $data['SDT'] }}</li>
-						<li class="list-group-item">Email: {{ $data['email'] }}</li>
-						<li class="list-group-item">Chức vụ của bạn: Admin</li>
-						<li class="list-group-item">Tên đăng nhập: {{ $data['Ten_dang_nhap'] }}</li>
-						<li class="list-group-item">Mật khẩu: ********</li>
+						<li class="list-group-item"><b>Tên nhà hàng:</b> {{ $data['Ten_nha_hang'] }} </li>
+						<li class="list-group-item"><b>Địa chỉ:</b> {{ $data['Dia_chi'] }}</li>
+						<li class="list-group-item"><b>Số điện thoại:</b> {{ $data['SDT'] }}</li>
+						<li class="list-group-item"><b>Email:</b> {{ $data['email'] }}</li>
+						<li class="list-group-item"><b>Chức vụ của bạn:</b> Admin</li>
+						<li class="list-group-item"><b>Tên đăng nhập:</b> {{ $data['Ten_dang_nhap'] }}</li>
+						<li class="list-group-item"><b>Mật khẩu:</b> ********</li>
 					</ul>
 				</div>
 			</div>
