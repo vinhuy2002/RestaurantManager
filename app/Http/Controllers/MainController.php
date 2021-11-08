@@ -56,7 +56,7 @@ class MainController extends Controller
     public function loginCheck(Request $request){
         $request->validate([
             'email' => 'required | email',
-            'password' => 'required',
+            'password' => 'required | min:5',
         ]);
 
         $userinfo = User::where('email', $request->email)->first();

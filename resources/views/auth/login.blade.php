@@ -36,7 +36,7 @@
                                         <!-- <input class="form-control" id="email" type="email" name="email" :value="old('email')" required autofocus/>
                                         <label class="form-label" for="email">Email</label> -->
 
-                                      <input class="form-control" id="auth" type="text" name="email" value="{{ old('email') }}" required autofocus/>
+                                        <input class="form-control" id="auth" type="text" name="email" value="{{ old('email') }}" required autofocus/>
                                         <label class="form-label" for="auth">Email</label>
                                     </div>
                                 </div>
