@@ -82,7 +82,7 @@ class MonAnController extends Controller
     public function update(Request $request)
     {
         // update
-        $monan = MonAn::find($request->id);
+        $monan = MonAn::find($request->ID_mon);
         $monan['loai'] = $request->loai;
         $monan['ten_mon'] = $request->ten_mon;
         $monan['don_gia'] = $request->don_gia;
