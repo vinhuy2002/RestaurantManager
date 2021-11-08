@@ -1,3 +1,7 @@
+@extends('admin.index')
+
+@section('admin_content')
+
 <div class="card shadow mb-4">
 	<div class="card-header py-3">
 		<h4 class="" style="margin-top: 10px">
@@ -20,12 +24,12 @@
 				<hr>
 				<div class="card-body">
 					<ul class="list-group list-group-flush">
-						<li class="list-group-item">Tên nhà hàng: Xịn Liền</li>
-						<li class="list-group-item">Địa chỉ: Thừa Thiên - Huế, Việt Nam</li>
-						<li class="list-group-item">Số điện thoại: 0964196652</li>
-						<li class="list-group-item">Email: restaurantmanagersp@gmail.com</li>
+						<li class="list-group-item">Tên nhà hàng: {{ $data['Ten_nha_hang'] }} </li>
+						<li class="list-group-item">Địa chỉ: {{ $data['Dia_chi'] }}</li>
+						<li class="list-group-item">Số điện thoại: {{ $data['SDT'] }}</li>
+						<li class="list-group-item">Email: {{ $data['email'] }}</li>
 						<li class="list-group-item">Chức vụ của bạn: Admin</li>
-						<li class="list-group-item">Tên đăng nhập: admin</li>
+						<li class="list-group-item">Tên đăng nhập: {{ $data['Ten_dang_nhap'] }}</li>
 						<li class="list-group-item">Mật khẩu: ********</li>
 					</ul>
 				</div>
@@ -46,3 +50,6 @@
 
 <br>
 
+
+
+@endsection

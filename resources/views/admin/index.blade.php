@@ -31,10 +31,8 @@
 				@include('admin.app.header')
 
 				<div class="container-fluid">
-
-                    @php
-                        echo $route;
-                    @endphp 
+                    
+					@yield('admin_content')
 					
 				</div>
 			</div>

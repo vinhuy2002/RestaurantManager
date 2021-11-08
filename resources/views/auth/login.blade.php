@@ -24,15 +24,19 @@
                           <div class="col-md-10 col-lg-5 col-xl-5 order-2 order-lg-2">
                             <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Đăng nhập</p>
 
-                            <form class="mx-1 mx-md-4" method="POST" action="{{ route('login') }}"> 
+                            <form class="mx-1 mx-md-4" method="POST" action="{{ route('admin.dashboard') }}"> 
                                 <p>Hãy đăng nhập vào tài khoản của bạn:</p>
                                 @csrf
+                                <br>
+                                @if (Session::get('thatbai'))
+                                    <p class="text-danger">{{ Session::get('thatbai') }}</p>
+                                @endif
                                 <div class="d-flex flex-row align-items-center mb-4">
                                     <div class="form-outline flex-fill mb-0">
                                         <!-- <input class="form-control" id="email" type="email" name="email" :value="old('email')" required autofocus/>
                                         <label class="form-label" for="email">Email</label> -->
 
-                                      <input class="form-control" id="auth" type="text" name="auth" :value="old('auth')" required autofocus/>
+                                      <input class="form-control" id="auth" type="text" name="email" value="{{ old('email') }}" required autofocus/>
                                         <label class="form-label" for="auth">Tên đăng nhập</label>
                                     </div>
                                 </div>
@@ -61,7 +65,7 @@
 
                                 <div class="d-flex align-items-center justify-content-center pb-4">
                                     <p class="mb-0 me-2">Chưa có tài khoản?</p>
-                                    <a href="{{ route('register') }}" type="button" class="btn btn-outline-danger">Đăng ký</a>
+                                    <a href="{{ route('auth.register') }}" type="button" class="btn btn-outline-danger">Đăng ký</a>
                                 </div>
 
 

@@ -1,3 +1,7 @@
+@extends('admin.index')
+
+@section('admin_content')
+
 <div class="card shadow mb-4">
 	<div class="card-header py-3">
 		<h4 class="" style="margin-top: 10px">
@@ -76,3 +80,5 @@
 </div>
 
 <br>
+
+@endsection

@@ -45,10 +45,10 @@
 						@auth
                     		<a href="{{ url('/RestaurantManager/User/trangchu') }}" class="btn btn-primary btn-rounded">Nhà hàng của bạn</a>
 						@else
-							<a class="btn btn-outline-primary btn-rounded" href="{{ route('login') }}">ĐĂNG NHẬP</a>
+							<a class="btn btn-outline-primary btn-rounded" href="{{ route('auth.login') }}">ĐĂNG NHẬP</a>
 							&ensp;
 							@if (Route::has('register'))
-								<a class="btn btn-primary btn-rounded" href="{{ route('register') }}">ĐĂNG KÝ MIỄN PHÍ</a>
+								<a class="btn btn-primary btn-rounded" href="{{ route('auth.register') }}">ĐĂNG KÝ MIỄN PHÍ</a>
 							@endif
 						@endauth
             		@endif
