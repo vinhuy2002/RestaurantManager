@@ -1,9 +1,7 @@
 <br><br>
 <div class="container">
-	<br>
-	
 
-	<div class="card mb-3 shadow-1-strong">
+	<div class="card mb-3 shadow-5">
 		<div class="card-body">
 			<center><h5 class="card-title">GIỚI THIỆU</h5></center>
 		</div>

@@ -1,9 +1,9 @@
 <div class="container">
 	<br>
 	<br>
-	<div class="card mb-3 shadow-1-strong">
+	<div class="card mb-3 shadow-5">
 		<div class="card-body">
-			<center><h5 class="card-title">BÍ THUẬT</h5></center>
+			<center><h5 class="card-title">NỘI DUNG</h5></center>
 		</div>
 	</div>
 	<br>

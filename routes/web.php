@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MainController;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\MonAnController;
 use App\Http\Controllers\DatMonController;
 use App\Http\Controllers\NguyenLieuController;
@@ -43,9 +42,9 @@ Route::get('/auth/register', [MainController::class, 'register'])->name('auth.re
 // Route::post('/admin/dashboard', [MainController::class, 'storeReg'])->name('admin.dashboard');
 
 // Trang chủ
-Route::get('/RestaurantManager/User/trangchu/sua/id={id}', [UserController::class, 'edit']);
-Route::post('/RestaurantManager/User/trangchu/sua', [UserController::class, 'update']);
-Route::get('/RestaurantManager/User/monan/xoa/id={id}', [UserController::class, 'destroy']);
+Route::get('/RestaurantManager/User/trangchu/sua/id={id}', [MainController::class, 'edit']);
+Route::post('/RestaurantManager/User/trangchu/sua', [MainController::class, 'update']);
+Route::get('/RestaurantManager/User/monan/xoa/id={id}', [MainController::class, 'destroy']);
 
 // Món ăn
 Route::get('/RestaurantManager/User/monan/monan', [MonAnController::class, 'show']);
