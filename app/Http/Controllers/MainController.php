@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\MonAn;
+use App\Models\NguyenLieu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -79,9 +80,11 @@ class MainController extends Controller
     public function dieuhuong($slug){
         $data = User::where('id',session('DangNhap'))->first();
         $monans = MonAn::all();
+        $nguyenlieus = NguyenLieu::all();
         
         return view("admin.{$slug}.{$slug}")
         ->with('data', $data)
-        ->with('monans', $monans);
+        ->with('monans', $monans)
+        ->with('nguyenlieus', $nguyenlieus);
     }
 }
