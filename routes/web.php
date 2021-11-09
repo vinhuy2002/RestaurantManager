@@ -28,16 +28,25 @@ Route::get('/', [MainController::class, 'index']);
 
 Route::get('/GioiThieu', [MainController::class, 'aboutUs']);
 
-
-// Admin View
+Route::get('/auth/login', [MainController::class, 'login'])->name('auth.login');
+Route::get('/auth/register', [MainController::class, 'register'])->name('auth.register');
 Route::post('/auth/save', [MainController::class, 'storeReg'])->name('registerStore');
+Route::get('/auth/logoff', [MainController::class, 'dangXuat'])->name('auth.logoff');
+
+//Check Login or not
+// Route::group(['middleware'=>['CheckLogin']], function(){
+    // Admin View
+
+
+
+
+
 Route::post('/RestaurantManager/User', [MainController::class, 'loginCheck'])->name('admin.dashboard');
 
 Route::get('/RestaurantManager/User/{slug}', [MainController::class, 'dieuhuong']);
 Route::get('/RestaurantManager/User/{slug}/{slug2}', [AdminController::class, 'dieuhuong2']);
 
-Route::get('/auth/login', [MainController::class, 'login'])->name('auth.login');
-Route::get('/auth/register', [MainController::class, 'register'])->name('auth.register');
+
 
 // Route::post('/admin/dashboard', [MainController::class, 'storeReg'])->name('admin.dashboard');
 
@@ -66,3 +75,5 @@ Route::post('/RestaurantManager/User/ban/them', [BanController::class, 'store'])
 Route::get('/RestaurantManager/User/ban/xoa/id={id}', [BanController::class, 'destroy']);
 Route::get('/RestaurantManager/User/ban/sua/id={id}', [BanController::class, 'edit']);
 Route::post('/RestaurantManager/User/ban/sua', [BanController::class, 'update']);
+// });
+

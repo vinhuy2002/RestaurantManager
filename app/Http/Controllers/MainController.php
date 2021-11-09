@@ -98,6 +98,13 @@ class MainController extends Controller
         ->with('users', $users);
     }
 
+    function dangXuat(){
+        if (session()->has('DangNhap')){
+            session()->pull('DangNhap');
+            return redirect('/');
+        }
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

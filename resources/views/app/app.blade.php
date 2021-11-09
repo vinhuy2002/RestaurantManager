@@ -42,7 +42,7 @@
                 <div class="d-flex align-items-center">
                     <a href="/"><button type="button" class="btn btn-link px-3 me-2">TRANG CHỦ</button></a>
                     <a href="/GioiThieu"><button type="button" class="btn btn-link px-3 me-2">GIỚI THIỆU</button></a>
-					@if (Route::has('login'))
+					{{-- @if (Route::has('login'))
 						@auth
                     		<a href="{{ url('/RestaurantManager/User/trangchu') }}" class="btn btn-primary btn-rounded">Nhà hàng của bạn</a>
 						@else
@@ -52,7 +52,19 @@
 								<a class="btn btn-primary btn-rounded" href="{{ route('auth.register') }}">ĐĂNG KÝ MIỄN PHÍ</a>
 							@endif
 						@endauth
-            		@endif
+            		@endif --}}
+					{{-- <a class="btn btn-outline-primary btn-rounded" href="{{ route('auth.login') }}">ĐĂNG NHẬP</a>
+						&ensp;
+						<a class="btn btn-primary btn-rounded" href="{{ route('auth.register') }}">ĐĂNG KÝ MIỄN PHÍ</a> --}}
+
+					@if (Session::get('DangNhap'))
+						<a href="{{ url('/RestaurantManager/User/trangchu') }}" class="btn btn-primary btn-rounded">Nhà hàng của bạn</a>
+					@else
+						<a class="btn btn-outline-primary btn-rounded" href="{{ route('auth.login') }}">ĐĂNG NHẬP</a>
+						&ensp;
+						<a class="btn btn-primary btn-rounded" href="{{ route('auth.register') }}">ĐĂNG KÝ MIỄN PHÍ</a>
+					@endif
+
                 </div>
             </div>
         </div>
