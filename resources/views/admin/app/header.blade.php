@@ -71,7 +71,7 @@
 			<ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start" aria-labelledby="userDropdown">
 				<form method="POST" action="{{ route('logout') }}">
 					@csrf
-					<li><a class="dropdown-item" href="#">Thông tin</a></li>
+					<li><a class="dropdown-item" href="/RestaurantManager/User/trangchu">Thông tin</a></li>
 					<li><a class="dropdown-item" href="/RestaurantManager/User/doanhthu">Doanh thu</a></li>
 					<li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">Đăng xuất</a></li>
 				</form>

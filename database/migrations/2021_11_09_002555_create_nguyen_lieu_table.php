@@ -16,6 +16,7 @@ class CreateNguyenLieuTable extends Migration
         Schema::create('nguyen_lieu', function (Blueprint $table) {
             $table->increments('ID_nguyen_lieu');
             $table->string('ten_nguyen_lieu');
+            $table->string('ngay_mua');
             $table->string('so_luong');
             $table->string('don_gia');
         });

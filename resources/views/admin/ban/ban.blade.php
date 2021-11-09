@@ -23,41 +23,21 @@
 					</tr>
 				</thead>
 				<tbody>
+					@foreach ($bans as $ban)
 					<tr>
-						<th scope="row">1</th>
-						<td>Bàn 1</td>
-						<td>Trống</td>
-						<td>18h - 22h</td>
-						<td>
-							<a href="" type="button" class="btn btn-success btn-rounded" target="_blank">Xem</a>
-							<a href="" type="button" class="btn btn-warning btn-rounded">Sửa</a>
-							<a href="" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-danger btn-rounded">Xóa</a>
-						</td>
-					</tr>
+                        <th scope="row">{{$ban['ID_ban']}}</th>
+                        <td>{{$ban['ten_ban']}}</td>
+                        <td>{{$ban['trang_thai']}}</td>
+                        <td>{{$ban['dat_truoc']}}</td>
+                        <td>
+                            <a href="" type="button" class="btn btn-success btn-rounded" target="_blank">Xem</a>
+                            <a href="/RestaurantManager/User/ban/sua/id={{$ban['ID_ban']}}" type="button" class="btn btn-warning btn-rounded">Sửa</a>
+                            <a href="/RestaurantManager/User/ban/xoa/id={{$ban['ID_ban']}}" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button"
+                                class="btn btn-danger btn-rounded">Xóa</a>
+                        </td>
+                    </tr>
 
-					<tr>
-						<th scope="row">2</th>
-						<td>Bàn 2</td>
-						<td>Có khách</td>
-						<td>17h - 22h</td>
-						<td>
-							<a href="" type="button" class="btn btn-success btn-rounded" target="_blank">Xem</a>
-							<a href="" type="button" class="btn btn-warning btn-rounded">Sửa</a>
-							<a href="" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-danger btn-rounded">Xóa</a>
-						</td>
-					</tr>
-
-					<tr>
-						<th scope="row">3</th>
-						<td>Bàn vip</td>
-						<td>Trống</td>
-						<td>19h - 22h</td>
-						<td>
-							<a href="" type="button" class="btn btn-success btn-rounded" target="_blank">Xem</a>
-							<a href="" type="button" class="btn btn-warning btn-rounded">Sửa</a>
-							<a href="" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-danger btn-rounded">Xóa</a>
-						</td>
-					</tr>
+					@endforeach
 
 				</tbody>
 			</table>
@@ -74,7 +54,7 @@
 <div class="card shadow">
 	<div class="card-header"><h5 class="card-title" style="margin-top: 10px">Tùy chỉnh:</h5></div>
 	<div class="card-body">
-		<a href="?mod=ban&act=add" type="button" class="btn btn-info">Thêm bàn</a>
+		<a href="/RestaurantManager/User/ban/them" type="button" class="btn btn-info">Thêm bàn</a>
 		<a href="" type="button" class="btn btn-secondary">Đặt bàn</a>
 	</div>
 </div>

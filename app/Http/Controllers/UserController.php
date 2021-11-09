@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\NguyenLieu;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Hash;
 
-class NguyenLieuController extends Controller
+
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -37,13 +39,6 @@ class NguyenLieuController extends Controller
     public function store(Request $request)
     {
         //
-        $nguyenlieu = NguyenLieu::create([
-            'ten_nguyen_lieu' => $request->input('ten_nguyen_lieu'),
-            'ngay_mua' => $request->input('ngay_mua'),
-            'so_luong' => $request->input('so_luong'),
-            'don_gia' => $request->input('don_gia'),
-        ]);
-        return Redirect('/RestaurantManager/User/nguyenlieu');
     }
 
     /**
@@ -54,9 +49,7 @@ class NguyenLieuController extends Controller
      */
     public function show($id)
     {
-        // hiển thị
-        $data = NguyenLieu::all();
-        return View('admin.nguyenlieu.nguyenlieu', ['nguyenlieus'=>$data]);
+        //
     }
 
     /**
@@ -68,8 +61,8 @@ class NguyenLieuController extends Controller
     public function edit($id)
     {
         // sửa
-        $data = NguyenLieu::find($id);
-        return View('admin.nguyenlieu.sua', ['data'=>$data]);
+        $data = User::find($id);
+        return View('admin.trangchu.sua', ['data'=>$data]);
     }
 
     /**
@@ -81,15 +74,19 @@ class NguyenLieuController extends Controller
      */
     public function update(Request $request)
     {
-        // update
-        $nguyenlieu = NguyenLieu::find($request->ID_nguyen_lieu);
-        $nguyenlieu['ID_nguyen_lieu'] = $request->ID_nguyen_lieu;
-        $nguyenlieu['ten_nguyen_lieu'] = $request->ten_nguyen_lieu;
-        $nguyenlieu['ngay_mua'] = $request->ngay_mua;
-        $nguyenlieu['so_luong'] = $request->so_luong;
-        $nguyenlieu['don_gia'] = $request->don_gia;
-        $nguyenlieu->save();
-        return Redirect('/RestaurantManager/User/nguyenlieu');
+        /// update
+        $data = User::find($request->id);
+        $data['Ten_nha_hang'] = $request->Ten_nha_hang;
+        $data['Dia_chi'] = $request->Dia_chi;
+        $data['SDT'] = $request->SDT;
+        $data['email'] = $request->email;
+        $data['Ten_dang_nhap'] = $request->Ten_dang_nhap;
+        // $data['password'] = $request->password;
+        $data['password'] = Hash::make($request->password);
+
+        $data->save();
+        return Redirect('/RestaurantManager/User/trangchu');
+
     }
 
     /**
@@ -100,9 +97,9 @@ class NguyenLieuController extends Controller
      */
     public function destroy($id)
     {
-        // xóa
-        $data = NguyenLieu::find($id);
+        /// xóa
+        $data = User::find($id);
         $data->delete();
-        return Redirect('/RestaurantManager/User/nguyenlieu');
+        return Redirect('/');
     }
 }

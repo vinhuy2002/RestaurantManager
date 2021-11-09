@@ -43,8 +43,8 @@
 <div class="card shadow">
 	<div class="card-header"><h5 class="card-title" style="margin-top: 10px">Tùy chỉnh:</h5></div>
 	<div class="card-body">
-		
-		<a href="" type="button" class="btn btn-info">Chỉnh sửa thông tin</a>
+		<a href="/RestaurantManager/User/trangchu/sua/id={{$data['id']}}" type="button" class="btn btn-info">Chỉnh sửa thông tin</a>
+		<div class="float-end"><a href="/RestaurantManager/User/trangchu/xoa/id={{$data['id']}}" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-danger btn-rounded">Xóa tài khoản</a></div>
 	</div>
 </div>
 

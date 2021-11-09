@@ -13,11 +13,13 @@
 		<form action="" class="text-center">
 			<h6>
 				Chọn mốc thời gian từ:&ensp;
-				<input type="date" id="batdau" name="batdau">
+				<input type="date" id="batdau" name="batdau" >
+				
 				&ensp;cho đến:&ensp;
 				<input type="date" id="ketthuc" name="ketthuc">&emsp;
 				<button type="button" class="btn btn-info btn-rounded">Thống kê</button>
 			</h6>
+
 		</form>
 		<br>
 		<table class="table table-hover text-nowrap table-bordered">

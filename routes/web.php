@@ -2,8 +2,14 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\MonAnController;
+use App\Http\Controllers\DatMonController;
 use App\Http\Controllers\NguyenLieuController;
+use App\Http\Controllers\BanController;
+use App\Http\Controllers\LichLamViecController;
+use App\Http\Controllers\NhanVienController;
+use App\Http\Controllers\DoanhThuController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -36,11 +42,15 @@ Route::get('/auth/register', [MainController::class, 'register'])->name('auth.re
 
 // Route::post('/admin/dashboard', [MainController::class, 'storeReg'])->name('admin.dashboard');
 
+// Trang chủ
+Route::get('/RestaurantManager/User/trangchu/sua/id={id}', [UserController::class, 'edit']);
+Route::post('/RestaurantManager/User/trangchu/sua', [UserController::class, 'update']);
+Route::get('/RestaurantManager/User/monan/xoa/id={id}', [UserController::class, 'destroy']);
+
 // Món ăn
 Route::get('/RestaurantManager/User/monan/monan', [MonAnController::class, 'show']);
 Route::post('/RestaurantManager/User/monan/them', [MonAnController::class, 'store']);
 Route::get('/RestaurantManager/User/monan/xoa/id={id}', [MonAnController::class, 'destroy']);
-Route::get('/RestaurantManager/User/monan/monan/xoa/{id}', [MonAnController::class, 'destroy']);
 Route::get('/RestaurantManager/User/monan/sua/id={id}', [MonAnController::class, 'edit']);
 Route::post('/RestaurantManager/User/monan/sua', [MonAnController::class, 'update']);
 
@@ -48,6 +58,12 @@ Route::post('/RestaurantManager/User/monan/sua', [MonAnController::class, 'updat
 Route::get('/RestaurantManager/User/nguyenlieu/nguyenlieu', [NguyenLieuController::class, 'show']);
 Route::post('/RestaurantManager/User/nguyenlieu/them', [NguyenLieuController::class, 'store']);
 Route::get('/RestaurantManager/User/nguyenlieu/xoa/id={id}', [NguyenLieuController::class, 'destroy']);
-Route::get('/RestaurantManager/User/nguyenlieu/nguyenlieu/xoa/{id}', [NguyenLieuController::class, 'destroy']);
 Route::get('/RestaurantManager/User/nguyenlieu/sua/id={id}', [NguyenLieuController::class, 'edit']);
 Route::post('/RestaurantManager/User/nguyenlieu/sua', [NguyenLieuController::class, 'update']);
+
+// Bàn
+Route::get('/RestaurantManager/User/ban/ban', [BanController::class, 'show']);
+Route::post('/RestaurantManager/User/ban/them', [BanController::class, 'store']);
+Route::get('/RestaurantManager/User/ban/xoa/id={id}', [BanController::class, 'destroy']);
+Route::get('/RestaurantManager/User/ban/sua/id={id}', [BanController::class, 'edit']);
+Route::post('/RestaurantManager/User/ban/sua', [BanController::class, 'update']);

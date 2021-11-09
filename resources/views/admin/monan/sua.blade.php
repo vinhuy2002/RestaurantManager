@@ -15,20 +15,20 @@
                 @csrf
                 <br>
 
-                <input type="hidden" id="form2Example1" class="form-control" name="ID_mon" value="{{$data['ID_mon']}}" />
+                <input type="hidden" id="form2Example1" class="form-control" name="ID_mon" value="{{$data['ID_mon']}}"/>
 
                 <div class="form-outline mb-4">
-                    <input type="input" id="form2Example1" class="form-control" name="loai" value="{{$data['loai']}}" />
+                    <input type="input" id="form2Example1" class="form-control" name="loai" value="{{$data['loai']}}" required/>
                     <label class="form-label" for="form2Example1">Loại món ăn</label>
                 </div>
 
                 <div class="form-outline mb-4">
-                    <input type="input" id="form2Example1" class="form-control" name="ten_mon" value="{{$data['ten_mon']}}"/>
+                    <input type="input" id="form2Example1" class="form-control" name="ten_mon" value="{{$data['ten_mon']}}" required/>
                     <label class="form-label" for="form2Example1">Tên món</label>
                 </div>
 
                 <div class="form-outline mb-4">
-                    <input type="input" id="form2Example1" class="form-control" name="don_gia" value="{{$data['don_gia']}}"/>
+                    <input type="input" id="form2Example1" class="form-control" name="don_gia" value="{{$data['don_gia']}}" required/>
                     <label class="form-label" for="form2Example1">Đơn giá</label>
                 </div>
 

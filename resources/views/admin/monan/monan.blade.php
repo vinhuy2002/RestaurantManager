@@ -11,8 +11,8 @@
 
     <div class="card-body">
         <div class="table-responsive">
-
-            <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+            <!-- table-hover -->
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
@@ -31,8 +31,8 @@
                         <td>{{$monan['don_gia']}} VND</td>
                         <td>
                             <a href="" type="button" class="btn btn-success btn-rounded" target="_blank">Xem</a>
-                            <a href="monan/sua/id={{$monan['ID_mon']}}" type="button" class="btn btn-warning btn-rounded">Sửa</a>
-                            <a href="monan/xoa/id={{$monan['ID_mon']}}" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button"
+                            <a href="/RestaurantManager/User/monan/sua/id={{$monan['ID_mon']}}" type="button" class="btn btn-warning btn-rounded">Sửa</a>
+                            <a href="/RestaurantManager/User/monan/xoa/id={{$monan['ID_mon']}}" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button"
                                 class="btn btn-danger btn-rounded">Xóa</a>
                         </td>
                     </tr>
@@ -61,7 +61,7 @@
     <div class="card-body">
 
         <a href="/RestaurantManager/User/monan/them" type="button" class="btn btn-info">Thêm Món ăn</a>
-        <br><br>
+        <!-- <br><br>
         <div class="row">
             <div class="col-12">
                 <button class="btn btn-info dropdown-toggle" type="button" id="LoaiMonAn" data-mdb-toggle="dropdown"
@@ -92,8 +92,8 @@
                 <button type="button" class="btn btn-warning btn-rounded">Sửa</button>
                 <button type="button" class="btn btn-danger btn-rounded">Xóa</button>
             </div>
+        </div> -->
 
-        </div>
     </div>
 </div>
 

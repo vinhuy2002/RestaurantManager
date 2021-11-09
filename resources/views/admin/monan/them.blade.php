@@ -15,17 +15,17 @@
                 @csrf
                 <br>
                 <div class="form-outline mb-4">
-                    <input type="input" id="form2Example1" class="form-control" name="loai" />
+                    <input type="input" id="form2Example1" class="form-control" name="loai" required/>
                     <label class="form-label" for="form2Example1">Loại món ăn</label>
                 </div>
 
                 <div class="form-outline mb-4">
-                    <input type="input" id="form2Example1" class="form-control" name="ten_mon" />
+                    <input type="input" id="form2Example1" class="form-control" name="ten_mon" required/>
                     <label class="form-label" for="form2Example1">Tên món</label>
                 </div>
 
                 <div class="form-outline mb-4">
-                    <input type="input" id="form2Example1" class="form-control" name="don_gia" />
+                    <input type="input" id="form2Example1" class="form-control" name="don_gia" required/>
                     <label class="form-label" for="form2Example1">Đơn giá</label>
                 </div>
 

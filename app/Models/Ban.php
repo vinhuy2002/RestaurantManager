@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Ban extends Model
+{
+    use HasFactory;
+
+    protected $table = "ban";
+
+    protected $primaryKey = "ID_ban";
+
+    public $timestamps = false;
+
+    protected $fillable = ['ten_ban', 'trang_thai', 'dat_truoc'];
+}

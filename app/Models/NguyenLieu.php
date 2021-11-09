@@ -15,5 +15,5 @@ class NguyenLieu extends Model
 
     public $timestamps = false;
 
-    protected $fillable = ['ten_nguyen_lieu', 'so_luong', 'don_gia'];
+    protected $fillable = ['ten_nguyen_lieu', 'ngay_mua','so_luong', 'don_gia'];
 }
