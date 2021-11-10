@@ -115,14 +115,17 @@ class MainController extends Controller
         $monans = MonAn::all();
         $nguyenlieus = NguyenLieu::all();
         $bans = Ban::all();
-        $users = User::all();
+        $datmons = DatMon::all();
+        // $users = User::all();
         
         return view("admin.{$slug}.{$slug}")
         ->with('data', $data)
         ->with('monans', $monans)
         ->with('nguyenlieus', $nguyenlieus)
         ->with('bans', $bans)
-        ->with('users', $users);
+        ->with('datmons', $datmons)
+        // ->with('users', $users)
+        ;
     }
 
     function dangXuat(){

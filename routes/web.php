@@ -62,6 +62,13 @@ Route::get('/RestaurantManager/User/monan/xoa/id={id}', [MonAnController::class,
 Route::get('/RestaurantManager/User/monan/sua/id={id}', [MonAnController::class, 'edit']);
 Route::post('/RestaurantManager/User/monan/sua', [MonAnController::class, 'update']);
 
+// Đặt món
+Route::get('/RestaurantManager/User/datmon/datmon', [DatMonController::class, 'show']);
+Route::post('/RestaurantManager/User/datmon/them', [DatMonController::class, 'store']);
+Route::get('/RestaurantManager/User/datmon/xoa/id={id}', [DatMonController::class, 'destroy']);
+Route::get('/RestaurantManager/User/datmon/sua/id={id}', [DatMonController::class, 'edit']);
+Route::post('/RestaurantManager/User/datmon/sua', [DatMonController::class, 'update']);
+
 // Nguyên liệu
 Route::get('/RestaurantManager/User/nguyenlieu/nguyenlieu', [NguyenLieuController::class, 'show']);
 Route::post('/RestaurantManager/User/nguyenlieu/them', [NguyenLieuController::class, 'store']);
@@ -75,5 +82,4 @@ Route::post('/RestaurantManager/User/ban/them', [BanController::class, 'store'])
 Route::get('/RestaurantManager/User/ban/xoa/id={id}', [BanController::class, 'destroy']);
 Route::get('/RestaurantManager/User/ban/sua/id={id}', [BanController::class, 'edit']);
 Route::post('/RestaurantManager/User/ban/sua', [BanController::class, 'update']);
-// });
 
