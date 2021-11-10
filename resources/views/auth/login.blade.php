@@ -46,8 +46,8 @@
                                         <!-- <input class="form-control" id="email" type="email" name="email" :value="old('email')" required autofocus/>
                                         <label class="form-label" for="email">Email</label> -->
 
-                                        <input class="form-control" id="auth" type="text" name="email" value="{{ old('email') }}" required autofocus/>
-                                        <label class="form-label" for="auth">Email</label>
+                                        <input class="form-control" id="auth" type="text" name="ten_dang_nhap" value="{{ old('ten_dang_nhap') }}" required autofocus/>
+                                        <label class="form-label" for="auth">Tên đăng nhập hoặc email</label>
                                     </div>
                                 </div>
 

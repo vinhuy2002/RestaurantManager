@@ -63,23 +63,48 @@ class MainController extends Controller
     // Login Check;
     public function loginCheck(Request $request){
         $request->validate([
-            'email' => 'required | email',
+            'ten_dang_nhap' => 'required',
             'password' => 'required | min:5',
         ]);
 
-        $userinfo = User::where('email', $request->email)->first();
+        $userinfoEmail = User::where('email', $request->ten_dang_nhap)->first();
+        $userinfoUser = User::where('Ten_dang_nhap', $request->ten_dang_nhap)->first();
 
-        if (!$userinfo){
-            return back()->with('thatbai','* Tên Email không tồn tại!');
+        if (!$userinfoEmail){
+            
+            if (!$userinfoUser){
+                return back()->with('thatbai','* Tên đăng nhập hoặc Email không tồn tại!');
+            } else {
+                if (Hash::check($request->password, $userinfoUser->password)){
+                    $request->session()->put('DangNhap', $userinfoUser->id);
+    
+                    return view('admin.trangchu.trangchu')->with('data', User::where('id',session('DangNhap'))->first());
+                } else {
+                    return back()->with('thatbai','* Mật khẩu nhập không đúng, vui lòng nhập lại');
+                }
+            }
         } else {
-            if (Hash::check($request->password, $userinfo->password)){
-                $request->session()->put('DangNhap', $userinfo->id);
+            if (Hash::check($request->password, $userinfoEmail->password)){
+                $request->session()->put('DangNhap', $userinfoEmail->id);
 
                 return view('admin.trangchu.trangchu')->with('data', User::where('id',session('DangNhap'))->first());
             } else {
                 return back()->with('thatbai','* Mật khẩu nhập không đúng, vui lòng nhập lại');
             }
         }
+
+        // $userinfoUser = User::where('Ten_dang_nhap', $request->ten_dang_nhap)->first();
+        // if (!$userinfoUser){
+        //     return back()->with('thatbai','* Tên đăng nhập hoặc Email không tồn tại!');
+        // } else {
+        //     if (Hash::check($request->password, $userinfoUser->password)){
+        //         $request->session()->put('DangNhap', $userinfoUser->id);
+
+        //         return view('admin.trangchu.trangchu')->with('data', User::where('id',session('DangNhap'))->first());
+        //     } else {
+        //         return back()->with('thatbai','* Mật khẩu nhập không đúng, vui lòng nhập lại');
+        //     }
+        // }
 
     }
 
