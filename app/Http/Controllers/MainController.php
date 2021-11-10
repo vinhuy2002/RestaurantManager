@@ -40,10 +40,13 @@ class MainController extends Controller
             'Dia_chi' => 'required',
             'SDT' => 'required',
             'email' => 'required | email | unique:users',
-            'Ten_dang_nhap' => 'required',
+            'Ten_dang_nhap' => 'required | unique:users',
             'password' => 'required | min:5 | confirmed',
         ],[
-            'email.unique' => 'Email đã tồn tại.',
+            'email.unique' => '* Email đã tồn tại.',
+            'Ten_dang_nhap.unique' => '* Tên đăng nhập đã tồn tại.',
+            'password.min' => '* Mật khẩu phải chứa ít nhất 5 kí tự.',
+            'password.confirmed' => '* Mật khẩu xác nhận nhập không đúng.',
         ]);
 
         User::create([
@@ -55,7 +58,6 @@ class MainController extends Controller
             'password' => Hash::make($request->input('password')),
         ]);
 
-        // return view('admin.index')->with('route', view('admin.trangchu.trangchu'));
         return redirect()->route('auth.login');
     }
 
