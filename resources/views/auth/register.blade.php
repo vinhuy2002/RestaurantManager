@@ -40,8 +40,7 @@
                                         <div class="d-flex flex-row align-items-center mt-4">
                                             <i class="fas fa-utensils fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
-                                                <input type="text" id="Ten_nha_hang" name="Ten_nha_hang"
-                                                    :value="old('Ten_nha_hang')" required autofocus
+                                                <input type="text" id="Ten_nha_hang" name="Ten_nha_hang" value="{{ old('Ten_nha_hang') }}" required autofocus
                                                     autocomplete="Ten_nha_hang" class="form-control" />
                                                 <label class="form-label" for="Ten_nha_hang">Tên nhà hàng</label>
                                             </div>
@@ -50,7 +49,7 @@
                                         <div class="d-flex flex-row align-items-center mt-4">
                                             <i class="fas fa-map-marker-alt fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
-                                                <input type="text" id="Dia_chi" name="Dia_chi" :value="old('Dia_chi')"
+                                                <input type="text" id="Dia_chi" name="Dia_chi" value="{{ old('Dia_chi') }}"
                                                     required autofocus autocomplete="Dia_chi" class="form-control" />
                                                 <label class="form-label" for="Dia_chi">Địa chỉ</label>
                                             </div>
@@ -60,7 +59,7 @@
                                         <div class="d-flex flex-row align-items-center mt-4">
                                             <i class="fas fa-phone fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
-                                                <input type="text" id="SDT" name="SDT" :value="old('SDT')" required
+                                                <input type="text" id="SDT" name="SDT" value="{{ old('SDT') }}" required
                                                     autofocus autocomplete="SDT" class="form-control" />
                                                 <label class="form-label" for="SDT">Số điện thoại</label>
                                             </div>
@@ -77,21 +76,25 @@
                                         <div class="d-flex flex-row align-items-center mt-4">
                                             <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
-                                                <input class="form-control" id="email" type="email" name="email"
-                                                    :value="old('email')" required />
+                                                <input class="form-control" id="email" type="email" name="email" value="{{ old('email') }}" required />
                                                 <label class="form-label" for="email">Email</label>
                                             </div>
                                         </div>
+                                        <p class="text-danger">@error('email')
+                                            {{ $message }}
+                                        @enderror</p>
 
                                         <div class="d-flex flex-row align-items-center mt-4">
                                             <i class="fas fa-user-edit fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
-                                                <input type="text" id="Ten_dang_nhap" name="Ten_dang_nhap"
-                                                    :value="old('Ten_dang_nhap')" required autofocus
+                                                <input type="text" id="Ten_dang_nhap" name="Ten_dang_nhap" value="{{ old('Ten_dang_nhap') }}" required autofocus
                                                     autocomplete="Ten_dang_nhap" class="form-control" />
                                                 <label class="form-label" for="Ten_dang_nhap">Tên đăng nhập</label>
                                             </div>
                                         </div>
+                                        <p class="text-danger">@error('Ten_dang_nhap')
+                                            {{ $message }}
+                                        @enderror</p>
 
                                         <div class="d-flex flex-row align-items-center mt-4">
                                             <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
@@ -101,6 +104,9 @@
                                                 <label class="form-label" for="password">Mật khẩu</label>
                                             </div>
                                         </div>
+                                        <p class="text-danger">@error('password')
+                                            {{ $message }}
+                                        @enderror</p>
 
                                         <div class="d-flex flex-row align-items-center mt-4">
                                             <i class="fas fa-key fa-lg me-3 fa-fw"></i>

@@ -40,10 +40,13 @@ class MainController extends Controller
             'Dia_chi' => 'required',
             'SDT' => 'required',
             'email' => 'required | email | unique:users',
-            'Ten_dang_nhap' => 'required',
+            'Ten_dang_nhap' => 'required | unique:users',
             'password' => 'required | min:5 | confirmed',
         ],[
-            'email.unique' => 'Email đã tồn tại.',
+            'email.unique' => '* Email đã tồn tại.',
+            'Ten_dang_nhap.unique' => '* Tên đăng nhập đã tồn tại.',
+            'password.min' => '* Mật khẩu phải chứa ít nhất 5 kí tự.',
+            'password.confirmed' => '* Mật khẩu xác nhận nhập không đúng.',
         ]);
 
         User::create([
@@ -55,7 +58,6 @@ class MainController extends Controller
             'password' => Hash::make($request->input('password')),
         ]);
 
-        // return view('admin.index')->with('route', view('admin.trangchu.trangchu'));
         return redirect()->route('auth.login');
     }
 
@@ -63,23 +65,48 @@ class MainController extends Controller
     // Login Check;
     public function loginCheck(Request $request){
         $request->validate([
-            'email' => 'required | email',
+            'ten_dang_nhap' => 'required',
             'password' => 'required | min:5',
         ]);
 
-        $userinfo = User::where('email', $request->email)->first();
+        $userinfoEmail = User::where('email', $request->ten_dang_nhap)->first();
+        $userinfoUser = User::where('Ten_dang_nhap', $request->ten_dang_nhap)->first();
 
-        if (!$userinfo){
-            return back()->with('thatbai','* Tên Email không tồn tại!');
+        if (!$userinfoEmail){
+            
+            if (!$userinfoUser){
+                return back()->with('thatbai','* Tên đăng nhập hoặc Email không tồn tại!');
+            } else {
+                if (Hash::check($request->password, $userinfoUser->password)){
+                    $request->session()->put('DangNhap', $userinfoUser->id);
+    
+                    return view('admin.trangchu.trangchu')->with('data', User::where('id',session('DangNhap'))->first());
+                } else {
+                    return back()->with('thatbai','* Mật khẩu nhập không đúng, vui lòng nhập lại');
+                }
+            }
         } else {
-            if (Hash::check($request->password, $userinfo->password)){
-                $request->session()->put('DangNhap', $userinfo->id);
+            if (Hash::check($request->password, $userinfoEmail->password)){
+                $request->session()->put('DangNhap', $userinfoEmail->id);
 
                 return view('admin.trangchu.trangchu')->with('data', User::where('id',session('DangNhap'))->first());
             } else {
                 return back()->with('thatbai','* Mật khẩu nhập không đúng, vui lòng nhập lại');
             }
         }
+
+        // $userinfoUser = User::where('Ten_dang_nhap', $request->ten_dang_nhap)->first();
+        // if (!$userinfoUser){
+        //     return back()->with('thatbai','* Tên đăng nhập hoặc Email không tồn tại!');
+        // } else {
+        //     if (Hash::check($request->password, $userinfoUser->password)){
+        //         $request->session()->put('DangNhap', $userinfoUser->id);
+
+        //         return view('admin.trangchu.trangchu')->with('data', User::where('id',session('DangNhap'))->first());
+        //     } else {
+        //         return back()->with('thatbai','* Mật khẩu nhập không đúng, vui lòng nhập lại');
+        //     }
+        // }
 
     }
 
@@ -96,6 +123,13 @@ class MainController extends Controller
         ->with('nguyenlieus', $nguyenlieus)
         ->with('bans', $bans)
         ->with('users', $users);
+    }
+
+    function dangXuat(){
+        if (session()->has('DangNhap')){
+            session()->pull('DangNhap');
+            return redirect('/');
+        }
     }
 
     /**
