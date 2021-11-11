@@ -66,7 +66,7 @@ class DatMonController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
         //
         $data = DatMon::all();
@@ -100,7 +100,7 @@ class DatMonController extends Controller
     {
         //
         $monans = MonAn::all();
-         foreach ($monans as $monan){
+        foreach ($monans as $monan){
             if($monan->ten_mon == $request->input('ten_mon')){
                 $don_gia = $monan['don_gia'];
             }
@@ -130,21 +130,49 @@ class DatMonController extends Controller
         return Redirect('/RestaurantManager/User/datmon');
     }
 
-    public function data(){
-        $data = User::all();
-        $monans = MonAn::all();
-        $nguyenlieus = NguyenLieu::all();
-        $bans = Ban::all();
+    
+    public function thanhtoan(Request $request)
+    {
+        //
+        $tong_tien['tong_tien'] = 0;
         $datmons = DatMon::all();
-        // $users = User::all();
+         foreach ($datmons as $datmon){
+            if($datmon->ten_ban == $request->input('ten_ban')){
+                $tong_tien['tong_tien'] = $tong_tien['tong_tien'] + $datmon['tien'];
+            }
+        }
+
+        $tong_tien['ten_ban_thanh_toan'] = $request->input('ten_ban');
         
-        return view("admin.datmon.sua")
-        ->with('data', $data)
-        ->with('monans', $monans)
-        ->with('nguyenlieus', $nguyenlieus)
-        ->with('bans', $bans)
-        ->with('datmons', $datmons)
-        // ->with('users', $users)
-        ;
+        $bans = Ban::all();
+        $monans = MonAn::all();
+        return View('admin.datmon.datmon', ['tong_tien'=>$tong_tien])->with('bans', $bans)->with('monans', $monans)->with('datmons', $datmons);
+    }
+
+    public function xoadulieuban($ban)
+    {
+        //
+        $datmons = DatMon::all();
+        foreach ($datmons as $datmon){
+            if($datmon->ten_ban == $ban){
+                $data = DatMon::find($datmon->ID_dat_mon);
+                $data->delete();
+            }
+        }
+        return Redirect('/RestaurantManager/User/datmon');
+    }
+
+    public function chuyenban(Request $request)
+    {
+        //
+        $datmons = DatMon::all();
+        foreach ($datmons as $datmon){
+            if($datmon->ten_ban == $request->input('ban_hien_tai')){
+                $data = DatMon::find($datmon->ID_dat_mon);
+                $data['ten_ban'] = $request->input('ban_chuyen_den');
+                $data->save();
+            }
+        }
+        return Redirect('/RestaurantManager/User/datmon');
     }
 }

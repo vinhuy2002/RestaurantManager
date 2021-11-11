@@ -68,6 +68,9 @@ Route::post('/RestaurantManager/User/datmon/them', [DatMonController::class, 'st
 Route::get('/RestaurantManager/User/datmon/xoa/id={id}', [DatMonController::class, 'destroy']);
 Route::get('/RestaurantManager/User/datmon/sua/id={id}', [DatMonController::class, 'edit']);
 Route::post('/RestaurantManager/User/datmon/sua', [DatMonController::class, 'update']);
+Route::post('/RestaurantManager/User/datmon/thanhtoan', [DatMonController::class, 'thanhtoan']);
+Route::post('/RestaurantManager/User/datmon/chuyenban', [DatMonController::class, 'chuyenban']);
+Route::get('/RestaurantManager/User/datmon/xoa_du_lieu_ban/ban={ban}', [DatMonController::class, 'xoadulieuban']);
 
 // Nguyên liệu
 Route::get('/RestaurantManager/User/nguyenlieu/nguyenlieu', [NguyenLieuController::class, 'show']);

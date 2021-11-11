@@ -27,7 +27,16 @@
 					<tr>
                         <th scope="row">{{$ban['ID_ban']}}</th>
                         <td>{{$ban['ten_ban']}}</td>
-                        <td>{{$ban['trang_thai']}}</td>
+
+						@foreach ($datmons as $datmon)	
+							@if(($datmon['ten_ban'] == $ban['ten_ban']))
+                        		@if($ban['trang_thai'] = 'Có người')
+								@endif
+								@break
+							@endif
+						@endforeach
+						<td>{{$ban['trang_thai']}}</td>
+						
                         <td>{{$ban['dat_truoc']}}</td>
                         <td>
                             <a href="" type="button" class="btn btn-success btn-rounded" target="_blank">Xem</a>

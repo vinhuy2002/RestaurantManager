@@ -17,7 +17,8 @@
             <div class="row">
                 <div class="col-3">
                     <div class="form-outline">
-                        <input type="input" class="form-control" name="ten_ban" list="ten_ban" autocomplete="off" required />
+                        <input type="input" class="form-control" name="ten_ban" list="ten_ban" autocomplete="off"
+                            required />
                         <label class="form-label">Chọn bàn</label>
                     </div>
                 </div>
@@ -29,7 +30,8 @@
 
                 <div class="col-3">
                     <div class="form-outline">
-                        <input type="input" class="form-control" name="ten_mon" list="ten_mon" autocomplete="off" required />
+                        <input type="input" class="form-control" name="ten_mon" list="ten_mon" autocomplete="off"
+                            required />
                         <label class="form-label">Chọn món</label>
                     </div>
                     <datalist id="ten_mon">
@@ -41,23 +43,26 @@
 
                 <div class="col-3">
                     <div class="d-flex">
-                        <div class="btn btn-info px-3 mr-1" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                        <div class="btn btn-info px-3 mr-1"
+                            onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                             <i class="fas fa-minus"></i>
                         </div>
 
                         <div class="form-outline">
-                            <input id="form1" min="1" name="so_luong" value="1" type="number" autocomplete="off" class="form-control" />
+                            <input id="form1" min="1" name="so_luong" value="1" type="number" autocomplete="off"
+                                class="form-control" />
                             <label class="form-label" for="form1">Số lượng</label>
                         </div>&nbsp;
 
-                        <div class="btn btn-info px-3 mr-1" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                        <div class="btn btn-info px-3 mr-1"
+                            onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                             <i class="fas fa-plus"></i>
                         </div>
                     </div>
-					
+
                 </div>
 
-               
+
 
                 <div class="col-3">
                     <div class="float-end">
@@ -91,8 +96,10 @@
                         <td>{{$datmon['don_gia']}} VND</td>
                         <td>{{$datmon['tien']}} VND</td>
                         <td>
-							<a href="/RestaurantManager/User/datmon/sua/id={{$datmon['ID_dat_mon']}}" type="button" class="btn btn-warning btn-rounded">Sửa</a>
-                            <a href="/RestaurantManager/User/datmon/xoa/id={{$datmon['ID_dat_mon']}}" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button"
+                            <a href="/RestaurantManager/User/datmon/sua/id={{$datmon['ID_dat_mon']}}" type="button"
+                                class="btn btn-warning btn-rounded">Sửa</a>
+                            <a href="/RestaurantManager/User/datmon/xoa/id={{$datmon['ID_dat_mon']}}"
+                                onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button"
                                 class="btn btn-danger btn-rounded">Xóa</a>
                         </td>
                     </tr>
@@ -119,12 +126,71 @@
 
 <div class="card shadow">
     <div class="card-header">
-        <h5 class="card-title" style="margin-top: 10px">Tùy chỉnh:</h5>
+        <div class="float-start">
+            <h5 class="card-title" style="margin-top: 10px">Tùy chỉnh:</h5>
+        </div>
+        <div class="float-end">
+            <h5 class="card-title text-success" style="margin-top: 10px">
+                Tổng số tiền phải trả: {{$tong_tien['tong_tien']}} VND ({{$tong_tien['ten_ban_thanh_toan']}})
+            </h5>
+
+        </div>
     </div>
     <div class="card-body">
-        <a href="" type="button" class="btn btn-primary">Thanh toán</a>
+        <form action="/RestaurantManager/User/datmon/thanhtoan" method="POST">
+            @csrf
+            <div class="float-start">
+                <div class="form-outline">
+                    <input type="input" class="form-control" name="ten_ban" list="ten_ban" autocomplete="off"
+                        required />
+                    <label class="form-label">Chọn bàn</label>
+                </div>
+            </div>
+            <div class="float-start">
+                <button type="submit" class="btn btn-primary" style="margin-left: 5px; padding-bottom: 9px">Thanh
+                    toán</button>
+            </div>
+            @if($tong_tien['ten_ban_thanh_toan'] != "Chưa chọn bàn")
+            <div class="float-start">
+                <a href="/RestaurantManager/User/datmon/xoa_du_lieu_ban/ban={{$tong_tien['ten_ban_thanh_toan']}}" type="submit" class="btn btn-danger"
+                    onclick="return confirm('Bạn có thật sự muốn xóa hết tất cả dữ liệu {{$tong_tien['ten_ban_thanh_toan']}}?');"
+                    style="margin-left: 5px; padding-bottom: 9px">
+                    Xóa dữ liệu {{$tong_tien['ten_ban_thanh_toan']}}
+                </a>
+            </div>
+            @endif
+        </form>
+        <!-- <br> -->
+        <form action="/RestaurantManager/User/datmon/chuyenban" method="POST">
+            @csrf
+            <div class="float-end">
+                <button type="submit" class="btn btn-info" style="margin-left: 5px; padding-bottom: 9px">Chuyển bàn</button>
+            </div>
+            <div class="float-end">
+                <div class="form-outline" style="margin-left: 5px;">
+                    <input type="input" class="form-control" name="ban_chuyen_den" list="ten_ban" autocomplete="off"
+                        required />
+                    <label class="form-label">Chọn muốn chuyển đến</label>
+                </div>
+            </div>
+            <div class="float-end">
+                <div class="form-outline">
+                    <input type="input" class="form-control" name="ban_hien_tai" list="ten_ban" autocomplete="off"
+                        required />
+                    <label class="form-label">Bàn hiện tại</label>
+                </div>
+            </div>
+        </form>
+        <!-- <form action="/RestaurantManager/User/datmon/xoa_du_lieu_ban" method="POST">
+            @csrf
+            <a href="/RestaurantManager/User/datmon/xoa_du_lieu_ban/ban={{$tong_tien['ten_ban_thanh_toan']}}" type="button" class="btn btn-danger"
+                onclick="return confirm('Bạn có thật sự muốn xóa hết tất cả dữ liệu {{$tong_tien['ten_ban_thanh_toan']}}?');"
+                style="margin-left: 5px; padding-bottom: 9px">
+                Xóa dữ liệu {{$tong_tien['ten_ban_thanh_toan']}}
+            </a>
+        </form> -->
 
-        <a href="?mod=ban&act=add" type="button" class="btn btn-info">Chuyển bàn</a>
+
     </div>
 </div>
 

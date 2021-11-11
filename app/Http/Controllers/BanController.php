@@ -42,7 +42,9 @@ class BanController extends Controller
             'trang_thai' => $request->input('trang_thai'),
             'dat_truoc' => $request->input('dat_truoc'),
         ]);
+
         return Redirect('/RestaurantManager/User/ban');
+
     }
 
     /**

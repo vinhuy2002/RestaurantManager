@@ -116,7 +116,9 @@ class MainController extends Controller
         $nguyenlieus = NguyenLieu::all();
         $bans = Ban::all();
         $datmons = DatMon::all();
-        // $users = User::all();
+
+        $tong_tien['tong_tien'] = 0;
+        $tong_tien['ten_ban_thanh_toan'] = "Chưa chọn bàn";
         
         return view("admin.{$slug}.{$slug}")
         ->with('data', $data)
@@ -124,7 +126,7 @@ class MainController extends Controller
         ->with('nguyenlieus', $nguyenlieus)
         ->with('bans', $bans)
         ->with('datmons', $datmons)
-        // ->with('users', $users)
+        ->with('tong_tien', $tong_tien)
         ;
     }
 

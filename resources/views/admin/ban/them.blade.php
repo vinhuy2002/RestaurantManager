@@ -1,6 +1,7 @@
 @extends('admin.index')
 
 @section('admin_content')
+
 <div class="card shadow mb-4">
     <div class="card-header py-3">
         <h4 class="" style="margin-top: 10px">
@@ -17,17 +18,18 @@
                 <br>
 
                 <div class="form-outline mb-4">
-                    <input type="input" id="form2Example1" class="form-control" name="ten_ban" required/>
+                    <input type="input" id="form2Example1" class="form-control" name="ten_ban" list="ten_ban" required/>
                     <label class="form-label" for="form2Example1">Tên bàn</label>
+                
                 </div>
 
                 <div class="form-outline mb-4">
-                    <input type="input" id="form2Example1" class="form-control" name="trang_thai" required/>
+                    <input type="input" id="form2Example1" class="form-control" name="trang_thai" value="Trống" required/>
                     <label class="form-label" for="form2Example1">Trạng thái</label>
                 </div>
 
                 <div class="form-outline mb-4">
-                    <input type="input" id="form2Example1" class="form-control" name="dat_truoc" required/>
+                    <input type="input" id="form2Example1" class="form-control" name="dat_truoc" value="Không" required/>
                     <label class="form-label" for="form2Example1">Đặt trước</label>
                 </div>
 
