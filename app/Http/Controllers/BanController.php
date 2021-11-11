@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ban;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -37,10 +38,14 @@ class BanController extends Controller
     public function store(Request $request)
     {
         //
+        $data = User::where('id',session('DangNhap'))->first();
+
         $ban = Ban::create([
             'ten_ban' => $request->input('ten_ban'),
             'trang_thai' => $request->input('trang_thai'),
             'dat_truoc' => $request->input('dat_truoc'),
+            'ID_nha_hang' => $data['id'],
+
         ]);
 
         return Redirect('/RestaurantManager/User/ban');

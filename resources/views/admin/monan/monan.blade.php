@@ -24,6 +24,7 @@
                 </thead>
                 <tbody>
                     @foreach ($monans as $monan)
+                    @if($monan['ID_nha_hang'] == $data['id'])
                     <tr>
                         <th scope="row">{{$monan['ID_mon']}}</th>
                         <td>{{$monan['loai']}}</td>
@@ -36,7 +37,7 @@
                                 class="btn btn-danger btn-rounded">Xóa</a>
                         </td>
                     </tr>
-
+                    @endif
                     @endforeach
 
 

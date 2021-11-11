@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\NguyenLieu;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -37,11 +38,15 @@ class NguyenLieuController extends Controller
     public function store(Request $request)
     {
         //
+        $data = User::where('id',session('DangNhap'))->first();
+
         $nguyenlieu = NguyenLieu::create([
             'ten_nguyen_lieu' => $request->input('ten_nguyen_lieu'),
             'ngay_mua' => $request->input('ngay_mua'),
             'so_luong' => $request->input('so_luong'),
             'don_gia' => $request->input('don_gia'),
+            'ID_nha_hang' => $data['id'],
+
         ]);
         return Redirect('/RestaurantManager/User/nguyenlieu');
     }

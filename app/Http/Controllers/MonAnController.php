@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\MonAn;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -37,10 +38,12 @@ class MonAnController extends Controller
     public function store(Request $request)
     {
         // tạo mới
+        $data = User::where('id',session('DangNhap'))->first();
         $monan = MonAn::create([
             'loai' => $request->input('loai'),
             'ten_mon' => $request->input('ten_mon'),
             'don_gia' => $request->input('don_gia'),
+            'ID_nha_hang' => $data['id'],
         ]);
         return Redirect('/RestaurantManager/User/monan');
     }

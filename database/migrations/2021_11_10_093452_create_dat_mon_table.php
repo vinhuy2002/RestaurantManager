@@ -20,6 +20,8 @@ class CreateDatMonTable extends Migration
             $table->string('so_luong');
             $table->string('don_gia');
             $table->string('tien');
+            $table->string('ID_nha_hang')->nullable();
+
         });
     }
 

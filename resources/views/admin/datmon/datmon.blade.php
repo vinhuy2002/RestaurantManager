@@ -24,7 +24,10 @@
                 </div>
                 <datalist id="ten_ban">
                     @foreach ($bans as $ban)
+                    @if($ban['ID_nha_hang'] == $data['id'])
+
                     <option value="{{$ban['ten_ban']}}">
+                        @endif
                         @endforeach
                 </datalist>
 
@@ -36,7 +39,10 @@
                     </div>
                     <datalist id="ten_mon">
                         @foreach ($monans as $monan)
+                        @if($monan['ID_nha_hang'] == $data['id'])
+
                         <option value="{{$monan['ten_mon']}}">
+                            @endif
                             @endforeach
                     </datalist>
                 </div>
@@ -77,7 +83,7 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th scope="col">STT</th>
+                        <th scope="col">ID</th>
                         <th scope="col">Tên bàn</th>
                         <th scope="col">Tên món</th>
                         <th scope="col">Số lượng</th>
@@ -88,6 +94,8 @@
                 </thead>
                 <tbody>
                     @foreach ($datmons as $datmon)
+                    @if($datmon['ID_nha_hang'] == $data['id'])
+
                     <tr>
                         <th scope="row">{{$datmon['ID_dat_mon']}}</th>
                         <td>{{$datmon['ten_ban']}}</td>
@@ -103,7 +111,7 @@
                                 class="btn btn-danger btn-rounded">Xóa</a>
                         </td>
                     </tr>
-
+                    @endif
                     @endforeach
 
                 </tbody>
@@ -137,60 +145,55 @@
         </div>
     </div>
     <div class="card-body">
-        <form action="/RestaurantManager/User/datmon/thanhtoan" method="POST">
-            @csrf
-            <div class="float-start">
-                <div class="form-outline">
-                    <input type="input" class="form-control" name="ten_ban" list="ten_ban" autocomplete="off"
-                        required />
-                    <label class="form-label">Chọn bàn</label>
-                </div>
-            </div>
-            <div class="float-start">
-                <button type="submit" class="btn btn-primary" style="margin-left: 5px; padding-bottom: 9px">Thanh
-                    toán</button>
-            </div>
-            @if($tong_tien['ten_ban_thanh_toan'] != "Chưa chọn bàn")
-            <div class="float-start">
-                <a href="/RestaurantManager/User/datmon/xoa_du_lieu_ban/ban={{$tong_tien['ten_ban_thanh_toan']}}" type="submit" class="btn btn-danger"
-                    onclick="return confirm('Bạn có thật sự muốn xóa hết tất cả dữ liệu {{$tong_tien['ten_ban_thanh_toan']}}?');"
-                    style="margin-left: 5px; padding-bottom: 9px">
-                    Xóa dữ liệu {{$tong_tien['ten_ban_thanh_toan']}}
-                </a>
-            </div>
-            @endif
-        </form>
+        
         <!-- <br> -->
         <form action="/RestaurantManager/User/datmon/chuyenban" method="POST">
             @csrf
-            <div class="float-end">
-                <button type="submit" class="btn btn-info" style="margin-left: 5px; padding-bottom: 9px">Chuyển bàn</button>
-            </div>
-            <div class="float-end">
-                <div class="form-outline" style="margin-left: 5px;">
-                    <input type="input" class="form-control" name="ban_chuyen_den" list="ten_ban" autocomplete="off"
-                        required />
-                    <label class="form-label">Chọn muốn chuyển đến</label>
-                </div>
-            </div>
-            <div class="float-end">
+            <div class="float-start">
                 <div class="form-outline">
                     <input type="input" class="form-control" name="ban_hien_tai" list="ten_ban" autocomplete="off"
                         required />
                     <label class="form-label">Bàn hiện tại</label>
                 </div>
             </div>
+            <div class="float-start">
+                <div class="form-outline" style="margin-left: 5px;">
+                    <input type="input" class="form-control" name="ban_chuyen_den" list="ten_ban" autocomplete="off"
+                        required />
+                    <label class="form-label">Chọn muốn chuyển đến</label>
+                </div>
+            </div>
+            <div class="float-start">
+                <button type="submit" class="btn btn-info" style="margin-left: 5px; padding-bottom: 9px">Chuyển
+                    bàn</button>
+            </div>
+            
         </form>
-        <!-- <form action="/RestaurantManager/User/datmon/xoa_du_lieu_ban" method="POST">
+        <form action="/RestaurantManager/User/datmon/thanhtoan" method="POST">
             @csrf
-            <a href="/RestaurantManager/User/datmon/xoa_du_lieu_ban/ban={{$tong_tien['ten_ban_thanh_toan']}}" type="button" class="btn btn-danger"
-                onclick="return confirm('Bạn có thật sự muốn xóa hết tất cả dữ liệu {{$tong_tien['ten_ban_thanh_toan']}}?');"
-                style="margin-left: 5px; padding-bottom: 9px">
-                Xóa dữ liệu {{$tong_tien['ten_ban_thanh_toan']}}
-            </a>
-        </form> -->
-
-
+            @if($tong_tien['ten_ban_thanh_toan'] != "Chưa chọn bàn")
+            <div class="float-end">
+                <a href="/RestaurantManager/User/datmon/xoa_du_lieu_ban/ban={{$tong_tien['ten_ban_thanh_toan']}}"
+                    type="submit" class="btn btn-danger"
+                    onclick="return confirm('Bạn có thật sự muốn xóa hết tất cả dữ liệu {{$tong_tien['ten_ban_thanh_toan']}}?');"
+                    style="margin-left: 5px; padding-bottom: 9px">
+                    Xóa dữ liệu {{$tong_tien['ten_ban_thanh_toan']}}
+                </a>
+            </div>
+            @endif
+            <div class="float-end">
+                <button type="submit" class="btn btn-primary" style="margin-left: 5px; padding-bottom: 9px">Thanh
+                    toán</button>
+            </div>
+            <div class="float-end">
+                <div class="form-outline">
+                    <input type="input" class="form-control" name="ten_ban" list="ten_ban" autocomplete="off"
+                        required />
+                    <label class="form-label">Chọn bàn</label>
+                </div>
+            </div>
+            
+        </form>
     </div>
 </div>
 

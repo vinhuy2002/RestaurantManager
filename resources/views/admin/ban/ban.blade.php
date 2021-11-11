@@ -24,15 +24,19 @@
 				</thead>
 				<tbody>
 					@foreach ($bans as $ban)
+                    @if($ban['ID_nha_hang'] == $data['id'])
+
 					<tr>
                         <th scope="row">{{$ban['ID_ban']}}</th>
                         <td>{{$ban['ten_ban']}}</td>
 
 						@foreach ($datmons as $datmon)	
 							@if(($datmon['ten_ban'] == $ban['ten_ban']))
+							@if($datmon['ID_nha_hang'] == $data['id'])
                         		@if($ban['trang_thai'] = 'Có người')
 								@endif
 								@break
+							@endif
 							@endif
 						@endforeach
 						<td>{{$ban['trang_thai']}}</td>
@@ -46,6 +50,7 @@
                         </td>
                     </tr>
 
+					@endif
 					@endforeach
 
 				</tbody>

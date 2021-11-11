@@ -24,7 +24,10 @@
                     <label class="form-label" for="form2Example1">Tên bàn</label>
                     <datalist id="ten_ban">
                         @foreach ($bans as $ban)
+                        @if($ban['ID_nha_hang'] == $user['id'])
+
                         <option value="{{$ban['ten_ban']}}">
+                            @endif
                             @endforeach
                     </datalist>
                 </div>
@@ -35,7 +38,10 @@
                     <label class="form-label" for="form2Example1">Tên món</label>
                     <datalist id="ten_mon">
                         @foreach ($monans as $monan)
+                        @if($monan['ID_nha_hang'] == $user['id'])
+
                         <option value="{{$monan['ten_mon']}}">
+                            @endif
                             @endforeach
                     </datalist>
                 </div>

@@ -15,6 +15,6 @@ class DatMon extends Model
 
     public $timestamps = false;
 
-    protected $fillable = ['ten_ban', 'ten_mon', 'so_luong', 'don_gia', 'tien'];
+    protected $fillable = ['ten_ban', 'ten_mon', 'so_luong', 'don_gia', 'tien', 'ID_nha_hang'];
 
 }

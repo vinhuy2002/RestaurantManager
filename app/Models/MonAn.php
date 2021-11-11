@@ -15,5 +15,5 @@ class MonAn extends Model
 
     public $timestamps = false;
 
-    protected $fillable = ['loai', 'ten_mon', 'don_gia'];
+    protected $fillable = ['loai', 'ten_mon', 'don_gia', 'ID_nha_hang'];
 }

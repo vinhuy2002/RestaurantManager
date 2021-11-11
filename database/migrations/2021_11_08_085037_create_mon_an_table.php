@@ -18,6 +18,7 @@ class CreateMonAnTable extends Migration
             $table->string('loai');
             $table->string('ten_mon');
             $table->string('don_gia');
+            $table->string('ID_nha_hang')->nullable();
         });
     }
 

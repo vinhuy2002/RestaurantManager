@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\DatMon;
 use App\Models\MonAn;
 use App\Models\Ban;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -46,12 +47,15 @@ class DatMonController extends Controller
             }
         }
 
+        $data = User::where('id',session('DangNhap'))->first();
+
         $datmon = DatMon::create([
             'ten_ban' => $request->input('ten_ban'),
             'ten_mon' => $request->input('ten_mon'),
             'so_luong' => $request->input('so_luong'),
             'don_gia' => $don_gia,
             'tien' => $request->input('so_luong')*$don_gia,
+            'ID_nha_hang' => $data['id'],
             
         ]);
         return Redirect('/RestaurantManager/User/datmon');
@@ -82,10 +86,12 @@ class DatMonController extends Controller
     public function edit($id)
     {
         //
+        $user = User::where('id',session('DangNhap'))->first();
+
         $data = DatMon::find($id);
         $monans = MonAn::all();
         $bans = Ban::all();
-        return View('admin.datmon.sua', ['data'=>$data])->with('monans', $monans)->with('bans', $bans);
+        return View('admin.datmon.sua', ['data'=>$data])->with('monans', $monans)->with('bans', $bans)->with('user', $user);
 
     }
 
@@ -134,10 +140,12 @@ class DatMonController extends Controller
     public function thanhtoan(Request $request)
     {
         //
+        $data = User::where('id',session('DangNhap'))->first();
+
         $tong_tien['tong_tien'] = 0;
         $datmons = DatMon::all();
          foreach ($datmons as $datmon){
-            if($datmon->ten_ban == $request->input('ten_ban')){
+            if(($datmon->ten_ban == $request->input('ten_ban')) && ($datmon->ID_nha_hang == $data['id'])){
                 $tong_tien['tong_tien'] = $tong_tien['tong_tien'] + $datmon['tien'];
             }
         }
@@ -146,15 +154,17 @@ class DatMonController extends Controller
         
         $bans = Ban::all();
         $monans = MonAn::all();
-        return View('admin.datmon.datmon', ['tong_tien'=>$tong_tien])->with('bans', $bans)->with('monans', $monans)->with('datmons', $datmons);
+        return View('admin.datmon.datmon', ['tong_tien'=>$tong_tien])->with('bans', $bans)->with('monans', $monans)->with('datmons', $datmons)->with('data', $data);
     }
 
     public function xoadulieuban($ban)
     {
         //
+        $user = User::where('id',session('DangNhap'))->first();
+
         $datmons = DatMon::all();
         foreach ($datmons as $datmon){
-            if($datmon->ten_ban == $ban){
+            if(($datmon->ten_ban == $ban) && ($datmon->ID_nha_hang == $user['id'])){
                 $data = DatMon::find($datmon->ID_dat_mon);
                 $data->delete();
             }
@@ -165,9 +175,11 @@ class DatMonController extends Controller
     public function chuyenban(Request $request)
     {
         //
+        $user = User::where('id',session('DangNhap'))->first();
+
         $datmons = DatMon::all();
         foreach ($datmons as $datmon){
-            if($datmon->ten_ban == $request->input('ban_hien_tai')){
+            if(($datmon->ten_ban == $request->input('ban_hien_tai')) && ($datmon->ID_nha_hang == $user['id'])){
                 $data = DatMon::find($datmon->ID_dat_mon);
                 $data['ten_ban'] = $request->input('ban_chuyen_den');
                 $data->save();

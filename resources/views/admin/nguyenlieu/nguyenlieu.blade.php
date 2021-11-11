@@ -25,6 +25,8 @@
 				</thead>
 				<tbody>
 					@foreach ($nguyenlieus as $nguyenlieu)
+                    @if($nguyenlieu['ID_nha_hang'] == $data['id'])
+
 					<tr>
                         <th scope="row">{{$nguyenlieu['ID_nguyen_lieu']}}</th>
                         <td>{{$nguyenlieu['ten_nguyen_lieu']}}</td>
@@ -38,7 +40,7 @@
                                 class="btn btn-danger btn-rounded">Xóa</a>
                         </td>
                     </tr>
-
+					@endif
 					@endforeach
 
 				</tbody>

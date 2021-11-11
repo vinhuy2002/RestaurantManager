@@ -19,6 +19,8 @@ class CreateNguyenLieuTable extends Migration
             $table->string('ngay_mua');
             $table->string('so_luong');
             $table->string('don_gia');
+            $table->string('ID_nha_hang')->nullable();
+
         });
     }
 

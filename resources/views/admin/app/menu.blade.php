@@ -29,6 +29,13 @@
 	</li>
 
 	<li class="nav-item">
+		<a class="nav-link" href="/RestaurantManager/User/ban">
+			<i class="fas fa-table"></i>
+			<span>Quản lý Bàn</span>
+		</a>
+	</li>
+
+	<li class="nav-item">
 		<a class="nav-link" href="/RestaurantManager/User/datmon">
 			<i class="fas fa-store"></i>
 			<span>Quản lý Đặt món</span>
@@ -39,13 +46,6 @@
 		<a class="nav-link" href="/RestaurantManager/User/nguyenlieu">
 			<i class="fas fa-cannabis"></i>
 			<span>Quản lý Nguyên liệu</span>
-		</a>
-	</li>
-
-	<li class="nav-item">
-		<a class="nav-link" href="/RestaurantManager/User/ban">
-			<i class="fas fa-table"></i>
-			<span>Quản lý Bàn</span>
 		</a>
 	</li>
 

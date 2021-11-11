@@ -15,5 +15,5 @@ class Ban extends Model
 
     public $timestamps = false;
 
-    protected $fillable = ['ten_ban', 'trang_thai', 'dat_truoc'];
+    protected $fillable = ['ten_ban', 'trang_thai', 'dat_truoc', 'ID_nha_hang'];
 }
