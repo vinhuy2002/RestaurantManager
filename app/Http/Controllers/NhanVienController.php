@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\NhanVien;
+use App\Models\ChucVu;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class NhanVienController extends Controller
 {
@@ -35,6 +39,31 @@ class NhanVienController extends Controller
     public function store(Request $request)
     {
         //
+        $data = User::where('id',session('DangNhap'))->first();
+
+        $nhanvien = NhanVien::create([
+            'ten_nhan_vien' => $request->input('ten_nhan_vien'),
+            'chuc_vu' => $request->input('chuc_vu'),
+            'gioi_tinh' => $request->input('gioi_tinh'),
+            'dia_chi' => $request->input('dia_chi'),
+            'sdt' => $request->input('sdt'),
+            'tai_khoan' => $request->input('tai_khoan'),
+            'mat_khau' => $request->input('mat_khau'),
+            'ban_quan_ly' => $request->input('ban_quan_ly'),
+            'lich_lam_viec' => $request->input('lich_lam_viec'),
+            'ID_nha_hang' => $data['id'],
+
+        ]);
+
+        return Redirect('/RestaurantManager/User/nhanvien');
+
+    }
+
+    public function them(){
+        $data = User::where('id',session('DangNhap'))->first();
+
+        $chucvus = ChucVu::all();
+        return View('admin.nhanvien.them', ['chucvus'=>$chucvus])->with('data', $data);
     }
 
     /**
@@ -45,7 +74,11 @@ class NhanVienController extends Controller
      */
     public function show($id)
     {
-        //
+        // hiển thị
+        $chucvus = ChucVu::all();
+
+        $nhanviens = NhanVien::all();
+        return View('admin.nhanvien.nhanvien', ['nhanviens'=>$nhanviens])->with('chucvus', $chucvus);
     }
 
     /**
@@ -56,7 +89,9 @@ class NhanVienController extends Controller
      */
     public function edit($id)
     {
-        //
+        // sửa
+        $data = NhanVien::find($id);
+        return View('admin.nhanvien.sua', ['data'=>$data]);
     }
 
     /**
@@ -66,9 +101,23 @@ class NhanVienController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         //
+        $nhanvien = NhanVien::find($request->ID_chuc_vu);
+        $nhanvien['ID_nhan_vien'] = $request->ID_nhan_vien;
+        $nhanvien['ten_nhan_vien'] = $request->ten_nhan_vien;
+        $nhanvien['chuc_vu'] = $request->chuc_vu;
+        $nhanvien['gioi_tinh'] = $request->gioi_tinh;
+        $nhanvien['dia_chi'] = $request->dia_chi;
+        $nhanvien['sdt'] = $request->sdt;
+        $nhanvien['tai_khoan'] = $request->tai_khoan;
+        $nhanvien['mat_khau'] = $request->mat_khau;
+        $nhanvien['ban_quan_ly'] = $request->ban_quan_ly;
+        $nhanvien['lich_lam_viec'] = $request->lich_lam_viec;
+        $nhanvien->save();
+        return Redirect('/RestaurantManager/User/nhanvien');
+
     }
 
     /**
@@ -79,6 +128,9 @@ class NhanVienController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // xóa
+        $data = NhanVien::find($id);
+        $data->delete();
+        return Redirect('/RestaurantManager/User/nhanvien');
     }
 }

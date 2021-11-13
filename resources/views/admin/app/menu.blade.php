@@ -57,6 +57,13 @@
 	</li>
 
 	<li class="nav-item">
+		<a class="nav-link" href="/RestaurantManager/User/chucvu">
+			<i class="fas fa-list"></i>
+			<span>Quản lý Chức vụ</span>
+		</a>
+	</li>
+
+	<li class="nav-item">
 		<a class="nav-link" href="/RestaurantManager/User/nhanvien">
 			<i class="fas fa-users"></i>
 			<span>Quản lý Nhân viên</span>

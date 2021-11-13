@@ -8,6 +8,7 @@ use App\Http\Controllers\NguyenLieuController;
 use App\Http\Controllers\BanController;
 use App\Http\Controllers\LichLamViecController;
 use App\Http\Controllers\NhanVienController;
+use App\Http\Controllers\ChucVuController;
 use App\Http\Controllers\DoanhThuController;
 
 use Illuminate\Support\Facades\Route;
@@ -37,14 +38,10 @@ Route::get('/auth/logoff', [MainController::class, 'dangXuat'])->name('auth.logo
 // Route::group(['middleware'=>['CheckLogin']], function(){
     // Admin View
 
-
-
-
-
 Route::post('/RestaurantManager/User', [MainController::class, 'loginCheck'])->name('admin.dashboard');
 
 Route::get('/RestaurantManager/User/{slug}', [MainController::class, 'dieuhuong']);
-Route::get('/RestaurantManager/User/{slug}/{slug2}', [AdminController::class, 'dieuhuong2']);
+Route::get('/RestaurantManager/User/{slug}/{slug2}', [MainController::class, 'dieuhuong2']);
 
 
 
@@ -53,7 +50,7 @@ Route::get('/RestaurantManager/User/{slug}/{slug2}', [AdminController::class, 'd
 // Trang chủ
 Route::get('/RestaurantManager/User/trangchu/sua/id={id}', [MainController::class, 'edit']);
 Route::post('/RestaurantManager/User/trangchu/sua', [MainController::class, 'update']);
-Route::get('/RestaurantManager/User/monan/xoa/id={id}', [MainController::class, 'destroy']);
+Route::get('/RestaurantManager/User/trangchu/xoa/id={id}', [MainController::class, 'destroy']);
 
 // Món ăn
 Route::get('/RestaurantManager/User/monan/monan', [MonAnController::class, 'show']);
@@ -85,4 +82,20 @@ Route::post('/RestaurantManager/User/ban/them', [BanController::class, 'store'])
 Route::get('/RestaurantManager/User/ban/xoa/id={id}', [BanController::class, 'destroy']);
 Route::get('/RestaurantManager/User/ban/sua/id={id}', [BanController::class, 'edit']);
 Route::post('/RestaurantManager/User/ban/sua', [BanController::class, 'update']);
+
+// Nhân viên
+Route::get('/RestaurantManager/User/nhanvien/nhanvien', [NhanVienController::class, 'show']);
+Route::get('/RestaurantManager/User/nhanvien/them', [NhanVienController::class, 'them']);
+Route::post('/RestaurantManager/User/nhanvien/them', [NhanVienController::class, 'store']);
+Route::get('/RestaurantManager/User/nhanvien/xoa/id={id}', [NhanVienController::class, 'destroy']);
+Route::get('/RestaurantManager/User/nhanvien/sua/id={id}', [NhanVienController::class, 'edit']);
+Route::post('/RestaurantManager/User/nhanvien/sua', [NhanVienController::class, 'update']);
+
+// Chức vụ
+Route::get('/RestaurantManager/User/chucvu/chucvu', [ChucVuController::class, 'show']);
+Route::post('/RestaurantManager/User/chucvu/them', [ChucVuController::class, 'store']);
+Route::get('/RestaurantManager/User/chucvu/xoa/id={id}', [ChucVuController::class, 'destroy']);
+Route::get('/RestaurantManager/User/chucvu/sua/id={id}', [ChucVuController::class, 'edit']);
+Route::post('/RestaurantManager/User/chucvu/sua', [ChucVuController::class, 'update']);
+Route::post('/RestaurantManager/User/chucvu/chucvumacdinh', [ChucVuController::class, 'chucvumacdinh']);
 

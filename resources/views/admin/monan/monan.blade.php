@@ -62,38 +62,6 @@
     <div class="card-body">
 
         <a href="/RestaurantManager/User/monan/them" type="button" class="btn btn-info">Thêm Món ăn</a>
-        <!-- <br><br>
-        <div class="row">
-            <div class="col-12">
-                <button class="btn btn-info dropdown-toggle" type="button" id="LoaiMonAn" data-mdb-toggle="dropdown"
-                    aria-expanded="false">Loại món ăn</button>
-                <ul class="dropdown-menu" aria-labelledby="LoaiMonAn">
-                    <li><a class="dropdown-item" href="#">Thịt</a></li>
-                    <li><a class="dropdown-item" href="#">Cá</a></li>
-                    <li><a class="dropdown-item" href="#">Trái cây</a></li>
-                    <li><a class="dropdown-item" href="#">Nước</a></li>
-                </ul>
-                &emsp;&emsp;&emsp;&emsp;&emsp;
-                <button type="button" class="btn btn-primary btn-rounded">Thêm</button>
-                <button type="button" class="btn btn-warning btn-rounded">Sửa</button>
-                <button type="button" class="btn btn-danger btn-rounded">Xóa</button>
-            </div>
-            <br><br>
-            <div class="col-12">
-                <button class="btn btn-info dropdown-toggle" type="button" id="MonAn" data-mdb-toggle="dropdown"
-                    aria-expanded="false">Các món ăn</button>
-                <ul class="dropdown-menu" aria-labelledby="MonAn">
-                    <li><a class="dropdown-item" href="#">Thịt bò xung khói</a></li>
-                    <li><a class="dropdown-item" href="#">Gà rán</a></li>
-                    <li><a class="dropdown-item" href="#">Dưa hấu</a></li>
-                    <li><a class="dropdown-item" href="#">Cam ép</a></li>
-                </ul>
-                &emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;
-                <button type="button" class="btn btn-primary btn-rounded">Thêm</button>
-                <button type="button" class="btn btn-warning btn-rounded">Sửa</button>
-                <button type="button" class="btn btn-danger btn-rounded">Xóa</button>
-            </div>
-        </div> -->
 
     </div>
 </div>

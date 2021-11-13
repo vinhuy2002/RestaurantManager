@@ -9,6 +9,7 @@ use App\Models\Ban;
 use App\Models\DatMon;
 use App\Models\LichLamViec;
 use App\Models\NhanVien;
+use App\Models\ChucVu;
 use App\Models\DoanhThu;
 
 use Illuminate\Http\Request;
@@ -61,7 +62,6 @@ class MainController extends Controller
         return redirect()->route('auth.login');
     }
 
-
     // Login Check;
     public function loginCheck(Request $request){
         $request->validate([
@@ -110,12 +110,21 @@ class MainController extends Controller
 
     }
 
+    function dangXuat(){
+        if (session()->has('DangNhap')){
+            session()->pull('DangNhap');
+            return redirect('/');
+        }
+    }
+
     public function dieuhuong($slug){
         $data = User::where('id',session('DangNhap'))->first();
         $monans = MonAn::all();
         $nguyenlieus = NguyenLieu::all();
         $bans = Ban::all();
         $datmons = DatMon::all();
+        $chucvus = ChucVu::all();
+        $nhanviens = NhanVien::all();
 
         $tong_tien['tong_tien'] = 0;
         $tong_tien['ten_ban_thanh_toan'] = "Chưa chọn bàn";
@@ -127,14 +136,33 @@ class MainController extends Controller
         ->with('bans', $bans)
         ->with('datmons', $datmons)
         ->with('tong_tien', $tong_tien)
+        ->with('chucvus', $chucvus)
+        ->with('nhanviens', $nhanviens)
         ;
     }
 
-    function dangXuat(){
-        if (session()->has('DangNhap')){
-            session()->pull('DangNhap');
-            return redirect('/');
-        }
+    public function dieuhuong2($slug, $slug2){
+        $data = User::where('id',session('DangNhap'))->first();
+        $monans = MonAn::all();
+        $nguyenlieus = NguyenLieu::all();
+        $bans = Ban::all();
+        $datmons = DatMon::all();
+        $chucvus = ChucVu::all();
+        $nhanviens = NhanVien::all();
+
+        $tong_tien['tong_tien'] = 0;
+        $tong_tien['ten_ban_thanh_toan'] = "Chưa chọn bàn";
+        
+        return view("admin.{$slug}.{$slug2}")
+        ->with('data', $data)
+        ->with('monans', $monans)
+        ->with('nguyenlieus', $nguyenlieus)
+        ->with('bans', $bans)
+        ->with('datmons', $datmons)
+        ->with('tong_tien', $tong_tien)
+        ->with('chucvus', $chucvus)
+        ->with('nhanviens', $nhanviens)
+        ;
     }
 
     /**
@@ -159,15 +187,15 @@ class MainController extends Controller
      */
     public function update(Request $request)
     {
-        /// update
+        // update
         $data = User::find($request->id);
         $data['Ten_nha_hang'] = $request->Ten_nha_hang;
         $data['Dia_chi'] = $request->Dia_chi;
         $data['SDT'] = $request->SDT;
         $data['email'] = $request->email;
         $data['Ten_dang_nhap'] = $request->Ten_dang_nhap;
-        $data['password'] = $request->password;
-        // $data['password'] = Hash::make($request->password);
+        // $data['password'] = $request->password;
+        $data['password'] = Hash::make($request->password);
 
         $data->save();
         return Redirect('/RestaurantManager/User/trangchu');
@@ -182,7 +210,7 @@ class MainController extends Controller
      */
     public function destroy($id)
     {
-        /// xóa
+        // xóa
         $data = User::find($id);
         $data->delete();
         return Redirect('/');
