@@ -19,7 +19,8 @@ class CreateNguyenLieuTable extends Migration
             $table->string('ngay_mua');
             $table->string('so_luong');
             $table->string('don_gia');
-            $table->string('ID_nha_hang')->nullable();
+            $table->unsignedInteger('ID_nha_hang')->nullable();
+            $table->foreign('ID_nha_hang')->references('id')->on('users')->onDelete('cascade');
 
         });
     }

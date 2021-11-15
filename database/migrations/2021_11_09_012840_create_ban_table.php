@@ -18,7 +18,8 @@ class CreateBanTable extends Migration
             $table->string('ten_ban');
             $table->string('trang_thai');
             $table->string('dat_truoc');
-            $table->string('ID_nha_hang')->nullable();
+            $table->unsignedInteger('ID_nha_hang')->nullable();
+            $table->foreign('ID_nha_hang')->references('id')->on('users')->onDelete('cascade');
 
         });
     }
