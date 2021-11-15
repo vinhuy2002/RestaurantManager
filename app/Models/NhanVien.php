@@ -16,11 +16,11 @@ class NhanVien extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'ten_nhan_vien', 'chuc_vu', 'gioi_tinh', 'dia_chi', 'sdt', 
+        'ten_nhan_vien', 'chuc_vu_id', 'chuc_vu', 'gioi_tinh', 'dia_chi', 'sdt', 
         'tai_khoan', 'mat_khau', 'ban_quan_ly', 'lich_lam_viec', 'ID_nha_hang'
     ];
 
-    public function user(){
-        return $this->belongsTo(User::class);
+    public function chucVu(){
+        return $this->belongsTo(ChucVu::class);
     }
 }

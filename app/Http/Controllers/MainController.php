@@ -83,7 +83,11 @@ class MainController extends Controller
 
                 } else {
                     if($request->password ===   $staffInfo->mat_khau){
-                        $request->session()->put('DangNhap', $staffInfo->ID_nha_hang);
+                        $checkRole = ChucVu::where('ID_chuc_vu', $staffInfo->chuc_vu_id)->where('ID_nha_hang', $staffInfo->ID_nha_hang)->first(); 
+                        $request->session()
+                                ->put(['DangNhap' => $staffInfo->ID_nha_hang,
+                                       'CheckRole' => $checkRole->quyen,             
+                                    ]);
                         return view('admin.trangchu.trangchu')->with('data', User::where('id',session('DangNhap'))->first());
                     } else {
                         return back()->with('thatbai','* Mật khẩu nhập không đúng, vui lòng nhập lại');
@@ -127,6 +131,7 @@ class MainController extends Controller
     function dangXuat(){
         if (session()->has('DangNhap')){
             session()->pull('DangNhap');
+            session()->pull('CheckRole');
             return redirect('/');
         }
     }

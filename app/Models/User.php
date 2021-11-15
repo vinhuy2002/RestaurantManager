@@ -39,7 +39,7 @@ class User extends Authenticatable
     ];
 
     public function nhanVien(){
-        return $this->hasMany(NhanVien::class);
+        return $this->hasMany(ChucVu::class);
     }
     
 }

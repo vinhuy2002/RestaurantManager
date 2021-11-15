@@ -39,10 +39,15 @@ class NhanVienController extends Controller
     public function store(Request $request)
     {
         //
+
+        $idCV = ChucVu::where('ten_chuc_vu', $request->input('chuc_vu'))->first();
+        // dd($idCV);
+
         $data = User::where('id',session('DangNhap'))->first();
 
         $nhanvien = NhanVien::create([
             'ten_nhan_vien' => $request->input('ten_nhan_vien'),
+            'chuc_vu_id' => $idCV->ID_chuc_vu,
             'chuc_vu' => $request->input('chuc_vu'),
             'gioi_tinh' => $request->input('gioi_tinh'),
             'dia_chi' => $request->input('dia_chi'),
@@ -52,7 +57,6 @@ class NhanVienController extends Controller
             'ban_quan_ly' => $request->input('ban_quan_ly'),
             'lich_lam_viec' => $request->input('lich_lam_viec'),
             'ID_nha_hang' => $data['id'],
-
         ]);
 
         return Redirect('/RestaurantManager/User/nhanvien');

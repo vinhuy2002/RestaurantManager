@@ -16,4 +16,12 @@ class ChucVu extends Model
     public $timestamps = false;
 
     protected $fillable = ['ten_chuc_vu', 'mo_ta', 'quyen', 'ID_nha_hang'];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
+    public function nhanVien(){
+        return $this->hasMany(NhanVien::class);
+    }
 }

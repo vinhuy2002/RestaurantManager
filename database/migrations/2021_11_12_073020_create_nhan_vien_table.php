@@ -25,7 +25,7 @@ class CreateNhanVienTable extends Migration
             $table->string('mat_khau');
             $table->string('lich_lam_viec')->nullable();
             $table->string('ban_quan_ly')->nullable();
-            $table->string('ID_nha_hang')->nullable();
+            $table->unsignedInteger('ID_nha_hang')->nullable();
             
             
             $table->foreign('chuc_vu_id')->references('ID_chuc_vu')->on('chuc_vu');
