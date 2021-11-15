@@ -71,11 +71,25 @@ class MainController extends Controller
 
         $userinfoEmail = User::where('email', $request->ten_dang_nhap)->first();
         $userinfoUser = User::where('Ten_dang_nhap', $request->ten_dang_nhap)->first();
-
+        $staffInfo = NhanVien::where('tai_khoan', $request->ten_dang_nhap)->first(); 
         if (!$userinfoEmail){
             
             if (!$userinfoUser){
-                return back()->with('thatbai','* Tên đăng nhập hoặc Email không tồn tại!');
+                
+                if (!$staffInfo){
+
+                        return back()->with('thatbai', '* Tài khoản đăng nhập hoặc email không tồn tại');
+
+
+                } else {
+                    if($request->password ===   $staffInfo->mat_khau){
+                        $request->session()->put('DangNhap', $staffInfo->ID_nha_hang);
+                        return view('admin.trangchu.trangchu')->with('data', User::where('id',session('DangNhap'))->first());
+                    } else {
+                        return back()->with('thatbai','* Mật khẩu nhập không đúng, vui lòng nhập lại');
+                    }
+                }
+
             } else {
                 if (Hash::check($request->password, $userinfoUser->password)){
                     $request->session()->put('DangNhap', $userinfoUser->id);

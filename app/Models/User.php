@@ -38,5 +38,8 @@ class User extends Authenticatable
         'password',
     ];
 
+    public function nhanVien(){
+        return $this->hasMany(NhanVien::class);
+    }
     
 }

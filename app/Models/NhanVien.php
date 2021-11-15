@@ -20,5 +20,7 @@ class NhanVien extends Model
         'tai_khoan', 'mat_khau', 'ban_quan_ly', 'lich_lam_viec', 'ID_nha_hang'
     ];
 
-    
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }
