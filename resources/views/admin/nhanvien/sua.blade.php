@@ -4,7 +4,7 @@
 <div class="card shadow mb-4">
     <div class="card-header py-3">
         <h4 class="" style="margin-top: 10px">
-            <strong>THÊM NHÂN VIÊN</strong>&ensp;
+            <strong>SỬA NHÂN VIÊN</strong>&ensp;
             <i class="fas fa-users"></i>
         </h4>
     </div>
@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="form-outline mb-4">
-                    <input type="input" class="form-control" name="chuc_vu" value="{{$data['chuc_vu']}}" required/>
+                    <input type="input" class="form-control" name="chuc_vu" value="{{$data['chuc_vu']}}" autocomplete="off" required/>
                     <label class="form-label">Chức vụ</label>
                 </div>
 

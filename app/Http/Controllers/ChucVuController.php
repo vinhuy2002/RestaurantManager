@@ -121,8 +121,8 @@ class ChucVuController extends Controller
         //
         $data = User::where('id',session('DangNhap'))->first();
         
-        $admin = ChucVu::create([
-            'ten_chuc_vu' => 'Admin',
+        $quanly = ChucVu::create([
+            'ten_chuc_vu' => 'Quản lý',
             'mo_ta' => 'Quản lý tất cả mọi thứ ở nhà hàng',
             'quyen' => serialize(["Món ăn","Bàn","Đặt món","Nguyên liệu","Lịch làm việc","Chức vụ","Nhân viên","Doanh thu"]),
             'ID_nha_hang' => $data['id'],

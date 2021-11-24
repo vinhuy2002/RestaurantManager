@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="form-outline mb-4">
-                    <input type="input" id="form2Example1" class="form-control" name="password" value="{{$data['password']}}" required/>
+                    <input type="password" id="form2Example1" class="form-control" name="password" value="{{$data['password']}}" required/>
                     <label class="form-label" for="form2Example1">Mật khẩu</label>
                 </div>
 

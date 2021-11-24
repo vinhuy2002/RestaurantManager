@@ -37,7 +37,7 @@
                         <td>{{$nhanvien['sdt']}}</td>
                         <td>{{$nhanvien['tai_khoan']}}</td>
                         <td>
-                            <a href="" type="button" class="btn btn-success btn-rounded" target="_blank">Xem</a>
+                            <!-- <a href="" type="button" class="btn btn-success btn-rounded" target="_blank">Xem</a> -->
                             <a href="/RestaurantManager/User/nhanvien/sua/id={{$nhanvien['ID_nhan_vien']}}"
                                 type="button" class="btn btn-warning btn-rounded">Sửa</a>
                             <a href="/RestaurantManager/User/nhanvien/xoa/id={{$nhanvien['ID_nhan_vien']}}"

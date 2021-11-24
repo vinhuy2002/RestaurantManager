@@ -34,7 +34,7 @@
                         <td>{{$nguyenlieu['so_luong']}}</td>
                         <td>{{$nguyenlieu['don_gia']}} VND</td>
                         <td>
-                            <a href="" type="button" class="btn btn-success btn-rounded" target="_blank">Xem</a>
+                            <!-- <a href="" type="button" class="btn btn-success btn-rounded" target="_blank">Xem</a> -->
                             <a href="/RestaurantManager/User/nguyenlieu/sua/id={{$nguyenlieu['ID_nguyen_lieu']}}" type="button" class="btn btn-warning btn-rounded">Sửa</a>
                             <a href="/RestaurantManager/User/nguyenlieu/xoa/id={{$nguyenlieu['ID_nguyen_lieu']}}" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button"
                                 class="btn btn-danger btn-rounded">Xóa</a>

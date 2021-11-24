@@ -5,7 +5,7 @@
 <div class="card shadow mb-4">
 	<div class="card-header py-3">
 		<h4 class="" style="margin-top: 10px">
-			<strong>NHÀ HÀNG XỊN LIỀN</strong>&ensp;
+			<strong style="text-transform: uppercase;">NHÀ HÀNG {{ $data['Ten_nha_hang'] }}</strong>&ensp;
 			<i class="fas fa-grin-wink"></i>
 		</h4>            
 	</div>

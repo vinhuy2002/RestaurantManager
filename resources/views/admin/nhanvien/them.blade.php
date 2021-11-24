@@ -20,7 +20,7 @@
                 </div>
 
                 <div class="form-outline mb-4">
-                    <input type="input" class="form-control" name="chuc_vu" list="chuc_vu" required/>
+                    <input type="input" class="form-control" name="chuc_vu" list="chuc_vu" autocomplete="off" required/>
                     <label class="form-label">Chức vụ</label>
                     <datalist id="chuc_vu">
                         @foreach ($chucvus as $chucvu)
@@ -57,8 +57,16 @@
                 </div>
 
                 <div class="form-outline mb-4">
-                    <input type="input" class="form-control" name="ban_quan_ly" value="Không" required/>
+                    <input type="input" class="form-control" name="ban_quan_ly" list="ten_ban" value="Không" required/>
                     <label class="form-label">Bàn quản lý</label>
+                    <datalist id="ten_ban">
+                        @foreach ($bans as $ban)
+                        @if($ban['ID_nha_hang'] == $data['id'])
+
+                        <option value="{{$ban['ten_ban']}}">
+                            @endif
+                            @endforeach
+                    </datalist>
                 </div>
 
                 <div class="form-outline mb-4">

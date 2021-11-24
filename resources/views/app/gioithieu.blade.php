@@ -1,12 +1,21 @@
+<div class="card mb-3 shadow-5" style="background-color: #EEEEEE">
+    <div class="card-body" style="margin-top:40px" >
+        <center>
+            <h3 class="card-title">GIỚI THIỆU</h3>
+        </center>
+    </div>
+    <br>
+</div>
+
 <br><br>
 <div class="container">
 
-	<div class="card mb-3 shadow-5">
+	<!-- <div class="card mb-3 shadow-5">
 		<div class="card-body">
 			<center><h5 class="card-title">GIỚI THIỆU</h5></center>
 		</div>
 	</div>
-	<br>
+	<br> -->
 
 	<div class="card mb-3" style="max-width: 100%;">
 		<div class="row g-0">
@@ -28,16 +37,18 @@
 
 						<ol>
 							<li>Quản lý Món ăn</li>
-							<li>Quản lý Đặt món</li>
 							<li>Quản lý Bàn</li>
+							<li>Quản lý Đặt món</li>
+							<li>Quản lý Nguyên liệu</li>
 							<li>Quản lý Lịch làm việc</li>
+							<li>Quản lý Chức vụ</li>
 							<li>Quản lý Nhân viên</li>
 							<li>Quản lý Doanh thu</li>
 						</ol>
 
 					</div>
-					<p class="card-text">
-						<i><small class="text-muted">Đăng ký tài khoản và bắt đầu quản lý nhà hàng của bạn một cách chuyên nghiệp!</small></i>
+					<p class="card-text ">
+						<i><small class="text-success">Đăng ký tài khoản và bắt đầu quản lý nhà hàng của bạn một cách chuyên nghiệp!</small></i>
 					</p>
 				</div>
 			</div>

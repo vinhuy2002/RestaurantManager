@@ -31,7 +31,7 @@
                         <td>{{$monan['ten_mon']}}</td>
                         <td>{{$monan['don_gia']}} VND</td>
                         <td>
-                            <a href="" type="button" class="btn btn-success btn-rounded" target="_blank">Xem</a>
+                            <!-- <a href="" type="button" class="btn btn-success btn-rounded" target="_blank">Xem</a> -->
                             <a href="/RestaurantManager/User/monan/sua/id={{$monan['ID_mon']}}" type="button" class="btn btn-warning btn-rounded">Sửa</a>
                             <a href="/RestaurantManager/User/monan/xoa/id={{$monan['ID_mon']}}" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button"
                                 class="btn btn-danger btn-rounded">Xóa</a>
