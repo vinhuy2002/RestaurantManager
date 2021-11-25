@@ -87,6 +87,9 @@ class MainController extends Controller
                         $request->session()
                                 ->put(['DangNhap' => $staffInfo->ID_nha_hang,
                                        'CheckRole' => $checkRole->quyen,             
+                                       'TenChucVu' => $checkRole->ten_chuc_vu,             
+                                       'TenDangNhap' => $staffInfo->tai_khoan,             
+                                       'NhanVien' => $staffInfo,             
                                     ]);
                         return view('admin.trangchu.trangchu')->with('data', User::where('id',session('DangNhap'))->first());
                     } else {
@@ -132,7 +135,11 @@ class MainController extends Controller
         if (session()->has('DangNhap')){
             session()->pull('DangNhap');
             session()->pull('CheckRole');
+            session()->pull('TenChucVu');
+            session()->pull('TenDangNhap');
+            session()->pull('NhanVien');
             return redirect('/');
+            // return session()->get(key:'TenChucVu');
         }
     }
 

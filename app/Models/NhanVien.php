@@ -17,7 +17,7 @@ class NhanVien extends Model
 
     protected $fillable = [
         'ten_nhan_vien', 'chuc_vu_id', 'chuc_vu', 'gioi_tinh', 'dia_chi', 'sdt', 
-        'tai_khoan', 'mat_khau', 'ban_quan_ly', 'lich_lam_viec', 'ID_nha_hang'
+        'tai_khoan', 'mat_khau', 'ban_quan_ly', 'thu_lam_viec', 'gio_lam_viec', 'ID_nha_hang'
     ];
 
     public function chucVu(){

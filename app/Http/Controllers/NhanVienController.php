@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\NhanVien;
 use App\Models\ChucVu;
 use App\Models\User;
+use App\Models\Ban;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -55,7 +56,8 @@ class NhanVienController extends Controller
             'tai_khoan' => $request->input('tai_khoan'),
             'mat_khau' => $request->input('mat_khau'),
             'ban_quan_ly' => $request->input('ban_quan_ly'),
-            'lich_lam_viec' => $request->input('lich_lam_viec'),
+            'thu_lam_viec' => serialize($request->input('thu_lam_viec')),
+            'gio_lam_viec' => $request->input('gio_lam_viec'),
             'ID_nha_hang' => $data['id'],
         ]);
 
@@ -94,8 +96,11 @@ class NhanVienController extends Controller
     public function edit($id)
     {
         // sửa
+        $user = User::where('id',session('DangNhap'))->first();
         $data = NhanVien::find($id);
-        return View('admin.nhanvien.sua', ['data'=>$data]);
+        $chucvus = ChucVu::all();
+        $bans = Ban::all();
+        return View('admin.nhanvien.sua', ['data'=>$data])->with('chucvus', $chucvus)->with('bans', $bans)->with('user', $user);
     }
 
     /**
@@ -108,7 +113,7 @@ class NhanVienController extends Controller
     public function update(Request $request)
     {
         //
-        $nhanvien = NhanVien::find($request->ID_chuc_vu);
+        $nhanvien = NhanVien::find($request->ID_nhan_vien);
         $nhanvien['ID_nhan_vien'] = $request->ID_nhan_vien;
         $nhanvien['ten_nhan_vien'] = $request->ten_nhan_vien;
         $nhanvien['chuc_vu'] = $request->chuc_vu;
@@ -118,7 +123,9 @@ class NhanVienController extends Controller
         $nhanvien['tai_khoan'] = $request->tai_khoan;
         $nhanvien['mat_khau'] = $request->mat_khau;
         $nhanvien['ban_quan_ly'] = $request->ban_quan_ly;
-        $nhanvien['lich_lam_viec'] = $request->lich_lam_viec;
+        $nhanvien['thu_lam_viec'] = serialize($request->input('thu_lam_viec'));
+        $nhanvien['gio_lam_viec'] = $request->gio_lam_viec;
+
         $nhanvien->save();
         return Redirect('/RestaurantManager/User/nhanvien');
 

@@ -65,8 +65,15 @@
 		
 		<li class="dropdown nav-item">
 			<a class="nav-link dropdown-toggle" type="button" id="userDropdown" data-mdb-toggle="dropdown" aria-expanded="false" >
-				<span class="badge bg-primary">Admin</span>&ensp;
-				<img class="img-profile rounded-circle" height="50" src="{{ URL('images2/girl.jpg') }}">
+				<span class="badge bg-primary">
+					@if(!session()->get(key:'TenChucVu')) Admin
+					@else {{session()->get(key:'TenChucVu')}} @endif
+				</span>&ensp;
+				<span>
+					@if(!session()->get(key:'TenDangNhap')) {{ $data['Ten_dang_nhap'] }}
+					@else {{session()->get(key:'TenDangNhap')}} @endif
+				</span>
+				<!-- <img class="img-profile rounded-circle" height="50" src="{{ URL('images2/girl.jpg') }}"> -->
 			</a>
 			<ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start" aria-labelledby="userDropdown">
 				{{-- <form method="POST" action="{{ route('logout') }}"> --}}
