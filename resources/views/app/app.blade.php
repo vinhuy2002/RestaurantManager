@@ -42,6 +42,8 @@
                 <div class="d-flex align-items-center">
                     <a href="/"><button type="button" class="btn btn-link px-3 me-2">TRANG CHỦ</button></a>
                     <a href="/GioiThieu"><button type="button" class="btn btn-link px-3 me-2">GIỚI THIỆU</button></a>
+					<a href="/NhaHang"><button type="button" class="btn btn-link px-3 me-2">NHÀ HÀNG</button></a>
+
 					{{-- @if (Route::has('login'))
 						@auth
                     		<a href="{{ url('/RestaurantManager/User/trangchu') }}" class="btn btn-primary btn-rounded">Nhà hàng của bạn</a>

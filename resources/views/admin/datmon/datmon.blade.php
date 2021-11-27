@@ -101,8 +101,8 @@
                         <td>{{$datmon['ten_ban']}}</td>
                         <td>{{$datmon['ten_mon']}}</td>
                         <td>{{$datmon['so_luong']}}</td>
-                        <td>{{$datmon['don_gia']}} VND</td>
-                        <td>{{$datmon['tien']}} VND</td>
+                        <td>{{number_format($datmon['don_gia'])}} VNĐ</td>
+                        <td>{{number_format($datmon['tien'])}} VNĐ</td>
                         <td>
                             <a href="/RestaurantManager/User/datmon/sua/id={{$datmon['ID_dat_mon']}}" type="button"
                                 class="btn btn-warning btn-rounded">Sửa</a>
@@ -139,7 +139,7 @@
         </div>
         <div class="float-end">
             <h5 class="card-title text-success" style="margin-top: 10px">
-                Tổng số tiền phải trả: {{$tong_tien['tong_tien']}} VND ({{$tong_tien['ten_ban_thanh_toan']}})
+                Tổng số tiền phải trả: {{number_format($tong_tien['tong_tien'])}} VNĐ ({{$tong_tien['ten_ban_thanh_toan']}})
             </h5>
 
         </div>

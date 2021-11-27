@@ -14,6 +14,7 @@ use App\Models\DoanhThu;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
 class MainController extends Controller
 {
@@ -24,6 +25,71 @@ class MainController extends Controller
 
     public function aboutUs(){
         return view('index')->with('route', 'GioiThieu');
+    }
+
+    public function nhahang(){
+        $users = User::all();
+
+        return view('index')->with('route', 'NhaHang')
+            ->with('users', $users)
+        ;
+    }
+
+    public function idnhahang($slug){
+        $users = User::all();
+        $bans = Ban::all();
+        $user = User::find($slug);
+
+        $monan = DB::table('mon_an')->where('ID_nha_hang', $slug)->count();
+        $ban = DB::table('ban')->where('ID_nha_hang', $slug)->count();
+        $nhanvien = DB::table('nhan_vien')->where('ID_nha_hang', $slug)->count();
+
+        return view('index')->with('route', 'id-nha-hang')
+            ->with('users', $users)
+            ->with('user', $user)
+            ->with('monan', $monan)
+            ->with('ban', $ban)
+            ->with('bans', $bans)
+            ->with('nhanvien', $nhanvien)
+            ->with('nhanvien', $nhanvien)
+            ->with('alert', '0')
+        ;
+    }
+
+    public function datban($id, Request $request){
+        $bans = Ban::all();
+
+        foreach($bans as $bann){
+            if($bann['ten_ban'] == $request->ban){
+                $ban = Ban::find($bann['ID_ban']);
+                $ban['dat_truoc'] = $request->time.' ngày '.$request->ngay;
+                $ban['datban_ten'] = $request->ten;
+                $ban['datban_so_nguoi'] = $request->so_nguoi;
+                $ban['datban_ngay'] = $request->ngay;
+                $ban['datban_time'] = $request->time;
+
+                $ban->save();
+            }
+        }
+
+        $users = User::all();
+        $bans = Ban::all();
+        $user = User::find($request->ID_nha_hang);
+
+        $monan = DB::table('mon_an')->where('ID_nha_hang', $request->ID_nha_hang)->count();
+        $ban = DB::table('ban')->where('ID_nha_hang', $request->ID_nha_hang)->count();
+        $nhanvien = DB::table('nhan_vien')->where('ID_nha_hang', $request->ID_nha_hang)->count();
+
+        return view('index')->with('route', 'id-nha-hang')
+            ->with('users', $users)
+            ->with('user', $user)
+            ->with('monan', $monan)
+            ->with('ban', $ban)
+            ->with('bans', $bans)
+            ->with('nhanvien', $nhanvien)
+            ->with('alert', '1')
+        ;
+        // return Redirect('/NhaHang/nha-hang='.$request->ID_nha_hang);
     }
 
     public function login(){

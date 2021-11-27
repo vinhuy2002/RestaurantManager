@@ -7,15 +7,17 @@
     <br>
 </div>
 
-<br><br>
+<br>
 <div class="container">
 
-	<!-- <div class="card mb-3 shadow-5">
-		<div class="card-body">
-			<center><h5 class="card-title">GIỚI THIỆU</h5></center>
-		</div>
-	</div>
-	<br> -->
+<nav aria-label="breadcrumb">
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item"><a href="/TrangChu">Trang chủ</a></li>
+		<li class="breadcrumb-item active" aria-current="page">Giới thiệu</li>
+	</ol>
+</nav>
+
+<br>
 
 	<div class="card mb-3" style="max-width: 100%;">
 		<div class="row g-0">

@@ -29,6 +29,10 @@ Route::get('/', [MainController::class, 'index']);
 
 Route::get('/GioiThieu', [MainController::class, 'aboutUs']);
 
+Route::get('/NhaHang', [MainController::class, 'nhahang']);
+Route::get('/NhaHang/nha-hang={slug}', [MainController::class, 'idnhahang']);
+Route::post('/NhaHang/nha-hang={id}/datban', [MainController::class, 'datban']);
+
 Route::get('/auth/login', [MainController::class, 'login'])->name('auth.login');
 Route::get('/auth/register', [MainController::class, 'register'])->name('auth.register');
 Route::post('/auth/save', [MainController::class, 'storeReg'])->name('registerStore');

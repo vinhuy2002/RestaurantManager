@@ -29,7 +29,7 @@
                         <th scope="row">{{$monan['ID_mon']}}</th>
                         <td>{{$monan['loai']}}</td>
                         <td>{{$monan['ten_mon']}}</td>
-                        <td>{{$monan['don_gia']}} VND</td>
+                        <td>{{number_format($monan['don_gia'])}} VNĐ</td>
                         <td>
                             <!-- <a href="" type="button" class="btn btn-success btn-rounded" target="_blank">Xem</a> -->
                             <a href="/RestaurantManager/User/monan/sua/id={{$monan['ID_mon']}}" type="button" class="btn btn-warning btn-rounded">Sửa</a>
