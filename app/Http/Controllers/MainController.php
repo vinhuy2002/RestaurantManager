@@ -37,17 +37,20 @@ class MainController extends Controller
     // Register;
     public function storeReg(Request $request){
         $request->validate([
-            'Ten_nha_hang' => 'required',
+            'Ten_nha_hang' => 'required | unique:users',
             'Dia_chi' => 'required',
-            'SDT' => 'required',
+            'SDT' => 'required | digits:10 |unique:users',
             'email' => 'required | email | unique:users',
             'Ten_dang_nhap' => 'required | unique:users',
             'password' => 'required | min:5 | confirmed',
         ],[
+            'Ten_nha_hang.unique' => '* Tên nhà hàng đã tồn tại.',
             'email.unique' => '* Email đã tồn tại.',
             'Ten_dang_nhap.unique' => '* Tên đăng nhập đã tồn tại.',
             'password.min' => '* Mật khẩu phải chứa ít nhất 5 kí tự.',
             'password.confirmed' => '* Mật khẩu xác nhận nhập không đúng.',
+            'SDT.digits' => '* Số điện thoại phải có 10 số.',
+            'SDT.unique' => '* Số điện thoại đã tồn tại.',
         ]);
 
         User::create([
