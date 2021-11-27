@@ -46,6 +46,27 @@ class NhanVienController extends Controller
 
         $data = User::where('id',session('DangNhap'))->first();
 
+        $request->validate([
+            'ten_nhan_vien' => 'required',
+            'chuc_vu' => 'required',
+            'gioi_tinh' => 'required',
+            'dia_chi' => 'required',
+            'sdt' => 'required | digits:10',
+            'tai_khoan' => 'required',
+            'mat_khau' => 'required',
+        ],
+        [
+            'ten_nhan_vien.required' => '* Tên nhân viên không được để trống.',
+            'chuc_vu.required' => '* Chức vụ không được để trống.',
+            'gioi_tinh.required' => '* Giới tính không được để trống.',
+            'dia_chi.required' => '* Địa chỉ không được để trống.',
+            'sdt.required' => '* Số điện thoại không được để trống.',
+            'tai_khoan.required' => '* Tài khoản không được để trống.',
+            'mat_khau.required' => '* Mật khẩu không được để trống.',
+            'sdt.digits' => '* Số điện thoại phải có 10 số.',
+        ]);
+
+
         $nhanvien = NhanVien::create([
             'ten_nhan_vien' => $request->input('ten_nhan_vien'),
             'chuc_vu_id' => $idCV->ID_chuc_vu,
