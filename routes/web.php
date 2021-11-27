@@ -102,3 +102,4 @@ Route::post('/RestaurantManager/User/chucvu/chucvumacdinh', [ChucVuController::c
 // Doanh thu
 Route::get('/RestaurantManager/User/doanhthu/doanhthu', [DoanhThuController::class, 'show']);
 Route::post('/RestaurantManager/User/doanhthu/thongke', [DoanhThuController::class, 'thongke']);
+Route::post('/RestaurantManager/User/doanhthu/xuat', [DoanhThuController::class, 'export']);
