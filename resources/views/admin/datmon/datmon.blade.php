@@ -174,10 +174,10 @@
             @if($tong_tien['ten_ban_thanh_toan'] != "Chưa chọn bàn")
             <div class="float-end">
                 <a href="/RestaurantManager/User/datmon/xoa_du_lieu_ban/ban={{$tong_tien['ten_ban_thanh_toan']}}"
-                    type="submit" class="btn btn-danger"
-                    onclick="return confirm('Bạn có thật sự muốn xóa hết tất cả dữ liệu {{$tong_tien['ten_ban_thanh_toan']}}?');"
+                    type="submit" class="btn btn-success"
+                    onclick="return confirm('Bạn chắc chắn đã nhận được số tiền thanh toán từ khách hàng ở {{$tong_tien['ten_ban_thanh_toan']}} rồi chứ?');"
                     style="margin-left: 5px; padding-bottom: 9px">
-                    Xóa dữ liệu {{$tong_tien['ten_ban_thanh_toan']}}
+                    Đã nhận được tiền {{$tong_tien['ten_ban_thanh_toan']}}
                 </a>
             </div>
             @endif
