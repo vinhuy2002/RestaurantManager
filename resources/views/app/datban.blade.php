@@ -100,7 +100,7 @@
                             <label class="form-label">Số người</label>
                         </div>
                         <div class="form-outline mb-4">
-                            <input type="input" class="form-control" name="ban" list="ten_ban" required />
+                            <input type="input" class="form-control" name="ban" list="ten_ban" autocomplete="off"required />
                             <label class="form-label">Chọn bàn</label>
                             <datalist id="ten_ban">
                                 @foreach ($bans as $ban)
@@ -180,7 +180,7 @@
                         <p>✔️ <b>SĐT: </b>{{$user['SDT']}}</p>
                         <p>✔️ <b>Email: </b>{{$user['email']}}</p>
                         <p>✔️ <b>Số lượng món ăn: </b>{{$monan}}</p>
-                        <p>✔️ <b>Số lượng bàn: </b>{{$ban}}</p>
+                        <p>✔️ <b>Số lượng bàn: </b>{{$so_luong_ban}}</p>
                         <p>✔️ <b>Số lượng nhân viên: </b>{{$nhanvien}}</p>
                         <br>
                     </div>

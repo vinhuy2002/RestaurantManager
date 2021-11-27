@@ -41,14 +41,14 @@ class MainController extends Controller
         $user = User::find($slug);
 
         $monan = DB::table('mon_an')->where('ID_nha_hang', $slug)->count();
-        $ban = DB::table('ban')->where('ID_nha_hang', $slug)->count();
+        $so_luong_ban = DB::table('ban')->where('ID_nha_hang', $slug)->count();
         $nhanvien = DB::table('nhan_vien')->where('ID_nha_hang', $slug)->count();
 
         return view('index')->with('route', 'id-nha-hang')
             ->with('users', $users)
             ->with('user', $user)
             ->with('monan', $monan)
-            ->with('ban', $ban)
+            ->with('so_luong_ban', $so_luong_ban)
             ->with('bans', $bans)
             ->with('nhanvien', $nhanvien)
             ->with('nhanvien', $nhanvien)
@@ -60,7 +60,7 @@ class MainController extends Controller
         $bans = Ban::all();
 
         foreach($bans as $bann){
-            if($bann['ten_ban'] == $request->ban){
+            if(($bann['ten_ban'] == $request->ban) && ($bann['ID_nha_hang'] == $request->ID_nha_hang)){
                 $ban = Ban::find($bann['ID_ban']);
                 $ban['dat_truoc'] = $request->time.' ngày '.$request->ngay;
                 $ban['datban_ten'] = $request->ten;
@@ -77,14 +77,14 @@ class MainController extends Controller
         $user = User::find($request->ID_nha_hang);
 
         $monan = DB::table('mon_an')->where('ID_nha_hang', $request->ID_nha_hang)->count();
-        $ban = DB::table('ban')->where('ID_nha_hang', $request->ID_nha_hang)->count();
+        $so_luong_ban = DB::table('ban')->where('ID_nha_hang', $request->ID_nha_hang)->count();
         $nhanvien = DB::table('nhan_vien')->where('ID_nha_hang', $request->ID_nha_hang)->count();
 
         return view('index')->with('route', 'id-nha-hang')
             ->with('users', $users)
             ->with('user', $user)
             ->with('monan', $monan)
-            ->with('ban', $ban)
+            ->with('so_luong_ban', $so_luong_ban)
             ->with('bans', $bans)
             ->with('nhanvien', $nhanvien)
             ->with('alert', '1')
