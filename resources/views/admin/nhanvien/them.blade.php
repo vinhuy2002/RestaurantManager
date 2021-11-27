@@ -15,12 +15,15 @@
                 @csrf
                 <br>
                 <div class="form-outline mb-4">
-                    <input type="input" class="form-control" name="ten_nhan_vien" required />
+                    <input type="input" class="form-control" name="ten_nhan_vien" value="{{ old('ten_nhan_vien') }}" required />
                     <label class="form-label">Tên nhân viên</label>
                 </div>
+                <p class="text-danger">@error('ten_nhan_vien')
+                    {{ $message }}
+                @enderror</p>
 
                 <div class="form-outline mb-4">
-                    <input type="input" class="form-control" name="chuc_vu" list="chuc_vu" autocomplete="off"
+                    <input type="input" class="form-control" name="chuc_vu" list="chuc_vu" autocomplete="off" value="{{ old('chuc_vu') }}"
                         required />
                     <label class="form-label">Chức vụ</label>
                     <datalist id="chuc_vu">
@@ -31,31 +34,49 @@
                             @endforeach
                     </datalist>
                 </div>
+                <p class="text-danger">@error('chuc_vu')
+                    {{ $message }}
+                @enderror</p>
 
                 <div class="form-outline mb-4">
-                    <input type="input" class="form-control" name="gioi_tinh" required />
+                    <input type="input" class="form-control" name="gioi_tinh" value="{{ old('gioi_tinh') }}" required />
                     <label class="form-label">Giới tính</label>
                 </div>
+                <p class="text-danger">@error('gioi_tinh')
+                    {{ $message }}
+                @enderror</p>
 
                 <div class="form-outline mb-4">
-                    <input type="input" class="form-control" name="dia_chi" required />
+                    <input type="input" class="form-control" name="dia_chi" value="{{ old('dia_chi') }}"required />
                     <label class="form-label">Địa chỉ</label>
                 </div>
+                <p class="text-danger">@error('dia_chi')
+                    {{ $message }}
+                @enderror</p>
 
                 <div class="form-outline mb-4">
-                    <input type="input" class="form-control" name="sdt" required />
+                    <input type="input" class="form-control" name="sdt"  required maxlength="10" />
                     <label class="form-label">Số điện thoại</label>
                 </div>
+                <p class="text-danger">@error('sdt')
+                    {{ $message }}
+                @enderror</p>
 
                 <div class="form-outline mb-4">
-                    <input type="input" class="form-control" name="tai_khoan" required />
+                    <input type="input" class="form-control" name="tai_khoan" value="{{ old('ten_nhan_vien') }}" required />
                     <label class="form-label">Tên tài khoản</label>
                 </div>
+                <p class="text-danger">@error('tai_khoan')
+                    {{ $message }}
+                @enderror</p>
 
                 <div class="form-outline mb-4">
                     <input type="password" class="form-control" name="mat_khau" required />
                     <label class="form-label">Mật khẩu</label>
                 </div>
+                <p class="text-danger">@error('mat_khau')
+                    {{ $message }}
+                @enderror</p>
 
                 <div class="form-outline mb-4">
                     <input type="input" class="form-control" name="ban_quan_ly" list="ten_ban" value="" />

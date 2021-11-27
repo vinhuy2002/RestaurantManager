@@ -45,6 +45,9 @@
                                                 <label class="form-label" for="Ten_nha_hang">Tên nhà hàng</label>
                                             </div>
                                         </div>
+                                        <p class="text-danger">@error('Ten_nha_hang')
+                                            {{ $message }}
+                                        @enderror</p>
 
                                         <div class="d-flex flex-row align-items-center mt-4">
                                             <i class="fas fa-map-marker-alt fa-lg me-3 fa-fw"></i>
@@ -60,10 +63,13 @@
                                             <i class="fas fa-phone fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
                                                 <input type="text" id="SDT" name="SDT" value="{{ old('SDT') }}" required
-                                                    autofocus autocomplete="SDT" class="form-control" />
+                                                    autofocus autocomplete="SDT" class="form-control" maxlength="10"/>
                                                 <label class="form-label" for="SDT">Số điện thoại</label>
                                             </div>
                                         </div>
+                                        <p class="text-danger">@error('SDT')
+                                            {{ $message }}
+                                        @enderror</p>
 
                                         <!--   <div class="d-flex flex-row align-items-center mt-4">
                                             <i class="fas fa-user fa-lg me-3 fa-fw"></i>
@@ -103,6 +109,7 @@
                                                     name="password" required autocomplete="new-password" />
                                                 <label class="form-label" for="password">Mật khẩu</label>
                                             </div>
+
                                         </div>
                                         <p class="text-danger">@error('password')
                                             {{ $message }}
