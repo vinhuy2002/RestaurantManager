@@ -92,7 +92,10 @@
 <div class="card shadow">
 	<div class="card-header"><h5 class="card-title" style="margin-top: 10px">Tùy chỉnh:</h5></div>
 	<div class="card-body">
-		<button type="button" class="btn btn-success">Xuất excel</button>
+		<form action="/RestaurantManager/User/doanhthu/xuat" method="POST">
+		@csrf
+			<button type="submit" class="btn btn-success">Xuất excel</button>
+		</form>
 	</div>
 </div>
 

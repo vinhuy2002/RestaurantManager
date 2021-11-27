@@ -15,6 +15,10 @@ use App\Models\DoanhThu;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
+
+use App\Exports\DoanhThuExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class DoanhThuController extends Controller
 {
@@ -111,12 +115,20 @@ class DoanhThuController extends Controller
         //
         $data = User::where('id',session('DangNhap'))->first();
 
-        $doanhthus = DB::table('doanh_thu')
-            ->where('ID_nha_hang', session('DangNhap'))
-            ->whereDate('created_at', '>=',$request->input('bat_dau'))
-            ->whereDate('created_at', '<=',$request->input('ket_thuc'))
-            ->get()
-        ;
+        if($request->input('ket_thuc')){
+            $doanhthus = DB::table('doanh_thu')
+                ->where('ID_nha_hang', session('DangNhap'))
+                ->whereDate('created_at', '>=',$request->input('bat_dau'))
+                ->whereDate('created_at', '<=',$request->input('ket_thuc'))
+                ->get()
+            ;
+        } else {
+            $doanhthus = DB::table('doanh_thu')
+                ->where('ID_nha_hang', session('DangNhap'))
+                ->whereDate('created_at',$request->input('bat_dau'))
+                ->get()
+            ;
+        }
 
         $tong_doanh_thu['so_don_hang'] = 0;
         $tong_doanh_thu['tong_doanh_thu'] = 0;
@@ -135,5 +147,11 @@ class DoanhThuController extends Controller
             ->with('ket_thuc', $request->input('ket_thuc'))
         ;
         
+    }
+
+    public function export(Request $request)
+    {
+        //
+        return Excel::download(new DoanhThuExport, 'doanhthu.xlsx');
     }
 }
