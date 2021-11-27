@@ -154,7 +154,14 @@ class MainController extends Controller
 
         $tong_tien['tong_tien'] = 0;
         $tong_tien['ten_ban_thanh_toan'] = "Chưa chọn bàn";
-        
+        $tong_doanh_thu['so_don_hang'] = 0;
+        $tong_doanh_thu['tong_doanh_thu'] = 0;
+        $tong_doanh_thu['tong_loi_nhuan'] = 0;
+        $tong_doanh_thu['loi_nhuan'] = 0;
+        $doanhthus = array();
+        $bat_dau = '';
+        $ket_thuc = '';
+
         return view("admin.{$slug}.{$slug}")
         ->with('data', $data)
         ->with('monans', $monans)
@@ -164,7 +171,12 @@ class MainController extends Controller
         ->with('tong_tien', $tong_tien)
         ->with('chucvus', $chucvus)
         ->with('nhanviens', $nhanviens)
+        ->with('doanhthus', $doanhthus)
+        ->with('tong_doanh_thu', $tong_doanh_thu)
+        ->with('bat_dau', $bat_dau)
+        ->with('ket_thuc', $ket_thuc)
         ;
+        
     }
 
     public function dieuhuong2($slug, $slug2){
@@ -178,7 +190,14 @@ class MainController extends Controller
 
         $tong_tien['tong_tien'] = 0;
         $tong_tien['ten_ban_thanh_toan'] = "Chưa chọn bàn";
-        
+        $tong_doanh_thu['so_don_hang'] = 0;
+        $tong_doanh_thu['tong_doanh_thu'] = 0;
+        $tong_doanh_thu['tong_loi_nhuan'] = 0;
+        $tong_doanh_thu['loi_nhuan'] = 0;
+        $doanhthus = array();
+        $bat_dau = '';
+        $ket_thuc = '';
+
         return view("admin.{$slug}.{$slug2}")
         ->with('data', $data)
         ->with('monans', $monans)
@@ -188,6 +207,10 @@ class MainController extends Controller
         ->with('tong_tien', $tong_tien)
         ->with('chucvus', $chucvus)
         ->with('nhanviens', $nhanviens)
+        ->with('doanhthus', $doanhthus)
+        ->with('tong_doanh_thu', $tong_doanh_thu)
+        ->with('bat_dau', $bat_dau)
+        ->with('ket_thuc', $ket_thuc)
         ;
     }
 

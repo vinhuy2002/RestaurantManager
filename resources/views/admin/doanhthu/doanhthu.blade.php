@@ -10,14 +10,15 @@
 	</div>
 
 	<div class="card-body">
-		<form action="" class="text-center">
+		<form action="/RestaurantManager/User/doanhthu/thongke" method="POST" class="text-center">
+			@csrf
 			<h6>
 				Chọn mốc thời gian từ:&ensp;
-				<input type="date" id="batdau" name="batdau" >
+				<input type="date" id="bat_dau" name="bat_dau" >
 				
 				&ensp;cho đến:&ensp;
-				<input type="date" id="ketthuc" name="ketthuc">&emsp;
-				<button type="button" class="btn btn-info btn-rounded">Thống kê</button>
+				<input type="date" id="ket_thuc" name="ket_thuc">&emsp;
+				<button type="submit" class="btn btn-info btn-rounded">Thống kê</button>
 			</h6>
 
 		</form>
@@ -35,12 +36,12 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td scope="row">Nhà hàng Xịn Liền</td>
-					<td>10/10/2021 - 30/10/2021</td>
-					<td>239</td>
-					<td>150.000.000 VNĐ</td>
-					<td>122.000.000 VNĐ</td>
-					<td>92.33 %</td>
+					<td scope="row">{{ $data['Ten_nha_hang'] }}</td>
+					<td>{{$bat_dau}} - {{$ket_thuc}}</td>
+					<td>{{$tong_doanh_thu['so_don_hang']}}</td>
+					<td>{{number_format($tong_doanh_thu['tong_doanh_thu'])}} VNĐ</td>
+					<td>{{number_format($tong_doanh_thu['tong_loi_nhuan'])}} VNĐ</td>
+					<td>{{$tong_doanh_thu['loi_nhuan']}} %</td>
 
 				</tr>
 			</tbody>
@@ -57,54 +58,25 @@
 				<thead>
 					<tr>
 						<th scope="col">Tên bàn</th>
+						<th scope="col">Tên món</th>
 						<th scope="col">Thời gian</th>
-						<th scope="col">Ngày</th>
-						<th scope="col">Số lượng đặt</th>
+						<th scope="col">Số lượng</th>
 						<th scope="col">Doanh thu</th>
-						<th scope="col">Lợi nhuận</th>
 					</tr>
 				</thead>
 				<tbody>
+					@foreach ($doanhthus as $doanhthu)
+                    @if($doanhthu->ID_nha_hang == $data['id'])
 					<tr>
-						<td scope="row">Bàn 1</td>
-						<td>10h - 16h</td>
-						<td>10/10/2021</td>
-						<td>16</td>
-						<td>2.250.000 VNĐ</td>
-						<td>1.700.000 VNĐ</td>
+						<td scope="row">{{$doanhthu->ten_ban}}</td>
+						<td>{{$doanhthu->ten_mon}}</td>
+						<td>{{$doanhthu->created_at}}</td>
+						<td>{{$doanhthu->so_luong}}</td>
+						<td>{{number_format($doanhthu->tien)}} VNĐ</td>
 					</tr>
-					<tr>
-						<td scope="row">Bàn vip</td>
-						<td>13h - 18h</td>
-						<td>10/10/2021</td>
-						<td>32</td>
-						<td>4.550.000 VNĐ</td>
-						<td>4.100.000 VNĐ</td>
-					</tr>
-					<tr>
-						<td scope="row">Bàn 5</td>
-						<td>10h - 16h</td>
-						<td>10/10/2021</td>
-						<td>10</td>
-						<td>1.250.000 VNĐ</td>
-						<td>900.000 VNĐ</td>
-					</tr>
-					<tr>
-						<td scope="row">Bàn 1</td>
-						<td>10h - 16h</td>
-						<td>10/10/2021</td>
-						<td>5</td>
-						<td>620.000 VNĐ</td>
-						<td>400.000 VNĐ</td>
-					</tr>
-					<tr>
-						<td scope="row">Bàn 2</td>
-						<td>10h - 16h</td>
-						<td>10/10/2021</td>
-						<td>15</td>
-						<td>2.250.000 VNĐ</td>
-						<td>1.700.000 VNĐ</td>
-					</tr>
+					@endif
+                    @endforeach
+
 				</tbody>
 			</table>
 
@@ -121,7 +93,6 @@
 	<div class="card-header"><h5 class="card-title" style="margin-top: 10px">Tùy chỉnh:</h5></div>
 	<div class="card-body">
 		<button type="button" class="btn btn-success">Xuất excel</button>
-		<button type="button" class="btn btn-info">In báo cáo</button>
 	</div>
 </div>
 

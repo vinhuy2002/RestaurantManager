@@ -99,3 +99,6 @@ Route::get('/RestaurantManager/User/chucvu/sua/id={id}', [ChucVuController::clas
 Route::post('/RestaurantManager/User/chucvu/sua', [ChucVuController::class, 'update']);
 Route::post('/RestaurantManager/User/chucvu/chucvumacdinh', [ChucVuController::class, 'chucvumacdinh']);
 
+// Doanh thu
+Route::get('/RestaurantManager/User/doanhthu/doanhthu', [DoanhThuController::class, 'show']);
+Route::post('/RestaurantManager/User/doanhthu/thongke', [DoanhThuController::class, 'thongke']);

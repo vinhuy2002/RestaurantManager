@@ -6,6 +6,7 @@ use App\Models\DatMon;
 use App\Models\MonAn;
 use App\Models\Ban;
 use App\Models\User;
+use App\Models\DoanhThu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -165,6 +166,16 @@ class DatMonController extends Controller
         $datmons = DatMon::all();
         foreach ($datmons as $datmon){
             if(($datmon->ten_ban == $ban) && ($datmon->ID_nha_hang == $user['id'])){
+
+                $doanhthu = DoanhThu::create([
+                    'ten_ban' => $datmon->ten_ban,
+                    'ten_mon' => $datmon->ten_mon,
+                    'so_luong' => $datmon->so_luong,
+                    'tien' => $datmon->tien,
+                    'ID_nha_hang' => $user['id'],
+                    
+                ]);
+
                 $data = DatMon::find($datmon->ID_dat_mon);
                 $data->delete();
             }
