@@ -332,6 +332,15 @@ class MainController extends Controller
         $data = User::find($id);
         
         $data->delete();
-        return Redirect('/');
+        if (session()->has('DangNhap')){
+            session()->pull('DangNhap');
+            session()->pull('CheckRole');
+            session()->pull('TenChucVu');
+            session()->pull('TenDangNhap');
+            session()->pull('NhanVien');
+            return redirect('/');
+            // return session()->get(key:'TenChucVu');
+        }
+        return redirect('/');
     }
 }
