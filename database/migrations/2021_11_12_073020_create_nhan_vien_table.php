@@ -28,7 +28,7 @@ class CreateNhanVienTable extends Migration
             $table->string('gio_lam_viec')->nullable();
             $table->unsignedInteger('ID_nha_hang')->nullable();
             
-            $table->foreign('chuc_vu_id')->references('ID_chuc_vu')->on('chuc_vu');
+            $table->foreign('chuc_vu_id')->references('ID_chuc_vu')->on('chuc_vu')->onDelete('cascade');
         });
     }
 

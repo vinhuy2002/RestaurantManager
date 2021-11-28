@@ -330,6 +330,7 @@ class MainController extends Controller
     {
         // xóa
         $data = User::find($id);
+        
         $data->delete();
         return Redirect('/');
     }
