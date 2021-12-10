@@ -18,10 +18,28 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->insert([
             'Ten_nha_hang' => 'Nhà hàng BangPhan',
-            'Dia_chi' => 'Thừa Thiên Huế',
-            'SDT' => '0123456789',
+            'Dia_chi' => 'Phú An, Thừa Thiên Huế',
+            'SDT' => '0123456788',
             'email' => 'pvbang23092002@gmail.com',
             'Ten_dang_nhap' => 'bang',
+            'password' => Hash::make('123456789'),
+        ]);
+
+        DB::table('users')->insert([
+            'Ten_nha_hang' => 'Nhà hàng VinhUy',
+            'Dia_chi' => 'Thuân An, Thừa Thiên Huế',
+            'SDT' => '0123456789',
+            'email' => 'vinhuy@gmail.com',
+            'Ten_dang_nhap' => 'vinhuy',
+            'password' => Hash::make('123456789'),
+        ]);
+
+        DB::table('users')->insert([
+            'Ten_nha_hang' => 'Nhà hàng Test',
+            'Dia_chi' => '470 Đường Trần Đại Nghĩa, Hoà Hải, Ngũ Hành Sơn, Đà Nẵng',
+            'SDT' => '0123456777',
+            'email' => 'test@gmail.com',
+            'Ten_dang_nhap' => 'test',
             'password' => Hash::make('123456789'),
         ]);
     }

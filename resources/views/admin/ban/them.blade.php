@@ -28,10 +28,7 @@
                     <label class="form-label" for="form2Example1">Trạng thái</label>
                 </div>
 
-                <div class="form-outline mb-4">
-                    <input type="input" id="form2Example1" class="form-control" name="dat_truoc" value="Không" required/>
-                    <label class="form-label" for="form2Example1">Đặt trước</label>
-                </div>
+                <input type="hidden" id="form2Example1" class="form-control" name="dat_truoc" value="Không" required/>
 
                 <button type="submit" class="btn btn-primary">Thêm</button>
                 <a href="/RestaurantManager/User/ban" type="button" class="btn btn-info">Quay lại</a>

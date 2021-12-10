@@ -108,6 +108,16 @@ class NhanVienController extends Controller
         return View('admin.nhanvien.nhanvien', ['nhanviens'=>$nhanviens])->with('chucvus', $chucvus);
     }
 
+    public function xem($id)
+    {
+        // hiển thị
+        $chucvus = ChucVu::all();
+        $data = User::where('id',session('DangNhap'))->first();
+
+        $nhanvien = NhanVien::find($id);
+        return View('admin.nhanvien.xem', ['nhanvien'=>$nhanvien])->with('chucvus', $chucvus)->with('data', $data);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

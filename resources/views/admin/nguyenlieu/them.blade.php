@@ -22,8 +22,8 @@
                 </div>
 
                 <div class="form-outline mb-4">
-                    <input type="input" id="form2Example1" class="form-control" name="ngay_mua" required/>
-                    <label class="form-label" for="form2Example1">Ngày mua</label>
+                    <input type="date" id="form2Example1" class="form-control" name="ngay_mua" required/>
+                    <!-- <label class="form-label" for="form2Example1">Ngày mua</label> -->
                 </div>
 
                 <div class="form-outline mb-4">

@@ -23,6 +23,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//
+Route::get('/clear-cache', function(){
+    $exitCode = Artisan::call('cache:clear');
+});
 
 // User View
 Route::get('/', [MainController::class, 'index']);
@@ -85,7 +89,10 @@ Route::get('/RestaurantManager/User/ban/ban', [BanController::class, 'show']);
 Route::post('/RestaurantManager/User/ban/them', [BanController::class, 'store']);
 Route::get('/RestaurantManager/User/ban/xoa/id={id}', [BanController::class, 'destroy']);
 Route::get('/RestaurantManager/User/ban/sua/id={id}', [BanController::class, 'edit']);
+Route::get('/RestaurantManager/User/ban/xem/id={id}', [BanController::class, 'xem']);
 Route::post('/RestaurantManager/User/ban/sua', [BanController::class, 'update']);
+Route::get('/RestaurantManager/User/ban/datban', [BanController::class, 'datban']);
+Route::post('/RestaurantManager/User/ban/datban', [BanController::class, 'datban']);
 
 // Nhân viên
 Route::get('/RestaurantManager/User/nhanvien/nhanvien', [NhanVienController::class, 'show']);
@@ -93,6 +100,7 @@ Route::get('/RestaurantManager/User/nhanvien/them', [NhanVienController::class, 
 Route::post('/RestaurantManager/User/nhanvien/them', [NhanVienController::class, 'store']);
 Route::get('/RestaurantManager/User/nhanvien/xoa/id={id}', [NhanVienController::class, 'destroy']);
 Route::get('/RestaurantManager/User/nhanvien/sua/id={id}', [NhanVienController::class, 'edit']);
+Route::get('/RestaurantManager/User/nhanvien/xem/id={id}', [NhanVienController::class, 'xem']);
 Route::post('/RestaurantManager/User/nhanvien/sua', [NhanVienController::class, 'update']);
 
 // Chức vụ

@@ -24,9 +24,9 @@
                 </div>
 
                 <div class="form-outline mb-4">
-                    <input type="input" id="form2Example1" class="form-control" name="ngay_mua" value="{{$data['ngay_mua']}}" required/>
+                    <input type="date" id="form2Example1" class="form-control" name="ngay_mua" value="{{$data['ngay_mua']}}" required/>
                     <!-- <input type="date" id="form2Example1" class="form-control" name="ngay_mua" data-date-format="DD/MM/YYYY" value="{{$data['ngay_mua']}}"/> -->
-                    <label class="form-label" for="form2Example1">Ngày mua</label>
+                    <!-- <label class="form-label" for="form2Example1">Ngày mua</label> -->
                 </div>
 
                 <div class="form-outline mb-4">
