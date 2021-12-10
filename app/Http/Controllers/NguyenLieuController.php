@@ -48,7 +48,7 @@ class NguyenLieuController extends Controller
             'ID_nha_hang' => $data['id'],
 
         ]);
-        return Redirect('/RestaurantManager/User/nguyenlieu');
+        return Redirect('/User/nguyenlieu');
     }
 
     /**
@@ -94,7 +94,7 @@ class NguyenLieuController extends Controller
         $nguyenlieu['so_luong'] = $request->so_luong;
         $nguyenlieu['don_gia'] = $request->don_gia;
         $nguyenlieu->save();
-        return Redirect('/RestaurantManager/User/nguyenlieu');
+        return Redirect('/User/nguyenlieu');
     }
 
     /**
@@ -108,6 +108,6 @@ class NguyenLieuController extends Controller
         // xóa
         $data = NguyenLieu::find($id);
         $data->delete();
-        return Redirect('/RestaurantManager/User/nguyenlieu');
+        return Redirect('/User/nguyenlieu');
     }
 }

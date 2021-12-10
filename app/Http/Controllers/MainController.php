@@ -316,7 +316,7 @@ class MainController extends Controller
         $data['password'] = Hash::make($request->password);
 
         $data->save();
-        return Redirect('/RestaurantManager/User/trangchu');
+        return Redirect('/User/trangchu');
 
     }
 

@@ -44,9 +44,9 @@
                         <td>{{$ban['dat_truoc']}}</td>
                         <td>
                             <!-- <a href="" type="button" class="btn btn-success btn-rounded" target="_blank">Xem</a> -->
-                            <a href="/RestaurantManager/User/ban/xem/id={{$ban['ID_ban']}}" type="button" class="btn btn-success btn-rounded">Xem</a>
-                            <a href="/RestaurantManager/User/ban/sua/id={{$ban['ID_ban']}}" type="button" class="btn btn-warning btn-rounded">Sửa</a>
-                            <a href="/RestaurantManager/User/ban/xoa/id={{$ban['ID_ban']}}" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button"
+                            <a href="/User/ban/xem/id={{$ban['ID_ban']}}" type="button" class="btn btn-success btn-rounded">Xem</a>
+                            <a href="/User/ban/sua/id={{$ban['ID_ban']}}" type="button" class="btn btn-warning btn-rounded">Sửa</a>
+                            <a href="/User/ban/xoa/id={{$ban['ID_ban']}}" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button"
                                 class="btn btn-danger btn-rounded">Xóa</a>
                         </td>
                     </tr>
@@ -69,8 +69,8 @@
 <div class="card shadow">
 	<div class="card-header"><h5 class="card-title" style="margin-top: 10px">Tùy chỉnh:</h5></div>
 	<div class="card-body">
-		<a href="/RestaurantManager/User/ban/them" type="button" class="btn btn-info">Thêm bàn</a>
-		<a href="/RestaurantManager/User/ban/datban" type="button" class="btn btn-secondary">Đặt bàn</a> 
+		<a href="/User/ban/them" type="button" class="btn btn-info">Thêm bàn</a>
+		<a href="/User/ban/datban" type="button" class="btn btn-secondary">Đặt bàn</a> 
 	</div>
 </div>
 

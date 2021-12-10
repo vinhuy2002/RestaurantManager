@@ -59,7 +59,7 @@ class DatMonController extends Controller
             'ID_nha_hang' => $data['id'],
             
         ]);
-        return Redirect('/RestaurantManager/User/datmon');
+        return Redirect('/User/datmon');
 
         
                 	
@@ -120,7 +120,7 @@ class DatMonController extends Controller
         $datmon['don_gia'] = $don_gia;
         $datmon['tien'] = $request->so_luong*$don_gia;
         $datmon->save();
-        return Redirect('/RestaurantManager/User/datmon');
+        return Redirect('/User/datmon');
     }
 
     /**
@@ -134,7 +134,7 @@ class DatMonController extends Controller
         //
         $data = DatMon::find($id);
         $data->delete();
-        return Redirect('/RestaurantManager/User/datmon');
+        return Redirect('/User/datmon');
     }
 
     
@@ -180,7 +180,7 @@ class DatMonController extends Controller
                 $data->delete();
             }
         }
-        return Redirect('/RestaurantManager/User/datmon');
+        return Redirect('/User/datmon');
     }
 
     public function chuyenban(Request $request)
@@ -196,6 +196,6 @@ class DatMonController extends Controller
                 $data->save();
             }
         }
-        return Redirect('/RestaurantManager/User/datmon');
+        return Redirect('/User/datmon');
     }
 }

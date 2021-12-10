@@ -82,7 +82,7 @@ class NhanVienController extends Controller
             'ID_nha_hang' => $data['id'],
         ]);
 
-        return Redirect('/RestaurantManager/User/nhanvien');
+        return Redirect('/User/nhanvien');
 
     }
 
@@ -158,7 +158,7 @@ class NhanVienController extends Controller
         $nhanvien['gio_lam_viec'] = $request->gio_lam_viec;
 
         $nhanvien->save();
-        return Redirect('/RestaurantManager/User/nhanvien');
+        return Redirect('/User/nhanvien');
 
     }
 
@@ -173,6 +173,6 @@ class NhanVienController extends Controller
         // xóa
         $data = NhanVien::find($id);
         $data->delete();
-        return Redirect('/RestaurantManager/User/nhanvien');
+        return Redirect('/User/nhanvien');
     }
 }

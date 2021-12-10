@@ -45,7 +45,7 @@ class MonAnController extends Controller
             'don_gia' => $request->input('don_gia'),
             'ID_nha_hang' => $data['id'],
         ]);
-        return Redirect('/RestaurantManager/User/monan');
+        return Redirect('/User/monan');
     }
 
     /**
@@ -90,7 +90,7 @@ class MonAnController extends Controller
         $monan['ten_mon'] = $request->ten_mon;
         $monan['don_gia'] = $request->don_gia;
         $monan->save();
-        return Redirect('/RestaurantManager/User/monan');
+        return Redirect('/User/monan');
 
     }
 
@@ -105,7 +105,7 @@ class MonAnController extends Controller
         // xóa
         $data = MonAn::find($id);
         $data->delete();
-        return Redirect('/RestaurantManager/User/monan');
+        return Redirect('/User/monan');
 
     }
 }

@@ -48,7 +48,7 @@ class BanController extends Controller
 
         ]);
 
-        return Redirect('/RestaurantManager/User/ban');
+        return Redirect('/User/ban');
 
     }
 
@@ -101,7 +101,7 @@ class BanController extends Controller
          $ban['trang_thai'] = $request->trang_thai;
         //  $ban['dat_truoc'] = $request->dat_truoc;
          $ban->save();
-         return Redirect('/RestaurantManager/User/ban');
+         return Redirect('/User/ban');
     }
 
     /**
@@ -115,7 +115,7 @@ class BanController extends Controller
         // xóa
         $data = Ban::find($id);
         $data->delete();
-        return Redirect('/RestaurantManager/User/ban');
+        return Redirect('/User/ban');
     }
 
     public function datban(Request $request){
@@ -134,7 +134,7 @@ class BanController extends Controller
             }
         }
 
-        return Redirect('/RestaurantManager/User/ban');
+        return Redirect('/User/ban');
     }
 
 }

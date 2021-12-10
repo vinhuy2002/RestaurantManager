@@ -13,7 +13,7 @@
 
     <div class="card-body">
         <div class="table-responsive">
-            <form action="/RestaurantManager/User/trangchu/sua" method="POST">
+            <form action="/User/trangchu/sua" method="POST">
                 @csrf
                 <br>
                 <input type="hidden" id="form2Example1" class="form-control" name="id" value="{{$data['id']}}" />
@@ -49,7 +49,7 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary">Sửa</button>
-                <a href="/RestaurantManager/User/trangchu" type="button" class="btn btn-info">Quay lại</a>
+                <a href="/User/trangchu" type="button" class="btn btn-info">Quay lại</a>
 
             </form>
 

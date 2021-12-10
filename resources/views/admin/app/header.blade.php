@@ -78,8 +78,8 @@
 			<ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start" aria-labelledby="userDropdown">
 				{{-- <form method="POST" action="{{ route('logout') }}"> --}}
 					{{-- @csrf --}}
-					<li><a class="dropdown-item" href="/RestaurantManager/User/trangchu">Thông tin</a></li>
-					<li><a class="dropdown-item" href="/RestaurantManager/User/doanhthu">Doanh thu</a></li>
+					<li><a class="dropdown-item" href="/User/trangchu">Thông tin</a></li>
+					<li><a class="dropdown-item" href="/User/doanhthu">Doanh thu</a></li>
 					<li><a class="dropdown-item" href="/auth/logoff">Đăng xuất</a></li>
 				{{-- </form> --}}
 			</ul>

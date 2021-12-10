@@ -14,7 +14,7 @@
 		<div class="table-responsive">
 			<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 				@if(!Session::get('NhanVien'))
-				<span class="text-success">Bạn là Quản lý, không có lịch trình dành cho bạn! Nhưng bạn có thể thêm và thay đổi lịch làm việc của nhân viên ở Menu <a href="/RestaurantManager/User/nhanvien" class="text-success">Quản lý Nhân viên</a>.</span>
+				<span class="text-success">Bạn là Quản lý, không có lịch trình dành cho bạn! Nhưng bạn có thể thêm và thay đổi lịch làm việc của nhân viên ở Menu <a href="/User/nhanvien" class="text-success">Quản lý Nhân viên</a>.</span>
 				<!-- <thead>
 					<tr>
 						<th scope="col">ID</th>
@@ -146,7 +146,7 @@
 <div class="card shadow">
 	{{-- <div class="card-header"><h5 class="card-title" style="margin-top: 10px">Tùy chỉnh:</h5></div> --}}
 	<div class="card-body">
-		<a href="/RestaurantManager/User/nhanvien" type="button" class="btn btn-info">Xem lịch làm việc của từng nhân viên</a>
+		<a href="/User/nhanvien" type="button" class="btn btn-info">Xem lịch làm việc của từng nhân viên</a>
 	</div>
 </div>
 @endif

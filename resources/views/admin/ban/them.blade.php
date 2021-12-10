@@ -13,7 +13,7 @@
 
     <div class="card-body">
         <div class="table-responsive">
-            <form action="/RestaurantManager/User/ban/them" method="POST">
+            <form action="/User/ban/them" method="POST">
                 @csrf
                 <br>
 
@@ -31,7 +31,7 @@
                 <input type="hidden" id="form2Example1" class="form-control" name="dat_truoc" value="Không" required/>
 
                 <button type="submit" class="btn btn-primary">Thêm</button>
-                <a href="/RestaurantManager/User/ban" type="button" class="btn btn-info">Quay lại</a>
+                <a href="/User/ban" type="button" class="btn btn-info">Quay lại</a>
 
             </form>
 

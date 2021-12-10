@@ -11,7 +11,7 @@
         </div>
 
         <div class="card-body">
-            <form action="/RestaurantManager/User/ban/datban" method="POST">
+            <form action="/User/ban/datban" method="POST">
                 @csrf
                 {{-- <input type="hidden" id="form2Example1" class="form-control" name="ID_ban" value="{{$data['ID_ban']}}"/> --}}
 
@@ -57,7 +57,7 @@
                 <input type="hidden" class="form-control" name="ID_nha_hang" value="{{$data['id']}}" />
 
                 <button type="submit" class="btn btn-secondary">Đăt bàn</button>
-                <a href="/RestaurantManager/User/ban" type="button" class="btn btn-info">Quay lại</a>
+                <a href="/User/ban" type="button" class="btn btn-info">Quay lại</a>
 
             </form>
 

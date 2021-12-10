@@ -50,7 +50,7 @@ class ChucVuController extends Controller
 
         // unserialize();
         // return $request->input('quyen');
-        return Redirect('/RestaurantManager/User/chucvu');
+        return Redirect('/User/chucvu');
     }
 
     /**
@@ -97,7 +97,7 @@ class ChucVuController extends Controller
 
         // return $chucvu;
         $chucvu->save();
-        return Redirect('/RestaurantManager/User/chucvu');
+        return Redirect('/User/chucvu');
 
     }
 
@@ -112,7 +112,7 @@ class ChucVuController extends Controller
         // xóa
         $data = ChucVu::find($id);
         $data->delete();
-        return Redirect('/RestaurantManager/User/chucvu');
+        return Redirect('/User/chucvu');
     }
 
 
@@ -153,7 +153,7 @@ class ChucVuController extends Controller
         ]);
 
         // unserialize();
-        return Redirect('/RestaurantManager/User/chucvu');
+        return Redirect('/User/chucvu');
     }
 
 }

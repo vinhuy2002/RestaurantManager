@@ -12,7 +12,7 @@
 
     <div class="card-body">
 
-        <form action="/RestaurantManager/User/datmon/them" method="POST">
+        <form action="/User/datmon/them" method="POST">
             @csrf
             <div class="row">
                 <div class="col-3">
@@ -104,9 +104,9 @@
                         <td>{{number_format($datmon['don_gia'])}} VNĐ</td>
                         <td>{{number_format($datmon['tien'])}} VNĐ</td>
                         <td>
-                            <a href="/RestaurantManager/User/datmon/sua/id={{$datmon['ID_dat_mon']}}" type="button"
+                            <a href="/User/datmon/sua/id={{$datmon['ID_dat_mon']}}" type="button"
                                 class="btn btn-warning btn-rounded">Sửa</a>
-                            <a href="/RestaurantManager/User/datmon/xoa/id={{$datmon['ID_dat_mon']}}"
+                            <a href="/User/datmon/xoa/id={{$datmon['ID_dat_mon']}}"
                                 onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button"
                                 class="btn btn-danger btn-rounded">Xóa</a>
                         </td>
@@ -147,7 +147,7 @@
     <div class="card-body">
         
         <!-- <br> -->
-        <form action="/RestaurantManager/User/datmon/chuyenban" method="POST">
+        <form action="/User/datmon/chuyenban" method="POST">
             @csrf
             <div class="float-start">
                 <div class="form-outline">
@@ -169,11 +169,11 @@
             </div>
             
         </form>
-        <form action="/RestaurantManager/User/datmon/thanhtoan" method="POST">
+        <form action="/User/datmon/thanhtoan" method="POST">
             @csrf
             @if($tong_tien['ten_ban_thanh_toan'] != "Chưa chọn bàn")
             <div class="float-end">
-                <a href="/RestaurantManager/User/datmon/xoa_du_lieu_ban/ban={{$tong_tien['ten_ban_thanh_toan']}}"
+                <a href="/User/datmon/xoa_du_lieu_ban/ban={{$tong_tien['ten_ban_thanh_toan']}}"
                     type="submit" class="btn btn-success"
                     onclick="return confirm('Bạn chắc chắn đã nhận được số tiền thanh toán từ khách hàng ở {{$tong_tien['ten_ban_thanh_toan']}} rồi chứ?');"
                     style="margin-left: 5px; padding-bottom: 9px">

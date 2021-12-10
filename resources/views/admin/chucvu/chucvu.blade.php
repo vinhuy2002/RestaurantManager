@@ -34,9 +34,9 @@
                                     <td>{{ $string = implode(', ', $quyens) }}</td>
 
                                     <td>
-                                        <a href="/RestaurantManager/User/chucvu/sua/id={{ $chucvu['ID_chuc_vu'] }}"
+                                        <a href="/User/chucvu/sua/id={{ $chucvu['ID_chuc_vu'] }}"
                                             type="button" class="btn btn-warning btn-rounded">Sửa</a>
-                                        <a href="/RestaurantManager/User/chucvu/xoa/id={{ $chucvu['ID_chuc_vu'] }}"
+                                        <a href="/User/chucvu/xoa/id={{ $chucvu['ID_chuc_vu'] }}"
                                             onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button"
                                             class="btn btn-danger btn-rounded">Xóa</a>
                                     </td>
@@ -64,7 +64,7 @@
         </div>
         <div class="card-body">
             <div class="float-start">
-                <a href="/RestaurantManager/User/chucvu/them" type="button" class="btn btn-info">Thêm Chức vụ</a>
+                <a href="/User/chucvu/them" type="button" class="btn btn-info">Thêm Chức vụ</a>
             </div>
 
             @php $macdinh = 0; @endphp
@@ -77,7 +77,7 @@
 
             @if ($macdinh == 0)
                 <div class="float-end">
-                    <form action="/RestaurantManager/User/chucvu/chucvumacdinh" method="POST">
+                    <form action="/User/chucvu/chucvumacdinh" method="POST">
                         @csrf
                         <button type="submit"
                             onclick="return confirm('Bạn muốn sử dụng chức vụ mặc định mà chúng tôi đề xuất chứ ?'); "

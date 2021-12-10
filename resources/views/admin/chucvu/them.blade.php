@@ -11,7 +11,7 @@
 
     <div class="card-body">
         <div class="table-responsive">
-            <form action="/RestaurantManager/User/chucvu/them" method="POST">
+            <form action="/User/chucvu/them" method="POST">
                 @csrf
                 <br>
                 <div class="form-outline mb-4">
@@ -78,7 +78,7 @@
                 <br>
 
                 <button type="submit" class="btn btn-primary">Thêm</button>
-                <a href="/RestaurantManager/User/chucvu" type="button" class="btn btn-info">Quay lại</a>
+                <a href="/User/chucvu" type="button" class="btn btn-info">Quay lại</a>
 
             </form>
 

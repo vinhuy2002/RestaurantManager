@@ -35,8 +35,8 @@
                         <td>{{number_format($nguyenlieu['don_gia'])}} VND</td>
                         <td>
                             <!-- <a href="" type="button" class="btn btn-success btn-rounded" target="_blank">Xem</a> -->
-                            <a href="/RestaurantManager/User/nguyenlieu/sua/id={{$nguyenlieu['ID_nguyen_lieu']}}" type="button" class="btn btn-warning btn-rounded">Sửa</a>
-                            <a href="/RestaurantManager/User/nguyenlieu/xoa/id={{$nguyenlieu['ID_nguyen_lieu']}}" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button"
+                            <a href="/User/nguyenlieu/sua/id={{$nguyenlieu['ID_nguyen_lieu']}}" type="button" class="btn btn-warning btn-rounded">Sửa</a>
+                            <a href="/User/nguyenlieu/xoa/id={{$nguyenlieu['ID_nguyen_lieu']}}" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button"
                                 class="btn btn-danger btn-rounded">Xóa</a>
                         </td>
                     </tr>
@@ -58,7 +58,7 @@
 <div class="card shadow">
 	<div class="card-header"><h5 class="card-title" style="margin-top: 10px">Tùy chỉnh:</h5></div>
 	<div class="card-body">
-		<a href="/RestaurantManager/User/nguyenlieu/them" type="button" class="btn btn-info">Thêm nguyên liệu</a>
+		<a href="/User/nguyenlieu/them" type="button" class="btn btn-info">Thêm nguyên liệu</a>
 	</div>
 </div>
 

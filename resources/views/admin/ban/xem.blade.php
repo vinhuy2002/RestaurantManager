@@ -45,7 +45,7 @@
             <h5 class="card-title" style="margin-top: 10px">Tùy chỉnh:</h5>
         </div>
         <div class="card-body">
-            <a href="/RestaurantManager/User/ban/them" type="button" class="btn btn-info">Thêm bàn</a>
+            <a href="/User/ban/them" type="button" class="btn btn-info">Thêm bàn</a>
         </div>
     </div> --}}
 

@@ -18,7 +18,7 @@
 
 			<div class="col-6">
 				<div class="text-info">
-					<h5><i class="fas fa-chart-bar"></i>&ensp;Thông tin chi tiết:</h5>
+					<h5><i class="fas fa-book-open"></i>&ensp;Thông tin chi tiết:</h5>
 				</div>
 
 				<hr>
@@ -50,8 +50,8 @@
 <div class="card shadow">
 	<div class="card-header"><h5 class="card-title" style="margin-top: 10px">Tùy chỉnh:</h5></div>
 	<div class="card-body">
-		<a href="/RestaurantManager/User/trangchu/sua/id={{$data['id']}}" type="button" class="btn btn-info">Chỉnh sửa thông tin</a>
-		<div class="float-end"><a href="/RestaurantManager/User/trangchu/xoa/id={{$data['id']}}" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-danger btn-rounded">Xóa tài khoản</a></div>
+		<a href="/User/trangchu/sua/id={{$data['id']}}" type="button" class="btn btn-info">Chỉnh sửa thông tin</a>
+		<div class="float-end"><a href="/User/trangchu/xoa/id={{$data['id']}}" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-danger btn-rounded">Xóa tài khoản</a></div>
 	</div>
 </div>
 

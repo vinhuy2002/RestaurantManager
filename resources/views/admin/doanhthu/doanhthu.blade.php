@@ -10,7 +10,7 @@
 	</div>
 
 	<div class="card-body">
-		<form action="/RestaurantManager/User/doanhthu/thongke" method="POST" class="text-center">
+		<form action="/User/doanhthu/thongke" method="POST" class="text-center">
 			@csrf
 			<h6>
 				Chọn mốc thời gian từ:&ensp;
@@ -37,7 +37,7 @@
 			<tbody>
 				<tr>
 					<td scope="row">{{ $data['Ten_nha_hang'] }}</td>
-					<td>{{$bat_dau}} - {{$ket_thuc}}</td>
+					<td>{{$bat_dau}}@if($ket_thuc) đến @endif{{$ket_thuc}}</td>
 					<td>{{$tong_doanh_thu['so_don_hang']}}</td>
 					<td>{{number_format($tong_doanh_thu['tong_doanh_thu'])}} VNĐ</td>
 					<td>{{number_format($tong_doanh_thu['tong_loi_nhuan'])}} VNĐ</td>
@@ -92,7 +92,7 @@
 <div class="card shadow">
 	<div class="card-header"><h5 class="card-title" style="margin-top: 10px">Tùy chỉnh:</h5></div>
 	<div class="card-body">
-		<form action="/RestaurantManager/User/doanhthu/xuat" method="POST">
+		<form action="/User/doanhthu/xuat" method="POST">
 		@csrf
 			<button type="submit" class="btn btn-success">Xuất excel</button>
 		</form>

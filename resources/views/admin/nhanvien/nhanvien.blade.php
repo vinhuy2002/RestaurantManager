@@ -38,9 +38,9 @@
                                     <td>{{ $nhanvien['tai_khoan'] }}</td>
                                     <td>
                                         <!-- <a href="" type="button" class="btn btn-success btn-rounded" target="_blank">Xem</a> -->
-                                        <a href="/RestaurantManager/User/nhanvien/xem/id={{ $nhanvien['ID_nhan_vien'] }}" type="button" class="btn btn-success btn-rounded">Xem</a>
-                                        <a href="/RestaurantManager/User/nhanvien/sua/id={{ $nhanvien['ID_nhan_vien'] }}" type="button" class="btn btn-warning btn-rounded">Sửa</a>
-                                        <a href="/RestaurantManager/User/nhanvien/xoa/id={{ $nhanvien['ID_nhan_vien'] }}"
+                                        <a href="/User/nhanvien/xem/id={{ $nhanvien['ID_nhan_vien'] }}" type="button" class="btn btn-success btn-rounded">Xem</a>
+                                        <a href="/User/nhanvien/sua/id={{ $nhanvien['ID_nhan_vien'] }}" type="button" class="btn btn-warning btn-rounded">Sửa</a>
+                                        <a href="/User/nhanvien/xoa/id={{ $nhanvien['ID_nhan_vien'] }}"
                                             onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button"
                                             class="btn btn-danger btn-rounded">Xóa</a>
                                     </td>
@@ -67,7 +67,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-12">
-                    <a href="/RestaurantManager/User/nhanvien/them" type="button" class="btn btn-info">Thêm nhân viên</a>
+                    <a href="/User/nhanvien/them" type="button" class="btn btn-info">Thêm nhân viên</a>
                 </div>
                 <!-- <br><br>
                 <div class="col-12">
