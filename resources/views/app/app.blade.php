@@ -102,9 +102,9 @@
 						Danh mục
 					</h6>
 
-					<p><a href="#!" class="text-reset"><i class="fas fa-angle-right"></i>&nbsp;Quản lý</a></p>
-					<p><a href="#!" class="text-reset"><i class="fas fa-angle-right"></i>&nbsp;Giới thiệu</a></p>
-					<p><a href="#!" class="text-reset"><i class="fas fa-angle-right"></i>&nbsp;Thanh toán</a></p>
+					<p><a href="{{ route('auth.login') }}" class="text-reset"><i class="fas fa-angle-right"></i>&nbsp;Quản lý</a></p>
+					<p><a href="/GioiThieu" class="text-reset"><i class="fas fa-angle-right"></i>&nbsp;Giới thiệu</a></p>
+					<p><a href="/NhaHang" class="text-reset"><i class="fas fa-angle-right"></i>&nbsp;Nhà hàng</a></p>
 				</div>
 
 				<div class="col-md-3 col-lg-4 col-xl-2 mx-auto mb-4">
@@ -121,16 +121,16 @@
 						Mạng xã hội
 					</h6>
 
-					<a href="https://www.facebook.com/IT0902/" class="me-4 text-reset">
+					<a href="https://www.facebook.com/IT0902/" class="me-4 text-primary">
 						<i class="fab fa-facebook-f"></i>
 					</a>
-					<a href="https://www.facebook.com/IT0902/" class="me-4 text-reset">
+					<a href="https://www.facebook.com/IT0902/" class="me-4 text-info">
 						<i class="fab fa-twitter"></i>
 					</a>
-					<a href="https://www.facebook.com/IT0902/" class="me-4 text-reset">
+					<a href="https://www.facebook.com/IT0902/" class="me-4 text-warning">
 						<i class="fab fa-google"></i>
 					</a>
-					<a href="https://www.facebook.com/IT0902/" class="me-4 text-reset">
+					<a href="https://www.facebook.com/IT0902/" class="me-4 text-danger">
 						<i class="fab fa-instagram"></i>
 					</a>
 				</div>
