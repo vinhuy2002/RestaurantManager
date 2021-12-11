@@ -11,10 +11,12 @@ use App\Models\LichLamViec;
 use App\Models\NhanVien;
 use App\Models\ChucVu;
 use App\Models\DoanhThu;
+use App\Models\DanhGia;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Pagination\Paginator;
 
 class MainController extends Controller
 {
@@ -28,7 +30,7 @@ class MainController extends Controller
     }
 
     public function nhahang(){
-        $users = User::all();
+        $users = DB::table('users')->get();
 
         return view('index')->with('route', 'NhaHang')
             ->with('users', $users)
@@ -39,10 +41,17 @@ class MainController extends Controller
         $users = User::all();
         $bans = Ban::all();
         $user = User::find($slug);
+        $danhgias = DB::table('danh_gia')->where('ID_nha_hang', $slug)->paginate(3);
 
         $monan = DB::table('mon_an')->where('ID_nha_hang', $slug)->count();
         $so_luong_ban = DB::table('ban')->where('ID_nha_hang', $slug)->count();
         $nhanvien = DB::table('nhan_vien')->where('ID_nha_hang', $slug)->count();
+
+        $soluongdanhgia = DB::table('danh_gia')->where('ID_nha_hang', $slug)->count();
+        session()->put('soluongdanhgia', $soluongdanhgia);
+
+        $trungbinhdanhgia = DB::table('danh_gia')->where('ID_nha_hang', $slug)->avg('danh_gia');
+        session()->put('trungbinhdanhgia', $trungbinhdanhgia);
 
         return view('index')->with('route', 'id-nha-hang')
             ->with('users', $users)
@@ -52,6 +61,7 @@ class MainController extends Controller
             ->with('bans', $bans)
             ->with('nhanvien', $nhanvien)
             ->with('nhanvien', $nhanvien)
+            ->with('danhgias', $danhgias)
             ->with('alert', '0')
         ;
     }
@@ -90,6 +100,24 @@ class MainController extends Controller
             ->with('alert', '1')
         ;
         // return Redirect('/NhaHang/nha-hang='.$request->ID_nha_hang);
+    }
+
+    public function timkiem(Request $request){
+        $users = DB::table('users')
+        ->where('Ten_nha_hang', 'like', '%'.$request->input('tim_kiem').'%')
+        ->orWhere('Dia_chi', 'like', '%'.$request->input('tim_kiem').'%')
+        ->orWhere('SDT', $request->input('tim_kiem'))
+        ->orWhere('email', $request->input('tim_kiem'))
+        ->orWhere('Ten_dang_nhap', $request->input('tim_kiem'))
+        ->get();
+
+        if(!$users){
+            $users = DB::table('users')->get();
+        }
+
+        return view('index')->with('route', 'NhaHang')
+            ->with('users', $users)
+        ;
     }
 
     public function login(){
