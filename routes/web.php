@@ -10,6 +10,7 @@ use App\Http\Controllers\LichLamViecController;
 use App\Http\Controllers\NhanVienController;
 use App\Http\Controllers\ChucVuController;
 use App\Http\Controllers\DoanhThuController;
+use App\Http\Controllers\DanhGiaController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -33,8 +34,11 @@ Route::get('/', [MainController::class, 'index']);
 
 Route::get('/GioiThieu', [MainController::class, 'aboutUs']);
 
+Route::post('/tim-kiem', [MainController::class, 'timkiem']);
+
 Route::get('/NhaHang', [MainController::class, 'nhahang']);
 Route::get('/NhaHang/nha-hang={slug}', [MainController::class, 'idnhahang']);
+Route::post('/NhaHang/nha-hang={id}/danh-gia', [DanhGiaController::class, 'store']);
 Route::post('/NhaHang/nha-hang={id}/datban', [MainController::class, 'datban']);
 
 Route::get('/auth/login', [MainController::class, 'login'])->name('auth.login');

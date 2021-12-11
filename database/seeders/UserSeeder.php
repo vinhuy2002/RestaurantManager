@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'Ten_nha_hang' => 'Nhà hàng BangPhan',
+            'Ten_nha_hang' => 'BangPhan',
             'Dia_chi' => 'Phú An, Thừa Thiên Huế',
             'SDT' => '0123456788',
             'email' => 'pvbang23092002@gmail.com',
@@ -26,7 +26,7 @@ class UserSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'Ten_nha_hang' => 'Nhà hàng VinhUy',
+            'Ten_nha_hang' => 'VinhUy',
             'Dia_chi' => 'Thuân An, Thừa Thiên Huế',
             'SDT' => '0123456789',
             'email' => 'vinhuy@gmail.com',
@@ -35,7 +35,7 @@ class UserSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'Ten_nha_hang' => 'Nhà hàng Test',
+            'Ten_nha_hang' => 'Test',
             'Dia_chi' => '470 Đường Trần Đại Nghĩa, Hoà Hải, Ngũ Hành Sơn, Đà Nẵng',
             'SDT' => '0123456777',
             'email' => 'test@gmail.com',
